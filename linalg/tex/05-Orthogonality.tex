@@ -1,0 +1,67 @@
+\section*{5 Orthogonality}
+
+\paragraph{D 5.1.1} Two vectors $v,w\in\mathbb{R}^n$ are
+called \key{orthogonal} if $v^\top w=0$. Two subspaces $V$ and $W$
+are orthogonal if for all $v\in V$ and all $w\in W$, the vectors
+$v$ and $w$ are orthogonal.
+
+\paragraph{L 5.1.2} Let $v_1,\dots,v_k$ be a basis of subspace
+$V$. Let $w_1,\dots,w_l$ be a basis of subspace $W$. $V$ and $W$
+are orthogonal iff $v_i$ and $w_j$ are orthogonal for
+all $i\in\{1,\dots,k\}$ and $j\in\{1,\dots,l\}$.
+
+\paragraph{L 5.1.3} Let $V$ and $W$ be two orthogonal subspaces of
+$\mathbb{R}^n$. Let $v_1,\dots,v_k$ be a basis of subspace $V$. Let
+$w_1,\dots,w_l$ be a basis of subspace $W$. The set of vectors
+$\{v_1,\dots,v_k,w_1,\dots,w_l\}$ is linearly
+independent.
+
+\paragraph{C 5.1.4} Let $V$ and $W$ be orthogonal subspaces. Then
+$V\cap W=\{0\}$. Moreover, if $\dim(V)=k$ and $\dim(W)=l$, then $\dim(\{\lambda v+\mu w\mid\lambda,\mu\in\mathbb{R},v\in V,w\in W\})=k+l\leq n$.
+
+\paragraph{D 5.1.5} Let $V$ be a subspace of $\mathbb{R}^n$. We define
+the \key{orthogonal complement} of $V$ as: $V^\bot = \left\{ w\in\mathbb{R}^n\mid w^\top v=0\text{ for all }v\in V \right\}$.
+
+\paragraph{T 5.1.6} Let $A\in\mathbb{R}^{m\times n}$, then
+$\nullsp(A)=\colsp(A^\top)^\bot=\rowsp(A)^\bot$.
+
+\paragraph{T 5.1.7} Let $V,W$ be orthogonal subspaces of $\mathbb{R}^n$.
+The following statements are equivalent:
+\begin{enumerate}
+    \item $W=V^\bot$
+
+    \item $\dim(V)+\dim(W)=n$
+
+    \item Every $u\in\mathbb{R}^n$ can be written as
+        $u=v+w$ with unique vectors $v\in V,w\in W$.
+\end{enumerate}
+
+\paragraph{L 5.1.10} Let $A\in\mathbb{R}^{m\times n}$. Then
+$\nullsp(A)=\nullsp(A^\top A)$ and $\colsp(A^\top)=\colsp(A^\top A)$.
+
+\subsection{Projections}
+
+\paragraph{D 5.2.1} The \key{projection} of a vector
+$b\in\mathbb{R}^m$ on a subspace $S$ (of $\mathbb{R}^m$) is the point in
+$S$ that is closest to $b$. In other words: $\proj_S(b)=\argmin_{p\in S}\rnorm{b-p}$.
+
+\paragraph{L 5.2.2} Let $a \in \mathbb{R}^m \backslash \{0\}$ and
+$S = \{\lambda a \,  \, \lambda \in \mathbb{R}\}$. $proj_S(b) = \frac{aa^\top}{a^\top a}b$.
+
+\paragraph{L 5.2.3} The projection of a vector $b\in\mathbb{R}^m$ to
+the subspace $S=\colsp(A)$ can be written as $\proj_S(b)=A\hat{x}$,
+whereby $\hat{x} = \min_{x\in\mathbb{R}^n}{|| Ax-b||^2}$
+satisfies $A^\top A\hat{x}=A^\top b$.
+
+Note that, given the $QR$ decomposition
+of $A$, $\hat{x}$ satisfies $R\hat{x} = Q^\top b$ and
+$\hat{x} = R^{-1}Q^\top b$ if $A$ has independent columns
+(and thus $R$ is invertible)
+
+\paragraph{L 5.2.4} $A^\top A$ is invertible iff $A$ has
+linearly independent columns.
+
+\paragraph{T 5.2.5} Let $S$ be a subspace of $\mathbb{R}^m$ and $A$ a
+matrix whose columns are a basis of $S$. The projection of
+$b\in\mathbb{R}^m$ to $S$ is given by $\proj_S(b)=Pb$, where $P=A(A^\top
+A)^{-1}A^\top$ is the \key{projection matrix}.

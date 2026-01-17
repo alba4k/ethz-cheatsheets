@@ -1,0 +1,444 @@
+\section*{10 Algorithms and Procedures}
+
+\subsection{Gauss Elimination - \texorpdfstring{$O(m^3)$}{O(m\^3)}}
+
+Gauss elimination is an algorithm that can be used to solve systems of
+equations of the form $Ax=b$, where $A\in\mathbb{R}^{m\times m}$
+and $x,y\in\mathbb{R}^m$.
+
+\paragraph{Back substitution - $O(m^2)$} If we have an upper
+triangular matrix, we start by scaling the last row, so that the
+entry becomes one. Then we subtract that row from the second last,
+scale that one again, subtract both the last and the second last
+from the third last and continue until we arrive at the top.
+An example:
+
+\vspace{-\baselineskip}
+
+\begin{align*}
+    &\begin{bmatrix} 2 & 3 & 4 \\ 0 & 5 & 6 \\ 0 & 0 & 7 \end{bmatrix}
+    x
+    =
+    \begin{bmatrix} 19 \\ 17 \\ 14 \end{bmatrix}
+    \stackrel{(3)\div 7}{\implies}
+    \begin{bmatrix} 2 & 3 & 4 \\ 0 & 5 & 6 \\ 0 & 0 & 1 \end{bmatrix}
+    x
+    =
+    \begin{bmatrix} 19 \\ 17 \\ 2 \end{bmatrix}
+    \\
+    \stackrel{(2)-6(3)}{\implies}
+    &\begin{bmatrix} 2 & 3 & 4 \\ 0 & 5 & 0 \\ 0 & 0 & 1 \end{bmatrix}
+    x
+    =
+    \begin{bmatrix} 19 \\ 5 \\ 2 \end{bmatrix}
+    \stackrel{(2)\div 5}{\implies}
+    \begin{bmatrix} 2 & 3 & 4 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}
+    x
+    =
+    \begin{bmatrix} 19 \\ 1 \\ 2 \end{bmatrix}
+    \\
+    \stackrel{(1)-4(3)}{\implies}
+    &\begin{bmatrix} 2 & 3 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}
+    x
+    =
+    \begin{bmatrix} 11 \\ 1 \\ 2 \end{bmatrix}
+    \stackrel{(1)-3(2)}{\implies}
+    \begin{bmatrix} 2 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}
+    x
+    =
+    \begin{bmatrix} 8 \\ 1 \\ 2 \end{bmatrix}
+    \\
+    \stackrel{(1)\div2}{\implies}
+    &\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}
+    x
+    =
+    \begin{bmatrix} 4 \\ 1 \\ 2 \end{bmatrix}
+\end{align*}
+
+\paragraph{Elimination} If the matrix is not upper triangular, we can
+transform the system $Ax=b$ into an equivalent system $Ux=c$ with
+the same solutions, where $U$ is an upper triangular matrix.
+We do this by starting at the top and, using the diagonal entry
+of the current column (called the pivot, marked in bold in the
+example) to eliminate the nonzeros below it with row extractions.
+An example:
+
+\vspace{-\baselineskip}
+
+\begin{align*}
+    &\begin{bmatrix} \mathbf{2} & 3 & 4 \\ 4 & 11 & 14 \\ 2 & 8 & 17 \end{bmatrix}
+    x
+    =
+    \begin{bmatrix} 19 \\ 55 \\ 50 \end{bmatrix}
+    \stackrel{(2)-2(1)}{\implies}
+    \begin{bmatrix} \mathbf{2} & 3 & 4 \\ 0 & 5 & 6 \\ 2 & 8 & 17 \end{bmatrix}
+    x
+    =
+    \begin{bmatrix} 19 \\ 17 \\ 50 \end{bmatrix}
+    \\
+    \stackrel{(3)-(1)}{\implies}
+    &\begin{bmatrix} 2 & 3 & 4 \\ 0 & \mathbf{5} & 6 \\ 0 & 5 & 13 \end{bmatrix}
+    x
+    =
+    \begin{bmatrix} 19 \\ 17 \\ 31 \end{bmatrix}
+    \stackrel{(3)-(2)}{\implies}
+    \begin{bmatrix} 2 & 3 & 4 \\ 0 & 5 & 6 \\ 0 & 0 & \mathbf{7} \end{bmatrix}
+    x
+    =
+    \begin{bmatrix} 19 \\ 17 \\ 14 \end{bmatrix}
+\end{align*}
+
+The \key{elimination matrix} $E_{21} = \begin{bmatrix}
+    1 & 0 & 0 \\ -2 & 1 & 0 \\ 0 & 0 & 1
+\end{bmatrix}$ means "subtract $2\cdot(\text{row 1})$ from (row 2).
+
+\paragraph{Row exchanges} When the pivot element is $0$, we
+cannot use it to eliminate nonzeros below it. If there is some
+nonzero entry below the pivot, we can perform a row exchange to
+obtain a nonzero pivot.
+
+\vspace{-\baselineskip}
+
+\begin{align*}
+    &\begin{bmatrix} \mathbf{2} & 3 & 4 \\ 4 & 6 & 14 \\ 2 & 8 & 17 \end{bmatrix}
+    x
+    =
+    \begin{bmatrix} 2 \\ 10 \\ 25 \end{bmatrix}
+    \stackrel{(2)-2(1)}{\implies}
+    \begin{bmatrix} \mathbf{2} & 3 & 4 \\ 0 & 0 & 14 \\ 2 & 8 & 17 \end{bmatrix}
+    x
+    =
+    \begin{bmatrix} 2 \\ 6 \\ 25 \end{bmatrix}
+    \\
+    \stackrel{(3)-(1)}{\implies}
+    &\begin{bmatrix} 2 & 3 & 4 \\ 0 & \mathbf{0} & 14 \\ 0 & 5 & 13 \end{bmatrix}
+    x
+    =
+    \begin{bmatrix} 2 \\ 6 \\ 23 \end{bmatrix}
+    \stackrel{(2)\mathbin{\leftrightarrow}(3)}{\implies}
+    \begin{bmatrix} 2 & 3 & 4 \\ 0 & \mathbf{5} & 13 \\ 0 & 0 & 6 \end{bmatrix}
+    x
+    =
+    \begin{bmatrix} 2 \\ 23 \\ 6 \end{bmatrix}
+\end{align*}
+
+\paragraph{Success and failure} It is possible for Gauss
+elimination to fail, e.g. when we can no longer move
+zeros out of the diagonal of our matrix by doing row exchanges. 
+There is a pattern to the success or failure of the algorithm;
+Let $Ax=b$ be a system of $m$ linear equations in $m$ variables.
+The following two statements are equivalent (T 3.7):
+\begin{enumerate}
+    \item Gauss elimination succeeds.
+    \item The columns of $A$ are linearly independent.
+\end{enumerate}
+
+\subsection{Gauss-Jordan Elimination - \texorpdfstring{$O(m^2(m+n))$}{O(m\^2(m+n))}}
+
+Gauss-Jordan elimination is an algorithm for solving any system
+$Ax=b$ or detecting that there is no solution. The algorithm is
+very similar in spirit to Gauss elimination, but works by transforming
+the matrix to a matrix in $\RREF$ instead of an upper triangular.
+
+\paragraph{Direct Solution} $A$ is an $m\times n$ matrix in
+$\RREF(j_1,j_2,\dots,j_r)$. Then there are two cases. If
+$c_i\not=0$ for some row $i>r$, then there is no solution.
+If $c_i=0$ for all $i>r$, there is a canonical solution:
+we define $x$ by:
+\begin{equation*}
+    x_j =
+    \begin{cases}
+        c_i &\text{if } j=j_i \text{ for some $i$}
+        \\
+        0 &\text{otherwise}
+    \end{cases}
+\end{equation*}
+
+\begin{equation*}
+    \begin{bNiceMatrix}[first-col, first-row]
+          &   & j_1 & j_2 &   &   & j_3 &   & j_4 &   \\
+        1 & 0 & 1   & 0   & 2 & 2 & 0   & 2 & 0   & 2 \\
+        2 & 0 & 0   & 1   & 2 & 2 & 0   & 2 & 0   & 2 \\
+        3 & 0 & 0   & 0   & 0 & 0 & 1   & 2 & 0   & 2 \\
+        4 & 0 & 0   & 0   & 0 & 0 & 0   & 0 & 1   & 2 \\
+        5 & 0 & 0   & 0   & 0 & 0 & 0   & 0 & 0   & 0 \\
+        6 & 0 & 0   & 0   & 0 & 0 & 0   & 0 & 0   & 0 \\
+    \end{bNiceMatrix}
+    \begin{bmatrix}
+        0 \\ b_1 \\ b_2 \\ 0 \\ 0 \\ b_3 \\ 0 \\ b_4 \\ 0
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        b_1 \\ b_2 \\ b_3 \\ b_4 \\ 0 \\ 0
+    \end{bmatrix}
+\end{equation*}
+
+\paragraph{Elimination} We use row operations to transform any
+system $Ax=b$ into an equivalent system $Rx=c$, where $R$ is in
+$\RREF$. We proceed column by column, always starting with a row
+division (or exchange) and going on from there. The nonzero pivots
+we find will signal the "downward step" columns $j_1,j_2,\dots$ of
+the resulting matrix.
+
+\vspace{-\baselineskip}
+
+\begin{align*}
+    &\begin{bmatrix}
+        \mathbf{2} & 4  & 2 & 2 & -2 \\
+        6          & 12 & 6 & 7 & 1  \\
+        4          & 8  & 2 & 2 & 6  \\
+    \end{bmatrix}
+    \stackrel{(1)\div2}{\implies}
+    \begin{bmatrix}
+        \mathbf{1} & 2  & 1 & 1 & -1 \\
+        6          & 12 & 6 & 7 & 1  \\
+        4          & 8  & 2 & 2 & 6  \\
+    \end{bmatrix}
+    \\
+    \stackrel{(2)-6(1)}{\implies}
+    &\begin{bmatrix}
+        \mathbf{1} & 2 & 1 & 1 & -1 \\
+        0          & 0 & 0 & 1 & 7  \\
+        4          & 8 & 2 & 2 & 6  \\
+    \end{bmatrix}
+    \stackrel{(3)-4(1)}{\implies}
+    \begin{bmatrix}
+        \mathbf{1} & 2 & 1  & 1  & -1 \\
+        0          & 0 & 0  & 1  & 7  \\
+        0          & 0 & -2 & -2 & 10 \\
+    \end{bmatrix}
+\end{align*}
+
+We move on to column $2$:
+
+\vspace{-\baselineskip}
+
+\begin{align*}
+    \begin{bmatrix}
+        1 & 2          & 1  & 1  & -1 \\
+        0 & \mathbf{0} & 0  & 1  & 7  \\
+        0 & 0          & -2 & -2 & 10 \\
+    \end{bmatrix}
+\end{align*}
+
+In Gauss elimination, we'd stop. Here, we move on to column $3$,where we can make a row exchange:
+
+\vspace{-\baselineskip}
+
+\begin{align*}
+    &\begin{bmatrix}
+        1 & 2 & 1          & 1  & -1 \\
+        0 & 0 & \mathbf{0} & 1  & 7  \\
+        0 & 0 & -2         & -2 & 10 \\
+    \end{bmatrix}
+    \stackrel{(2)\mathbin{\leftrightarrow}(3)}{\implies}
+    \begin{bmatrix}
+        1 & 2 & 1           & 1  & -1 \\
+        0 & 0 & \mathbf{-2} & -2 & 10 \\
+        0 & 0 & 0           & 1  & 7  \\
+    \end{bmatrix}
+    \\
+    \stackrel{(2)\div-2}{\implies}
+    &\begin{bmatrix}
+        1 & 2 & 1          & 1 & -1 \\
+        0 & 0 & \mathbf{1} & 1 & -5 \\
+        0 & 0 & 0          & 1 & 7  \\
+    \end{bmatrix}
+    \stackrel{(1)-(2)}{\implies}
+    \begin{bmatrix}
+        1 & 2 & 0          & 0 & 4  \\
+        0 & 0 & \mathbf{1} & 1 & -5 \\
+        0 & 0 & 0          & 1 & 7  \\
+    \end{bmatrix}
+\end{align*}
+
+No further elimination is necessary here, so we move to column $4$.
+
+\vspace{-\baselineskip}
+
+\begin{align*}
+    \begin{bmatrix}
+        1 & 2 & 0 & 0          & 4  \\
+        0 & 0 & 1 & 1          & -5 \\
+        0 & 0 & 0 & \mathbf{1} & 7  \\
+    \end{bmatrix}
+    \stackrel{(2)-(3)}{\implies}
+    \begin{bmatrix}
+        1 & 2 & 0 & 0          & 4   \\
+        0 & 0 & 1 & 0          & -5  \\
+        0 & 0 & 0 & \mathbf{1} & -12 \\
+    \end{bmatrix}
+\end{align*}
+
+\textit{We're not only eliminating below, but also above the pivot (the column needs to be transformed into the correct standard unit vector).}
+
+Further downward steps are neither
+possible nor necessary, so we can stop before even having looked at the last
+column.
+
+\subsubsection{CR decomposition from Gauss-Jordan elimination}
+\begin{align*}
+    \begin{bmatrix}
+        1 & 2 & 0 & 3 \\
+        2 & 4 & 1 & 4 \\
+        3 & 6 & 2 & 5 \\
+    \end{bmatrix}
+    \overset{(2)-2\cdot(1)}{\underset{(3)-3\cdot(1)}{\implies}}
+    \begin{bmatrix}
+        1 & 2 & 0 & 3 \\
+        0 & 0 & 1 & -2 \\
+        0 & 0 & 2 & -4 \\
+    \end{bmatrix}
+    \stackrel{(3)-2\cdot(2)}{\implies}
+    \begin{bmatrix}
+        1 & 2 & 0 & 3 \\
+        0 & 0 & 1 & -2 \\
+        0 & 0 & 0 & 0 \\
+    \end{bmatrix}
+\end{align*}
+
+The resulting matrix $R$ is in $\RREF(1,3)$, so columns
+1 and 3 are independent in $A$:
+$$C=
+\begin{bmatrix}
+    1 & 0 \\
+    2 & 1 \\
+    3 & 2
+\end{bmatrix},\;
+R=
+\begin{bmatrix}
+    1 & 2 & 0 & 3 \\
+    0 & 0 & 1 & -2
+\end{bmatrix}$$
+
+\subsubsection{(Reduced) Row-Echelon Form}
+\vspace{\baselineskip}
+\begin{equation*}
+    \begin{bNiceMatrix}[first-row,first-col]
+          &               & j_1           & j_2           &               &               & j_3           &               & j_4           &               \\
+        1 & \color{gray}0 & \color{teal}1 & \color{teal}0 & 2             & 2             & \color{teal}0 & 2             & \color{teal}0 & 2             \\
+        2 & \color{gray}0 & \color{gray}0 & \color{teal}1 & 2             & 2             & \color{teal}0 & 2             & \color{teal}0 & 2             \\
+        3 & \color{gray}0 & \color{gray}0 & \color{gray}0 & \color{gray}0 & \color{gray}0 & \color{teal}1 & 2             & \color{teal}0 & 2             \\
+        4 & \color{gray}0 & \color{gray}0 & \color{gray}0 & \color{gray}0 & \color{gray}0 & \color{gray}0 & \color{gray}0 & \color{teal}1 & 2             \\
+        5 & \color{gray}0 & \color{gray}0 & \color{gray}0 & \color{gray}0 & \color{gray}0 & \color{gray}0 & \color{gray}0 & \color{gray}0 & \color{gray}0 \\
+        6 & \color{gray}0 & \color{gray}0 & \color{gray}0 & \color{gray}0 & \color{gray}0 & \color{gray}0 & \color{gray}0 & \color{gray}0 & \color{gray}0 \\
+    \end{bNiceMatrix}
+\end{equation*}
+
+\paragraph{D 3.13} Let $R=[r_{ij}]_{i=1}^{m}\,_{j=1}^{n}$. $R$ is in
+\key{reduced row echelon form} (RREF) if the following holds: There exist
+$r\leq m$ column indices $1\leq j_1<\cdots<j_r\leq n$ such that the following
+two statements hold:
+\begin{itemize}
+    \item For $i=1,\dots,r$, column $j_i$ of $R$ is the standard unit vector $e_i$.
+
+    \item All entries $r_{ij}$ "below the staircase" are $0$. This happens if:
+        \begin{itemize}
+            \item $i > r$ (entry is below row $r$).
+            \item $i \leq r$ and $j < j_i$ (entry is in the part of row $i$ to the left of column $j_i$).
+        \end{itemize}
+\end{itemize}
+
+If we want to describe the shape of $R$ precisely, we say that $R$ is in
+$\RREF(j_1,\dots,j_r)$.
+
+\paragraph{T 3.19} (Computing \key{inverses} with Gauss-Jordan elimination). Let $A\in\mathbb{R}^{m\times m}$, and let $(R,j_1,\dots,j_r, M)$ be the output of Gauss-Jordan elimination with input $(A,I)$. Then $A$ is invertible iff $R=I$, and in this case $A^{-1}=M$.
+
+\paragraph{T 3.21} Let $A\in\mathbb{R}^{m\times n}$. $(R,j_1,\dots,j_r, M)$ is the output of Gauss-Jordan elimination. There exists an invertible $m\times m$ matrix $M$ such that $R=MA$ is in $\RREF(j_1,\dots,j_r)$.
+
+\subsection{Least Squares Approximation}
+
+Suppose we have a linear system $Ax=b$ for which no solution
+exists. A natural approach is to try and find $x$ for which $Ax$ is
+as close as possible to $b$:
+\begin{equation}
+    \min_{\hat{x}\in\mathbb{R}^n}{\lVert A\hat{x}-b\rVert^2}
+    \label{eq:minimizer}
+\end{equation}
+
+Since the set of possible vectors $y=A\hat{x}$ is exactly $\colsp(A)$,
+$Ax$ is precisely the projection of $b$ on $\colsp(A)$. As we've
+seen, this can be written as:
+\begin{equation}
+    A^\top A\hat{x}=A^\top b
+    \label{eq:normaleq}
+\end{equation}
+
+Now, a minimizer of \eqref{eq:minimizer} is also a solution of
+\eqref{eq:normaleq}, and $A$ has independent columns, the unique minimizer of
+\eqref{eq:minimizer} is given by $\hat{x}=(A^\top A)^{-1}A^\top b$.
+
+\paragraph{Linear regression} is the process of fitting a line through data
+points and can be accomplished using least squares approximation. Let us
+consider data points $(t_1,b_1),\dots,(t_m,b_m)$ representing some attribute
+$b$ over time $t$. If the relation between $t$ and $b$ is explained by a linear
+relationship, then it makes sense to search for constants
+$\alpha_0\in\mathbb{R}$ and $\alpha_1\in\mathbb{R}$, such that $b_k\approx
+\alpha_0+\alpha_1 t_k$. In particular, it is natural to search for $\alpha_0$
+and $\alpha_1$ that minimize the sum of squares of the errors:
+\begin{equation}
+    \min_{\alpha_0,\alpha_1}\sum_{k=1}^{m}(b_k-(\alpha_0+\alpha_1 t_k))^2 \quad,\; \alpha_0, \alpha_1\in\mathbb{R}
+    \label{eq:linregorig}
+\end{equation}
+
+If we now define
+$b=\begin{bmatrix} b_1 \\ \vdots \\ b_m \end{bmatrix}$
+and $A=\begin{bmatrix} 1 & t_1 \\ \vdots & \vdots \\ 1 & t_m \end{bmatrix}$,
+we can write \eqref{eq:linregorig} in matrix-vector notation:
+
+\begin{equation}
+    \min_{\alpha_0,\alpha_1}
+    \left\lVert
+    b-A\begin{bmatrix} \alpha_0 \\ \alpha_1 \end{bmatrix}
+    \right\rVert
+    ^2
+    \label{eq:linregvec}
+\end{equation}
+
+$A$ has independent columns. Hence, the solution to \eqref{eq:linregvec} is given by:
+\begin{equation*}
+\begin{bmatrix}
+    \alpha_0 \\
+    \alpha_1
+\end{bmatrix}
+= (A^\top A)^{-1}A^\top b =
+\begin{bmatrix}
+    m & \sum^m_{k=1} t_k \\
+    \sum^m_{k=1} t_k & \sum^m_{k=1} t_k^2
+\end{bmatrix}^{-1}
+\begin{pmatrix}
+    \sum^m_{k=1} b_k \\
+    \sum^m_{k=1} t_k b_k
+\end{pmatrix}
+\end{equation*}
+
+\subsection{Gram-Schmidt Process}
+
+The Gram-Schmidt process can be used to construct an orthonormal basis from a
+regular one: Given $n$ linearly independent vectors $a_1,\dots,a_n$
+that span a subspace $S$, the Gram-Schmidt process constructs $n$ linearly
+independent orthogonal vectors $q_1,\dots,q_n$ the following way:
+
+\begin{itemize}
+
+    \item $q_1=\frac{a_1}{\lVert a_1 \rVert}$
+
+    \item For $k=2,\dots,n$, set:
+
+        \begin{itemize}
+            \item $q_k'=a_k-\sum_{i=1}^{k-1}(a_k^\top q_i)q_i$
+
+            \item $q_k=\frac{q_k'}{\lVert q_k \rVert}$
+        \end{itemize}
+
+\end{itemize}
+
+\subsection{Change of Basis}
+
+Let $A^{m\times n}$ be a matrix representing a linear transformation $L:\mathbb{R}^n\to\mathbb{R}^m$ given by $x\in\mathbb{R}^n\mapsto Ax\in\mathbb{R}m$, with both input and output written in the canonical bases as $x=\sum_{j=1}^{n}x_je_j$ and $Ax=\sum_{i=1}^{m}(Ax)_ie_i$.
+
+Now, let's say we have a basis for $\mathbb{R}^n$ given by $u_1,\dots,u_n$ and one for $\mathbb{R}^m$ given by $v_1,\dots,v_m$ and we want to understand the linear transformation $L$ written in this basis. Then $L$ takes a vector $x=\sum_{j=1}^n\alpha_ju_j$ and outputs $L(x)=\sum_{i=1}^m\beta_iv_i$.
+
+We might now want to compute the matrix $B$, that takes $\alpha\mapsto\beta$. In other words, such that $B\alpha=\beta$.
+
+For that, let $U\in\mathbb{R}^{n\times n}$ be the matrix with columns $u_1,\dots,u_n$ and let $V\in\mathbb{R}^{m\times m}$ be the matrix with columns $v_1,\dots,v_m$. Then $x=U\alpha$ and $L(x)=V\beta$, and so $\beta=V^{-1}AU\alpha$. Finally, this means that the matrix $B$, corresponding to the linear transformation $L$ written in the new bases, is $B=V^{-1}AU$.

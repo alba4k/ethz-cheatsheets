@@ -1,0 +1,115 @@
+\section*{11 Tips and Tricks}
+
+\subsection{Formulas for \texorpdfstring{$2\times 2$}{2x2} Matrices}
+
+\subsubsection{Determinant}
+\begin{equation*}
+    \begin{vmatrix}
+        a & b \\ c & d
+    \end{vmatrix}
+    :=
+    \det\begin{bmatrix}
+        a & b \\ c & d
+    \end{bmatrix}
+    =ad-bc
+\end{equation*}
+
+\subsubsection{Inverse}
+\begin{equation*}
+    A=
+    \begin{bmatrix}
+        a & b \\ c & d
+    \end{bmatrix}
+    \quad \dot\Longrightarrow \quad
+    A^{-1}=
+    \frac{1}{\det(A)}
+    \begin{bmatrix}
+        d & -b \\ -c & a
+    \end{bmatrix}
+\end{equation*}
+
+\subsection{Roots of polynomials of degree \texorpdfstring{$2$}{2}}
+
+Let $f(x)$ be a polynomial in $x$: $f(x)=ax^2+bx+c$.
+
+Then the two roots $r_1,r_2$ of $f(x)$ can be computed as follows:
+
+\begin{equation*}
+    r_{1,2}=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\end{equation*}
+
+\subsection{Singular Value Decomposition}
+To get the SVD of a matrix $A \in \mathbb{R}^{m \times n}$, we first
+find the matrices $S_L = A A^\top \in \mathbb{R}^{m \times m}$ and
+$S_R = A^\top A \in \mathbb{R}^{n \times n}$.
+
+Both matrices are symmetric, meaning that their eigenvectors are orthogonal
+to eachother. Let $\lambda_1, \dots, \lambda_m$ be the eigenvalues of $S_L$
+and $\lambda_1, \dots, \lambda_n$ be the eigenvalues of $S_R$, both ordered
+decreasingly. $\lambda_1, \dots, \lambda_{\min(m, n)}$ (i.e. the $\min(m, n)$)
+greatest eigenvalues are the same for both matrices, the remaining ones are 0.
+Both matrices are PSD and their eigenvalues are therefore non-negative.
+
+For $i \in [\min(m, n)]$, we define $\sigma_i = \sqrt{\lambda_i}$. This is the
+$i$-th largest singular value of $A$. 
+
+We define $\Sigma \in \mathbb{R}^{m \times n}$ as the rectangular diagonal matrix
+where $\Sigma_{ii} = \sigma_i$.
+
+We define $U \in \mathbb{R}^{m \times m}$ as the orthogonal matrix where the $i$-th
+column is the normalized eigenvector of $S_L$ corresponding to $\lambda_i$ (these are the
+left singular vectors).
+
+We define $V \in \mathbb{R}^{n \times n}$ as the orthogonal matrix where the $i$-th
+column is the normalized eigenvector of $S_R$ corresponding to $\lambda_i$ (there are the
+right singular vectors).
+
+Now, these three matrices can be combined into the final SVD: $$A = U \Sigma V^\top$$
+
+\subsection{SVD of \texorpdfstring{$vw^\top$}{vw\^T}}
+Let $n \in \mathbb{N}^+$, Consider arbitrary non-zero vectors
+$v, w \in \mathbb{R}^n$. $A \in \mathbb{R}^{n \times n}$ (which is a matrix of rank at most 1) has SVD:
+$$A = U\Sigma V^\top = \frac{v}{||v||}(||v|| \cdot ||w||)\left(\frac{w}{||w||}\right)^\top$$
+
+\subsection{Some Useful Equivalences}
+\begin{enumerate}
+    \item Invertibility ($A \in \mathbb{R}^{n \times n}$):
+        \begin{itemize}
+            \item $A$ is invertible ($A^{-1}$ exists)
+            \item $\det(A) \neq 0$ ($A$ is non-singular)
+            \item $0$ is \textbf{not} an eigenvalue ($\forall i \, \lambda_i \neq 0$)
+            \item $\rank(A) = n$ (full rank)
+            \item The columns of $A$ are linearly independent
+            \item $Ax = 0$ has only the trivial soltion ($N(A) = \{0\}$)
+            \item $Ax = b$ has a unique solution for every $b \in \mathbb{R}^n$
+            \item The RREF of $A$ is $I$
+            \item All singular values are non-zero ($\forall i \, \sigma_i > 0$)
+        \end{itemize}
+    \item Linear independence ($v_1, \dots, v_k \in \mathbb{R}^n$):
+        \begin{itemize}
+            \item Vectors $v_1, \dots, v_k$ are linearly independent
+            \item $\sum_{i=1}^{k}c_i v_i = 0 \implies \forall i \, c_i = 0$
+            \item None of the vectors is a linear combination of the others (nor of the preceeding ones)
+            \item The matrix $A = \begin{bmatrix}v_1 & \dots & v_k\end{bmatrix}$ has full column rank ($N(A) = \{0\}$)
+        \end{itemize}
+    \item Diagonalizability ($A \in \mathbb{R}^{n \times n}$):
+        \begin{itemize}
+            \item $A$ is diagonalizable ($A = V \Lambda V^{-1}$)
+            \item $A$ has $n$ linearly independent eigenvectors
+            \item The eigenvectors of $A$ form a basis for $\mathbb{R}^n$
+            \item For every eigenvalue $\lambda$: Geom. mult. = Alg. Mult
+        \end{itemize}
+        \textit{Note}: $n$ distinct eivenvalues $\implies$ diagonalizable \\
+        \textit{Note}: $A$ symmetric $\implies$ orthogonally diagonalizeable
+    \item Orthogonal matrix ($Q \in \mathbb{R}^{n \times n}$):
+        \begin{itemize}
+            \item $Q$ is orthogonal
+            \item $Q^\top Q = I$
+            \item $Q^{-1} = Q^\top$
+            \item The columns of $Q$ form an orthonormal basis of $\mathbb{R}^n$
+            \item The rows of $Q$ form an orthonormal basis of $\mathbb{R}^n$
+            \item $||Qx|| = ||x||$ for all $x \in \mathbb{R}^n$ and $(Qx) \cdot
+                  (Qy) = x \cdot y$ for all $x, y \in \mathbb{R}^{n \times n}$
+        \end{itemize}
+\end{enumerate}
+

@@ -1,0 +1,99 @@
+\section*{1 Vectors}
+\subsection{Linear Combinations}
+
+\paragraph{D 1.4} If $v_1, \dots,v_n\in\mathbb{R}^m$ and
+$\lambda_1, \dots,\lambda_n\in\mathbb{R}$, then
+$\lambda_1v_1+\dots+\lambda_nv_n$ is a
+\key{linear combination} of $v_1,\dots,v_n$.
+
+\paragraph{D 1.7} A linear combination
+$\lambda_1v_1+\dots+\lambda_nv_n$ is called
+
+\begin{enumerate}
+    \item an \key{affine combination} if $\lambda_1+\lambda_2+\cdots+\lambda_n=1$.
+
+    \item a \key{conic combination} if $\lambda_i\geq0$ for $i=1,\dots,n$.
+
+    \item a \key{convex combination} if both affine and conic combination.
+\end{enumerate}
+
+
+
+\subsection{Scalar Product}
+
+\paragraph{D 1.9} Let $v,w\in\mathbb{R}^m$. Then the
+\key{scalar product} of $v$ and $w$ is the number $v\cdot w := v_1w_1+\cdots + v_m w_m =\sum_{i=1}^{m}v_i w_i$
+
+\paragraph{Cross product:} $\left(\begin{smallmatrix} a_1 \\ a_2 \\ a_3 \end{smallmatrix}\right) \times \left(\begin{smallmatrix} b_1 \\ b_2 \\ b_3 \end{smallmatrix}\right) = \left(\begin{smallmatrix} a_2b_3 - a_3b_2 \\ a_3b_1 - a_1b_3 \\ a_1b_2 - a_2b_1 \end{smallmatrix}\right)$
+
+\paragraph{O 1.10} Let $u,v,w\in\mathbb{R}^m$
+and let $\lambda\in\mathbb{R}$. Then
+\begin{enumerate}
+    \item $v\cdot w=w\cdot v$
+
+    \item $(\lambda v)\cdot w=\lambda(v\cdot w)=v\cdot\lambda w$
+
+    \item $u\cdot(v+w) = u\cdot v+u\cdot w$ and
+        $(u+v)\cdot w = u\cdot w+v\cdot w$
+
+    \item $v\cdot v\geq0$, with equality iff $v=0$
+\end{enumerate}
+
+\paragraph{D 1.11} Let $v\in\mathbb{R}^m$. The \key{Euclidian
+norm} of $v$ is $\lVert v \rVert := \sqrt{v\cdot v}$
+
+\paragraph{L 1.12} (\key{Cauchy-Schwarz inequality}) For any two vectors
+$v,w\in\mathbb{R}^m$:
+\begin{equation*}
+    \lvert v\cdot w \rvert \leq \lVert v \rVert \lVert w \rVert
+\end{equation*}
+
+\paragraph{D 1.14} Let $v,w\in\mathbb{R}^m$ be two nonzero
+vectors. The angle between them is the unique $\alpha$ between $0$ and $\pi$
+such that:
+\begin{equation*}
+    \cos(\alpha) = \frac{v\cdot w}{\lVert v\rVert\lVert w\rVert}\in[-1,1]
+\end{equation*}
+
+\subsection{Linear (in)dependence}
+
+\paragraph{D 1.16} Let $d \in \mathbb{R}^m, d \neq 0$. The set $H_d=\{v\in \mathbb{R}:v \cdot d = 0 \}$ is called a \key{hyperplane through the origin}.
+
+\paragraph{L 1.17} (\key{Triangle ineq.}) Let $v,w\in \mathbb{R}^m$. Then $\lVert v + w \rVert \leq \lVert v \rVert + \lVert w \rVert$.
+
+\paragraph{D 1.21} Vectors $v_1,v_2,\dots,v_n$ are
+called \key{linearly dependent} if at least one of them is a linear combination
+of the others, i.e. if there exists an index $k\in[n]$ and scalars
+$\lambda_j$, such that $v_k=\sum_{\substack{j=1 \\
+j\not=k}}^{n}\lambda_jv_j$. Otherwise, they are called \key{linearly
+independent}.
+
+\paragraph{L 1.22} Let $v_1,\dots,v_n\in\mathbb{R}^m$. The
+following statements are equivalent:
+
+\begin{enumerate}
+    \item At least one of the vectors is a linear combination of the others.
+
+    \item There are scalars $\lambda_1,\dots,\lambda_n$ besides $0,\dots,0$
+        such that $\sum_{j=1}^{n}\lambda_jv_j=\vec{0}$. We also say that
+        $\vec{0}$ is a \textit{nontrivial linear combination} of the vectors.
+
+    \item At least one of the vectors is a linear combination of the previous.
+\end{enumerate}
+
+\paragraph{D 1.25} Let $v,\dots,v_n\in\mathbb{R}^m$. Their
+\key{span} is the set of all their linear combinations:
+\begin{equation*}
+    \mathbf{Span}(v_1,\dots,v_n) :=
+    \left\{
+        \sum_{j=1}^{n}\lambda_jv_j
+        \mathrel{\Big\vert}
+        \lambda_j \in\mathbb{R} \text{ for all } j\in[n]
+    \right\}
+\end{equation*}
+
+\paragraph{L 1.26} The span of a set of vectors does not
+change when adding a linear combination of its vectors to said set.
+
+\paragraph{L 1.28} Let $v_1, \dots, v_m \in \mathbb{R}^m$.
+$\mathbf{Span}(v_1, \dots, v_m) = \mathbb{R}^m$

@@ -1,0 +1,77 @@
+\section*{6 Applications of orth. and proj.}
+
+\subsection{Set of all solutions to a set of linear equations}
+
+\paragraph{L 6.2.1} Let $A\in\mathbb{R}^{m\times n}$. Let $x,y \in\colsp(A^\top)$.
+We have that $Ax=Ay \Longleftrightarrow x=y$.
+
+\paragraph{T 6.2.2} Suppose that $\{x\in\mathbb{R}^n\mid Ax=b\} \neq \varnothing$.
+Then $\{x\in\mathbb{R}^n\mid Ax=b\}=x_1+\nullsp(A)$ where $x_1 \in \rowsp(A)$ is
+unique such that $Ax_1 = b$.
+
+\paragraph{C 6.2.3} Suppose that $\{x\in\mathbb{R}^n\mid Ax=b\} \neq \varnothing$.
+Then there exists a unique vector $x_1\in \colsp(A^\top A)$ such that $Ax_1 = b$.
+
+\paragraph{T 6.2.4} $\{x\in\mathbb{R}^n\mid Ax=b\} = \varnothing
+\Longleftrightarrow \{z \in \mathbb{R}^m \mid A^\top z = 0, b^\top z = 1\} \neq
+\varnothing$.
+
+\subsection{Orthonormal Vectors and Orthogonal Matrices}
+
+\paragraph{D 6.3.1} Vectors $q_1,\dots,q_n\in\mathbb{R}^m$
+are \key{orthonormal} if they are orthogonal and have norm $1$. In other words,
+for all $i,j\in\{1,\dots,n\}$, we have $q_i^\top q_j=\delta_{ij}$,
+where $\delta_{ij}$ is the Kronecker delta
+($\delta_{ij}=\{0\text{ if }i\neq j,\;1\text{ if }i=j\}$).
+
+\paragraph{D 6.3.3} A square matrix $Q\in\mathbb{R}^{n\times n}$ is an
+\key{orthogonal matrix} when $Q^\top Q=I$. In this case, $QQ^\top=I$,
+$Q^{-1}=Q^\top$, and the columns of $Q$ form an orthonormal basis for
+$\mathbb{R}^n$.
+
+\paragraph{P 6.3.6} Orthogonal matrices preserve norm and inner
+product of vectors. In other words, if $Q\in\mathbb{R}^{n\times n}$ is
+orthogonal, then, for all $x,y\in\mathbb{R}^n$, we have: $\norm{Qx}=\norm{x}$ and
+$(Qx)^\top(Qy)=x^\top y$.
+
+\paragraph{D 6.3.10} Let $A\in\mathbb{R}^{m\times n}$ with linearly
+independent columns. The \key{QR decomposition} is given by $A=QR$, where $Q$
+is an $m\times n$ matrix with orthonormal columns (they are the output of the
+Gram-Schmidt algorithm on the columns of $A$) and $R$ is an upper triangular
+matrix given by $R=Q^\top A$ (and is invertible if $A$ has independent columns).
+
+\subsection{Pseudoinverses (Moore-Penrose Inverse)}
+
+\paragraph{D 6.4.1} For $A\in\mathbb{R}^{m\times n}$ with $\rank(A)=n$, we define the
+\key{pseudoinverse (full column rank)} $A^\dag\in\mathbb{R}^{n\times m}$ of $A$ as
+$A^\dag=(A^\top A)^{-1}A^\top$ ($A^\dag A = I$).
+
+\paragraph{D 6.4.3} For $A\in\mathbb{R}^{m\times n}$ with $\rank(A)=m$, we define
+the \key{pseudoinverse (full row rank)} $A^\dag\in\mathbb{R}^{n\times m}$ of $A$ as
+$A^\dag=A^\top(AA^\top)^{-1}$ ($AA^\dag = I$).
+
+\paragraph{P 6.4.6} For a full row rank matrix $A$, the (unique) solution to
+$\min_{x\in\mathbb{R}^n}\norm{x}^2$ such that $Ax=b$ is given by the vector
+$\hat{x}=A^\dag b$.
+
+\paragraph{D 6.4.7} For $A\in\mathbb{R}^{m\times n}$ with $\rank(A)=r$ and CR
+decomposition $A=CR$, we define the \key{pseudoinverse} $A^\dag$ as $A^\dag=R^\dag C^\dag$.
+
+\paragraph{L 6.4.8} Given $A\in\mathbb{R}^{m\times n}$ and a vector
+$b\in\mathbb{R}^n$, the (unique) solution to $\min_{x\in\mathbb{R}^n}\norm{x}^2$
+such that $A^\top Ax=A^\top b$ is given by $\hat{x}=A^\dag b$.
+
+\paragraph{T 6.4.10} Let $A\in\mathbb{R}^{m\times n}$. Then:
+\begin{enumerate}
+    \item $AA^\dag A=A$
+
+    \item $A^\dag AA^\dag=A^\dag$
+
+    \item $AA^\dag$ is symmetric. It is the proj. matrix for projection on
+        $\colsp(A)$.
+
+    \item $A^\dag A$ is symmetric. It is the proj. matrix for projection
+        on $\colsp(A^\top)$.
+
+    \item $\left(A^\top\right)^\dag = \left(A^\dag\right)^\top$
+\end{enumerate}

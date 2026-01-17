@@ -1,0 +1,141 @@
+\documentclass[8pt, a4paper]{extarticle}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{nicematrix}
+\usepackage{mathrsfs}
+\usepackage{booktabs}
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\usepackage[
+    landscape,
+    margin=0.8cm,
+    footskip=0.5cm
+]{geometry}
+
+\usepackage[
+    skip=5pt plus1pt,
+    indent=0pt
+]{parskip}
+
+\usepackage[
+    compact
+]{titlesec}
+
+\usepackage[hidelinks]{hyperref}
+
+\title{Linear Algebra Cheatsheet HS25}
+\date{}
+
+\AtBeginDocument{
+  \setlength\abovedisplayskip{0pt}
+  \setlength\belowdisplayskip{0pt}
+  \setlength\abovedisplayshortskip{-\baselineskip}
+  \setlength\belowdisplayshortskip{0pt}
+}
+
+\setlist{noitemsep, topsep=0pt, parsep=0pt, partopsep=-0.6\parskip}
+
+\newlength{\sepwidth}
+\setlength{\sepwidth}{0.4pt}
+\setlength{\columnseprule}{\sepwidth}
+
+\newcommand{\secsep}{
+    \vspace{\baselineskip}
+    \leaders
+        \hrule width \columnwidth \relax
+    \vskip\sepwidth
+}
+
+\titleformat{\section}
+    {\secsep\Large\bfseries}
+    {\thesection}
+    {1em}
+    {}
+    [\vspace{-\baselineskip}]
+
+\titleformat{\section}
+    {\secsep\normalfont\Large\bfseries}
+    {}
+    {0pt}
+    {\colorbox{yellow!50}}
+
+\titleformat{\subsection}
+    {\normalfont\large\bfseries}
+    {}
+    {0pt}
+    {\colorbox{yellow!50}}
+
+\titleformat{\subsubsection}
+    {\normalfont\normalsize\bfseries}
+    {}
+    {0pt}
+    {\colorbox{yellow!50}}
+
+\newcommand{\key}[1]{\textit{\color{red}{#1}}}
+
+\titleformat{\section}
+    {\secsep\normalfont\Large\bfseries}
+    {}
+    {0pt}
+    {\colorbox{yellow!50}}
+
+\titleformat{\subsection}
+    {\normalfont\large\bfseries}
+    {}
+    {0pt}
+    {\colorbox{yellow!50}}
+
+\titleformat{\subsubsection}
+    {\normalfont\normalsize\bfseries}
+    {}
+    {0pt}
+    {\colorbox{yellow!50}}
+
+\setcounter{secnumdepth}{1}
+\numberwithin{equation}{section}
+\renewcommand{\hat}{\widehat}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\rnorm}[1]{\lVert#1\rVert}
+\DeclareMathOperator{\RREF}{RREF}
+\DeclareMathOperator{\vecspan}{\mathbf{Span}}
+\DeclareMathOperator{\colsp}{\mathbf{C}}
+\DeclareMathOperator{\rowsp}{\mathbf{R}}
+\DeclareMathOperator{\nullsp}{\mathbf{N}}
+\DeclareMathOperator{\lnullsp}{\mathbf{LN}}
+\DeclareMathOperator{\solsp}{\mathbf{Sol}}
+\DeclareMathOperator{\rank}{\mathbf{rank}}
+\DeclareMathOperator{\tr}{\mathbf{Tr}}
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator{\sgn}{sgn}
+
+\begin{document}
+
+\begin{multicols*}{3}
+
+    {\large \textbf{Linear Algebra Cheatsheet HS25}}
+    by Aaron Blasko
+
+    \input{./tex/01-Vectors.tex}
+    \input{./tex/02-Matrices.tex}
+    \input{./tex/04-Fundamental-Subspaces.tex}
+    \input{./tex/05-Orthogonality.tex}
+    \input{./tex/06-Applications.tex}
+    \input{./tex/07-Determinant.tex}
+    \input{./tex/08-Eigenvalues-and-Eigenvectors.tex}
+    \input{./tex/09-Diagonalization.tex}
+    \input{./tex/10-Algorithms.tex}
+    \input{./tex/11-Tips-and-Tricks.tex}
+
+\end{multicols*}
+
+\pagebreak
+
+\clearpage
+
+\end{document}

@@ -1,0 +1,108 @@
+\section*{2 Matrices}
+
+\paragraph{D 2.3} Let $A=[a_{ij}]_{i=1}^{m}\,_{j=1}^{m}$ be an
+$m\times m$ square matrix. Then:
+
+\begin{enumerate}
+
+    \item If $a_{ii}=1$ for all $i$ and $a_{ij}=0$ for all $j\not=i$, then $A$
+        is the \key{identity matrix}, denoted (in abuse of notation) by $I$ in
+        every dimension.
+
+    \item If $a_{ij}=0$ for all $j\not=i$ (entries not on the diagonal are
+        $0$), then $A$ is a \key{diagonal matrix}.
+
+    \item If $a_{ij}=0$ for all $j<i$ (entries below the diagonal are $0$),
+        then $A$ is an \key{upper triangular matrix}.
+
+    \item If $a_{ij}=0$ for all $j>i$ (entries above the diagonal are $0$),
+        then $A$ is a \key{lower triangular matrix}.
+
+    \item If $a_{ij}=a_{ji}$ for all $i,j$, then $A$ is a \key{symmetric
+        matrix}.
+
+\end{enumerate}
+
+\paragraph{D 2.4} Let $A\in\mathbb{R}^{m\times n}$ be a matrix,
+$v_1,\dots,v_n$ its columns, and let $x\in\mathbb{R}^{n}$.
+Then the vector $Ax:=\sum_{j=1}^{n}x_jv_j\in\mathbb{R}^m$ is called the \key{product} of $A$ and $x$.
+
+\paragraph{D 2.9} Let $A \in \mathbb{R}^{m\times n}$. The \key{column space} $C(A)$ of $A$ is the span of the columns, $C(A):= \{Ax:x\in \mathbb{R}^n\} \subseteq \mathbb{R}^m$.
+
+\paragraph{D 2.14} Let $A \in \mathbb{R}^{m\times n}$. The \key{row space} $R(A)$ of $A$ is the column space of the transpose, $R(A):=C(A^{\top})\subseteq\mathbb{R}^n$.
+
+\paragraph{D 2.17} Let $A \in \mathbb{R}^{m\times n}$. The \key{nullspace} of $A$ is the set $N(A)=\{x\in\mathbb{R}^n : Ax=0\} \subseteq \mathbb{R}^n$.
+
+\paragraph{D 2.12} Let $A=[a_{ij}]_{i=1}^{m}\,_{j=1}^{n}$. The
+\key{transpose} of $A$ is the $n\times m$ matrix
+$A^\top:=[a_{ji}]_{i=1}^{n}\,_{j=1}^{m}$.
+
+\paragraph{L 2.40} Let $A\in\mathbb{R}^{a\times n}$ and
+$B\in\mathbb{R}^{n\times b}$. Then $(AB)^\top = B^\top A^\top$.
+
+\subsection{Linear Transformations}
+
+\paragraph{D 2.21} A function $T:\mathbb{R}^n\to\mathbb{R}^m$ / $T:\mathbb{R}^n\to\mathbb{R}$ is a \key{linear transformation} / \key{linear functional} if the following linearity axiom holds for all $x_1, x_2 \in \mathbb{R}^n$ and all $\lambda_1, \lambda_2 \in \mathbb{R}$: $T(\lambda_1x_1+\lambda_2x_2)=\lambda_1T(x_1)+\lambda_2T(x_2)$.
+In alternative, this can be proved with two axioms (for all
+$x,x'\in\mathbb{R}^n$ and all $\lambda\in\mathbb{R}$):
+\begin{enumerate}
+    \item $T(x + x') = T(x) + T(x')$
+    \item $T(\lambda x) = \lambda T(x)$
+\end{enumerate}
+
+\paragraph{D 2.27} Let $T:\mathbb{R}^n\to\mathbb{R}^m$ be a linear
+transformation. The following set is the \key{kernel} of $T$:
+\begin{equation*}
+    \mathbf{Ker}(T) := \left\{
+        x\in\mathbb{R}^n\mid T(x)=0
+    \right\}
+\subseteq\mathbb{R}^n
+\end{equation*}
+
+The following set is the \key{image} of $T$:
+\begin{equation*}
+    \mathbf{Im}(T) := \left\{
+        T(x) \mid x\in\mathbb{R}^n
+    \right\}
+\subseteq\mathbb{R}^m
+\end{equation*}
+
+\paragraph{O 2.28/29} Let $T:\mathbb{R}^n\to\mathbb{R}^m$ be a linear
+transformation and $A \in \mathbb{R}^{m\times n}$ s.t. $T=T_A$. $\mathbf{Im}(T)=\mathbf{C}(A)$. $\mathbf{Ker}(T) = \mathbf{N}(A)$.
+
+\subsection{CR decomposition}
+
+\paragraph{T 2.46} Let $A\in\mathbb{R}^{m\times n}$ of rank $r$. Let $C$
+be the $m\times r$ submatrix of $A$ containing the independent columns. Then
+there exists a unique $r\times n$ matrix $R$ such that $A=CR'$. (\textit{This
+\key{CR decomposition} can be constructed using Gauss-Jordan elimination.}) The columns of $R'$ contain the scalars that we need in order to write each column ad a scalar multiple of the first one.
+
+\subsection{Inverse Matrices}
+
+\paragraph{D 2.48} Let $X,Y$ be sets and $f:X \rightarrow Y$ a function.
+\begin{enumerate}
+    \item $f$ is called \key{injective} if for every $y \in Y$, there is at most one $x\in X$ with $f(x)=y$.
+    \item $f$ is called \key{surjective} if for every $y \in Y$, there is at least one $x\in X$ with $f(x)=y$.
+    \item $f$ is called \key{bijective} (undoable) if $f$ is both injective and surjective.
+    \item The inverse of a bijective funtion $f$ is: $f^{-1}:Y \rightarrow X, y \mapsto \text{the unique $x \in X$ such that $f(x)=y$}$.
+\end{enumerate}
+
+\paragraph{L 2.53} Let $A\in\mathbb{R}^{m\times m}$. The following
+statements are equivalent:
+\begin{enumerate}
+     \item $T_A:\mathbb{R}^m\rightarrow\mathbb{R}^m$ is bijective.
+
+     \item There is $B \in \mathbb{R}^{m\times m}$ such that $BA=I$.
+
+    \item The columns of $A$ are linearly independent.
+\end{enumerate}
+
+\paragraph{D 2.55/57} Let $M\in\mathbb{R}^{m\times m}$. $M$ is called
+\key{invertible} if there exists a matrix $M^{-1}\in\mathbb{R}^{m\times m}$
+(called the \key{inverse} of $M$) such that $MM^{-1}=M^{-1}M=I$.
+
+\paragraph{L 2.59} Let $A,B\in\mathbb{R}^{m\times m}$ be invertible
+matrices. Then $AB$ is also invertible, and $(AB)^{-1}=B^{-1}A^{-1}$.
+
+\paragraph{L 2.60} Let $A\in\mathbb{R}^{m\times m}$ be an invertible
+matrix. Then $A^\top$ is also invertible, and $(A^\top)^{-1}=(A^{-1})^\top$.

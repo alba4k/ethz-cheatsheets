@@ -1,0 +1,138 @@
+\section*{4 The Three Fundamental Subspaces}
+\subsection{Vector Spaces}
+
+\paragraph{D 4.1} A \key{vector space} is a triple $(V,+,\cdot)$ where
+$V$ is a set, $+:V\times V\to V$ is a function (vector addition), and $\cdot :
+\mathbb{R}\times V\to V$ is a function (scalar multiplication), satisfying the
+following axioms for all $u,v,w\in V$ and all
+$\lambda,\mu\in\mathbb{R}$:
+
+\begin{enumerate}
+
+    \item $v+w=w+v$
+        \hfill (\key{commutativity})
+
+    \item $u+(v+w) = (u+v)+w$
+        \hfill (\key{associativity})
+
+    \item There is a vector $0$ such that $v+0=v$.
+        \hfill (\key{zero vector})
+
+    \item There is a vector $-v$ such that $v+(-v)=0$.
+        \hfill (\key{negative vector})
+
+    \item $1\cdot v = v$
+        \hfill (\key{identity element})
+
+    \item $(\lambda\textcolor{red}{\cdot}\mu)v=\lambda\cdot(\mu\cdot v)$
+        \hfill (\key{compatibility of $\cdot$ and \textcolor{red}{$\cdot$ in $\mathbb{R}$}})
+
+    \item $\lambda(v+w)=\lambda v+\lambda w$
+        \hfill (\key{distributivity over $+$})
+
+    \item $(\lambda\textcolor{red}{+}\mu)v = \lambda v + \mu v$
+        \hfill (\key{distributivity over \textcolor{red}{$+$ in $\mathbb{R}$}})
+
+\end{enumerate}
+
+\paragraph{T 4.4} Let $\mathbb{R}[x]$ be the set of polynomials in one
+variable $x$. Given polynomials $p=\sum_{i=0}^{m}p_ix^i$ and
+$q=\sum_{i=0}^{n}q_ix^i$, and a scalar $\lambda\in\mathbb{R}$ we define:
+\begin{equation*}
+    p+q = \sum_{i=0}^{\max(m,n)}(p_i+q_i)x^i
+    \quad \text{and} \quad
+    \lambda p = \sum_{i=0}^{m}(\lambda p_i)x^i
+\end{equation*}
+We set $p_i=0$ for $i>m$ and $a_i=0$ for $>n$. Then $(\mathbb{R}[x],+,\cdot)$ is a vector space.
+
+\paragraph{D 4.8} Let $V$ be a vector space. A nonempty subset $U\in
+V$ is called a \key{subspace} of $V$ if the following two axioms of a subspace
+are true for all $v,w\in U$ and all $\lambda\in\mathbb{R}$:
+\begin{enumerate}
+    \item $v+w\in U$
+    \item $\lambda v\in U$
+\end{enumerate}
+
+\paragraph{L 4.14} Let $U\subseteq V$ be a subspace of a vector space $V$.
+Then $U$ is also a vector space (with the same "$+$" and "$\cdot$" as $V$).
+
+\paragraph{L 4.16} Let $V$ be a vector space.
+Every linear combination of $V$ is again in $V$.
+
+\subsection{Bases and Dimension}
+
+\paragraph{D 4.17} Let $V$ be a vectorspace, and $G\subseteq V$ a (possibly infinite) subset of vectors. Then $\vecspan(G)$ is the set of all linear combinations of $G$. The set $G$ is called linearly independent if no vector $v\in G$ is a linear combination of $G\setminus\{v\}$.
+
+\paragraph{D 4.18} Let $V$ be a vector space. A subset $B\subseteq V$
+of vectors is called \key{basis} of $V$ if $B$ is linearly independent and
+$\vecspan(B)=V$.
+
+\paragraph{L 4.19} Let $A\in\mathbb{R}^{m\times n}$. The set of independent
+columns of $A$ is a basis of the column space $\colsp(A)$.
+
+\paragraph{L 4.23} (\key{Steinitz exchange L}) Let $V$ be a finitely generated vector
+space, $F\subseteq V$ a finite set of linearly independent vectors, and
+$G\subseteq V$ a finite set of vectors with $\vecspan(G)=V$. Then the following
+two statements hold:
+\begin{enumerate}
+    \item $\lvert F\rvert \leq\lvert G\rvert$
+
+    \item There exists a subset $E\subseteq G$ of size $\lvert G\rvert - \lvert
+        F\rvert$ such that $\vecspan(F\cup E)=V$.
+\end{enumerate}
+
+\paragraph{D 4.21} A vector space $V$ is called \key{finitely
+generated} if there exists a finite subset $G\subseteq V$ with $\vecspan(G)=V$.
+
+\paragraph{T 4.22} Let $V$ be a finitely generated vector space, and let
+$G\subseteq V$ be a finite subset with $\vecspan(G)=V$. Then $V$ has a basis
+$B\subseteq G$.
+
+\paragraph{T 4.24} Let $V$ be a finitely generated vector space and $B,B'\subseteq V$ two bases of $V$. Then $\lvert B\rvert = \lvert B'\rvert$ (all bases have the same size).
+
+\paragraph{D 4.25} Let $V$ be a finitely generated vector space. Then
+$\dim(V)$, the \key{dimension} of $V$, is the size of any basis $B$ of $V$.
+
+\paragraph{T 4.31} Let $A\in\mathbb{R}^{m\times n}$ and let $R$ in
+$\RREF(j_1,\dots,j_r)$ be the result of Gauss-Jordan elimination on $A$. Then
+$A$ has independent columns at indices $j_1,\dots,j_r$ and these form a basis
+of the column space $\colsp(A)$. Hence $\dim(\colsp(A))=r=\rank(A)$
+
+\paragraph{L} Let $A\in\mathbb{R}^{m\times n}$ and
+$M\in\mathbb{R}^{m\times m}$ and invertible. Then $\rowsp(A)=\rowsp(MA)$.
+
+\paragraph{T 4.32} Let $A\in\mathbb{R}^{m\times n}$ and let $R_0$ in
+$\RREF(j_1,\dots,j_r)$ be the result of Gauss-Jordan elimination on $A$. Then
+the first $r$ rows of $R_0$ form a basis of $\rowsp(A)$, and $\dim(\rowsp(A))=r=\rank(A)$.
+
+\paragraph{T 4.33} Let $A\in\mathbb{R}^{m\times n}$. Then $\rank(A)=\rank(A^\top)$.
+
+\paragraph{L} Let $A\in\mathbb{R}^{m\times n}$ and
+$M\in\mathbb{R}^{m\times m}$ and invertible. Then $A$ and $MA$ have the same
+nullspace $\nullsp(A)=\nullsp(MA)$.
+
+\paragraph{T 4.36} Let $A\in\mathbb{R}^{m\times n}$, and let $R$ in
+$\RREF(j_1,\dots,j_r)$ be the result of Gauss-Jordan elimination on A. Let $Q$ be the $r\times (n-r)$ submatrix of $R$ consisting of the first $r$
+rows and columns $k_1,\dots,k_{n-r}$. A basis of $\nullsp(A)$ is given by the $n-r$ vectors $v_1,\dots,v_{n-r}$. Then $\dim(\nullsp(A))=n-r=n-\rank(A)$.
+
+\paragraph{D 4.37} Let $A\in\mathbb{R}^{m\times n}$ and
+$b\in\mathbb{R}^m$. The \key{solution space} of $Ax=b$ is the
+set of all solutions $x$: $\solsp(A,b):=\{x\in\mathbb{R}^n\mid Ax=b\}\subseteq\mathbb{R}^n$.
+
+If $b\not=0$, however, the solution space is not a subspace of $\mathbb{R}^n$,
+as it doesn't contain the zero vector.
+
+\paragraph{T 4.38} Let $A\in\mathbb{R}^{m\times n}$, and
+$b\in\mathbb{R}^m$. Let $s$ be some solution of $Ax=b$.
+Then $\solsp(A,b)=\{s+x\mid x\in\nullsp(A)\}$.
+
+Hence, we can compute $\solsp(A,b)$, despite it not being a subspace. To
+describe all solutions, we just need \textit{some} solution and a basis of
+$\nullsp(A)$.
+
+\paragraph{T 4.39} Let $A\in\mathbb{R}^{m\times n}$ of rank $r$.
+If $Ax=b$ has a solution, then $\solsp(A,b)$ has dimension $n-r$,
+where $\dim(\solsp(A,b)):=\dim(\nullsp(A))$.
+
+\paragraph{T 4.40} Let $A \in \mathbb{R}^{m \times n}$ of rank $m$.
+Then $Ax = b$ has a solution for every $b \in \mathbb{R}^m$
