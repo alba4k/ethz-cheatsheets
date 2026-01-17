@@ -3,10 +3,10 @@
 \subsection{Complex Numbers}
 
 The \key{complex numbers} are of the form $z=a+ib$ for $a\in\mathbb{R}$
-and $b\in\mathbb{R}$: $\mathbb{C}=\{a+ib\mid a,b\in\mathbb{R}\}$. Hereby $i$ is
+and $b\in\mathbb{R}$: $\CC=\{a+ib\mid a,b\in\mathbb{R}\}$. Hereby $i$ is
 defined as $i^2=-1$.
 
-Given $z\in\mathbb{C}$ with $z=a+ib$, we have the following notation:
+Given $z\in\CC$ with $z=a+ib$, we have the following notation:
 
 \begin{enumerate}
     \item $\mathfrak{R}(a+ib) := a$
@@ -28,45 +28,45 @@ Given $z\in\mathbb{C}$ with $z=a+ib$, we have the following notation:
         \hfill (\key{modulus} of $vn$)
 
     \item $\langle v, w \rangle = w^* v$
-        \hfill (\key{inner/dot product} in $\mathbb{C}^n$)
+        \hfill (\key{inner/dot product} in $\CC^n$)
 \end{enumerate}
 
 We also have $|z|^2 = z\overline{z}$, $z_1z_2=z_2z_1$, $\overline{z_1+z_2} = \overline{z_1}+\overline{z_2}$, $\frac{1}{\overline{z}} = \frac{\overline{z}}{|z|^2}$.
 
 The natural operation of "transposing" for complex vectors and matrices is that of the "\key{conjugate transpose}" or "hermitian transpose", denoted by $A^*$, or sometimes $A^H$: $v^*=\overline{v}^\top$ and $A^*=\overline{A}^\top$.
 
-The \key{inner product} (or dot-product) in $\mathbb{C}^n$ is given by $\langle
+The \key{inner product} (or dot-product) in $\CC^n$ is given by $\langle
 v,w\rangle=w^*v$.
 
 \paragraph{T 8.1.2} (\key{Fundamental T of Algebra}) Any degree $n$
 non-constant ($n\geq 1$) polynomial $P(z)$ has a zero (root)
-$\lambda\in\mathbb{C}$, such that $P(\lambda)=0$.
+$\lambda\in\CC$, such that $P(\lambda)=0$.
 
-\paragraph{C 8.1.3} Any degree $n$ non-constant ($n\geq 1$) polynomial $P(z)=\alpha_nz^n+\cdots+\alpha_1z+\alpha_0$ has $n$ zeros (roots) $\lambda_1,\dots,\lambda_n\in\mathbb{C}$, perhaps with repetitions, such that $P(z)=\alpha_n(z-\lambda_1)\cdots(z-\lambda_n)$.
+\paragraph{C 8.1.3} Any degree $n$ non-constant ($n\geq 1$) polynomial $P(z)=\alpha_nz^n+\cdots+\alpha_1z+\alpha_0$ has $n$ zeros (roots) $\lambda_1,\dots,\lambda_n\in\CC$, perhaps with repetitions, such that $P(z)=\alpha_n(z-\lambda_1)\cdots(z-\lambda_n)$.
 
-The number of times $\lambda\in\mathbb{C}$ appears in this expansion is called
+The number of times $\lambda\in\CC$ appears in this expansion is called
 the \key{algebraic multiplicity} of the zero.
 
 \subsection{Eigenvalues and Eigenvectors}
 
-\paragraph{D 8.2.1} Given $A\in\mathbb{R}^{n\times n}$, we say
-$\lambda\in\mathbb{C}$ is an \key{eigenvalue} of $A$ and
-$v\in\mathbb{C}^n\setminus\{0\}$ is an \key{eigenvector} of $A$,
+\paragraph{D 8.2.1} Given $A\in\mathbb{R}^{\nxn}$, we say
+$\lambda\in\CC$ is an \key{eigenvalue} of $A$ and
+$v\in\CC^n\setminus\{0\}$ is an \key{eigenvector} of $A$,
 associated with the eigenvalue $\lambda$, when the following holds: $Av=\lambda v$.
 
 We call them an eigenvalue-eigenvector pair. If $\lambda\in\mathbb{R}$, then we
 call $\lambda$ a \key{real} eigenvalue, and the associated eigenvalue-eigenvector
 pair a \key{real} eigenvalue-eigenvector pair.
 
-\paragraph{L 8.2.3} Let $A\in\mathbb{R}^{n\times n}$.
+\paragraph{L 8.2.3} Let $A\in\mathbb{R}^{\nxn}$.
 $\lambda\in\mathbb{R}$ is a (real) eigenvalue of $A$ iff
 $\det(A-\lambda I)=0$. A vector $v \in \mathbb{R}^n\setminus\{0\}$ is an eigenvector associated with the
 eigenvalue $\lambda$ iff it is a non-zero element of
 $\nullsp(A-\lambda I)$.
 
-\paragraph{P 8.2.7} Let $Q\in\mathbb{R}^{n\times n}$ be an orthogonal matrix. If $\lambda\in\mathbb{C}$ is an eigenvalue of $Q$, the $\lvert\lambda\rvert=1$.
+\paragraph{P 8.2.7} Let $Q\in\mathbb{R}^{\nxn}$ be an orthogonal matrix. If $\lambda\in\CC$ is an eigenvalue of $Q$, the $\lvert\lambda\rvert=1$.
 
-\paragraph{L 8.2.8} Let $A \in \mathbb{R}^{n \times n}$. If $(\lambda, v)$ is
+\paragraph{L 8.2.8} Let $A \in \mathbb{R}^{\nxn}$. If $(\lambda, v)$ is
 an eigenvalue-eigenvector pair, so is $(\overline{\lambda}, \overline{v})$.
 
 \paragraph{P 8.3.1}
@@ -81,30 +81,30 @@ $\frac{1}{\lambda}$ and $v$ are an eigenvalue-eigenvector pair of the
 matrix $A^{-1}$.
 \end{enumerate}
 
-\paragraph{L 8.3.2} Let $A\in\mathbb{R}^{n\times n}$ and let $v_1,\dots,v_k\in\mathbb{R}^n$ be eigenvectors corresponding to eigenvalues $\lambda_1,\dots,\lambda_k\in\mathbb{R}$. If $\lambda_1,\dots,\lambda_k$ are all distinct, the eigenvectors $v_1,\dots,v_k$ are linearly independent.
+\paragraph{L 8.3.2} Let $A\in\mathbb{R}^{\nxn}$ and let $v_1,\dots,v_k\in\mathbb{R}^n$ be eigenvectors corresponding to eigenvalues $\lambda_1,\dots,\lambda_k\in\mathbb{R}$. If $\lambda_1,\dots,\lambda_k$ are all distinct, the eigenvectors $v_1,\dots,v_k$ are linearly independent.
 
-\paragraph{T 8.3.3} Let $A \in \mathbb{R}^{n\times n}$ with $n$ distinct real eigenvalues (the $n$ zeros of $\det(A-\lambda I)$ are all distinct). Then there is a basis of $\mathbb{R}^n$, $v_1,\dots,v_n$, made up of eigenvectors of $A$.
+\paragraph{T 8.3.3} Let $A \in \mathbb{R}^{\nxn}$ with $n$ distinct real eigenvalues (the $n$ zeros of $\det(A-\lambda I)$ are all distinct). Then there is a basis of $\mathbb{R}^n$, $v_1,\dots,v_n$, made up of eigenvectors of $A$.
 
-\paragraph{D 8.3.4} (\key{Characteristic polynomial}) Let $A\in\mathbb{R}^{n\times n}$.
+\paragraph{D 8.3.4} (\key{Characteristic polynomial}) Let $A\in\mathbb{R}^{\nxn}$.
 Then $\det(zI-A)$ is a polynomial, in $\lambda$, of degree $n$, which can
 according to \textit{C 8.1.3} be factorised as follows:
 $\det(zI-A)=(z-\lambda_1)\cdots(z-\lambda_n)$.
 
 This polynomial is called the characteristic polynomial of $A$, and its roots
-$\lambda_1,\dots,\lambda_n\in\mathbb{C}$ are the eigenvalues of $A$. The
+$\lambda_1,\dots,\lambda_n\in\CC$ are the eigenvalues of $A$. The
 number of times an eigenvalue shows up is called \key{algebraic multiplicity}
 of that eigenvalue.
 
 The \key{trace} of $A$ is defined as $\tr(A) = \sum^n_{i=1} A_{ii}$.
 
-\paragraph{P 8.3.5} Given $A\in\mathbb{R}^{n\times n}$ the
+\paragraph{P 8.3.5} Given $A\in\mathbb{R}^{\nxn}$ the
 eigenvalues of $A$ are the same as the ones of $A^\top$.
 
-\paragraph{L 8.3.6} Let $A\in\mathbb{R}^{n\times n}$ and $\lambda_1,\dots,\lambda_n$ its $n$ eigenvalues as they show up as zeroes in its characteristic polynomial, then:
+\paragraph{L 8.3.6} Let $A\in\mathbb{R}^{\nxn}$ and $\lambda_1,\dots,\lambda_n$ its $n$ eigenvalues as they show up as zeroes in its characteristic polynomial, then:
 \begin{enumerate}
     \item $\tr(A)=\sum_{i=1}^{n}\lambda_i$
     \item $\det(A)=\prod_{i=1}^{n}\lambda_i$
 \end{enumerate}
 
-\paragraph{L 8.3.7} For matrices $A,B,C\in\mathbb{R}^{n\times n}$, we
+\paragraph{L 8.3.7} For matrices $A,B,C\in\mathbb{R}^{\nxn}$, we
 have: $\tr(AB)=\tr(BA)$, $\tr(ABC)=\tr(BCA)=\tr(CAB)$.

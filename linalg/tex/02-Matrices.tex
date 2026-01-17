@@ -23,15 +23,15 @@ $m\times m$ square matrix. Then:
 
 \end{enumerate}
 
-\paragraph{D 2.4} Let $A\in\mathbb{R}^{m\times n}$ be a matrix,
+\paragraph{D 2.4} Let $A\in\mathbb{R}^{\mxn}$ be a matrix,
 $v_1,\dots,v_n$ its columns, and let $x\in\mathbb{R}^{n}$.
 Then the vector $Ax:=\sum_{j=1}^{n}x_jv_j\in\mathbb{R}^m$ is called the \key{product} of $A$ and $x$.
 
-\paragraph{D 2.9} Let $A \in \mathbb{R}^{m\times n}$. The \key{column space} $C(A)$ of $A$ is the span of the columns, $C(A):= \{Ax:x\in \mathbb{R}^n\} \subseteq \mathbb{R}^m$.
+\paragraph{D 2.9} Let $A \in \mathbb{R}^{\mxn}$. The \key{column space} $C(A)$ of $A$ is the span of the columns, $C(A):= \{Ax:x\in \mathbb{R}^n\} \subseteq \mathbb{R}^m$.
 
-\paragraph{D 2.14} Let $A \in \mathbb{R}^{m\times n}$. The \key{row space} $R(A)$ of $A$ is the column space of the transpose, $R(A):=C(A^{\top})\subseteq\mathbb{R}^n$.
+\paragraph{D 2.14} Let $A \in \mathbb{R}^{\mxn}$. The \key{row space} $R(A)$ of $A$ is the column space of the transpose, $R(A):=C(A^{\top})\subseteq\mathbb{R}^n$.
 
-\paragraph{D 2.17} Let $A \in \mathbb{R}^{m\times n}$. The \key{nullspace} of $A$ is the set $N(A)=\{x\in\mathbb{R}^n : Ax=0\} \subseteq \mathbb{R}^n$.
+\paragraph{D 2.17} Let $A \in \mathbb{R}^{\mxn}$. The \key{nullspace} of $A$ is the set $N(A)=\{x\in\mathbb{R}^n : Ax=0\} \subseteq \mathbb{R}^n$.
 
 \paragraph{D 2.12} Let $A=[a_{ij}]_{i=1}^{m}\,_{j=1}^{n}$. The
 \key{transpose} of $A$ is the $n\times m$ matrix
@@ -68,11 +68,11 @@ The following set is the \key{image} of $T$:
 \end{equation*}
 
 \paragraph{O 2.28/29} Let $T:\mathbb{R}^n\to\mathbb{R}^m$ be a linear
-transformation and $A \in \mathbb{R}^{m\times n}$ s.t. $T=T_A$. $\mathbf{Im}(T)=\mathbf{C}(A)$. $\mathbf{Ker}(T) = \mathbf{N}(A)$.
+transformation and $A \in \mathbb{R}^{\mxn}$ s.t. $T=T_A$. $\mathbf{Im}(T)=\mathbf{C}(A)$. $\mathbf{Ker}(T) = \mathbf{N}(A)$.
 
 \subsection{CR decomposition}
 
-\paragraph{T 2.46} Let $A\in\mathbb{R}^{m\times n}$ of rank $r$. Let $C$
+\paragraph{T 2.46} Let $A\in\mathbb{R}^{\mxn}$ of rank $r$. Let $C$
 be the $m\times r$ submatrix of $A$ containing the independent columns. Then
 there exists a unique $r\times n$ matrix $R$ such that $A=CR'$. (\textit{This
 \key{CR decomposition} can be constructed using Gauss-Jordan elimination.}) The columns of $R'$ contain the scalars that we need in order to write each column ad a scalar multiple of the first one.

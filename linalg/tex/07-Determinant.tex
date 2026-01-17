@@ -15,7 +15,7 @@ $(i,j)\in\{1,\dots,n\}\times\{1,\dots,n\}$:
     \end{cases}
 \end{equation*}
 
-\paragraph{D 7.2.3} Let $A\in\mathbb{R}^{n\times n}$ be a square
+\paragraph{D 7.2.3} Let $A\in\mathbb{R}^{\nxn}$ be a square
 matrix and let $\Pi_n$ be the set of all permutations of $n$ elements. Then the
 \key{determinant} $\det(A)$ is defined as:
 
@@ -26,42 +26,42 @@ matrix and let $\Pi_n$ be the set of all permutations of $n$ elements. Then the
 \paragraph{P 7.2.4}
 \begin{enumerate}
     \item Given a permutation matrix
-$P\in\mathbb{R}^{n\times n}$ corresponding to a permutation $\sigma$, then
+$P\in\mathbb{R}^{\nxn}$ corresponding to a permutation $\sigma$, then
 $\det(P)=\sgn(\sigma)$. We sometimes also write $\sgn(P)$.
 
     \item Given a triangular (either upper or lower) matrix
-$T\in\mathbb{R}^{n\times n}$, we have $\det(T)=\prod^n_{k=1} T_{kk}$.
+$T\in\mathbb{R}^{\nxn}$, we have $\det(T)=\prod^n_{k=1} T_{kk}$.
 
-    \item If $Q\in\mathbb{R}^{n\times n}$ is an orthogonal
+    \item If $Q\in\mathbb{R}^{\nxn}$ is an orthogonal
 matrix, then $\det(Q)=1$ or $\det(Q)=-1$.
 \end{enumerate}
 
-\paragraph{T 7.2.5} Given a matrix $A\in\mathbb{R}^{n\times n}$, we have
+\paragraph{T 7.2.5} Given a matrix $A\in\mathbb{R}^{\nxn}$, we have
 $\det(A^\top)=\det(A)$.
 
 \paragraph{T 7.2.6}
 \begin{enumerate}
-    \item $A\in\mathbb{R}^{n\times n}$ is invertible iff $\det(A)\not=0$.
+    \item $A\in\mathbb{R}^{\nxn}$ is invertible iff $\det(A)\not=0$.
 
-    \item Given $A,B\in\mathbb{R}^{n\times n}$, we have $\det(AB)=\det(A)\det(B)$.
+    \item Given $A,B\in\mathbb{R}^{\nxn}$, we have $\det(AB)=\det(A)\det(B)$.
 
-    \item Given $A\in\mathbb{R}^{n\times n}$ such that $\det(A)\not=0$, then $A$ is invertible, and $\det(A^{-1})=\frac{1}{\det(A)}$.
+    \item Given $A\in\mathbb{R}^{\nxn}$ such that $\det(A)\not=0$, then $A$ is invertible, and $\det(A^{-1})=\frac{1}{\det(A)}$.
 \end{enumerate}
 
-\paragraph{D 7.3.1} Given $A\in\mathbb{R}^{n\times n}$, for each
+\paragraph{D 7.3.1} Given $A\in\mathbb{R}^{\nxn}$, for each
 $1\leq i,j\leq n$ let $\mathscr{A}_{ij}$ denote the $(n-1)\times (n-1)$ matrix
 obtained by removing row $i$ and column $j$ from $A$. Then we define the
 \key{co-factors of $A$} as $C_{ij}=(-1)^{i+j}\det(\mathscr{A}_{ij})$.
 
-\paragraph{P 7.3.2} Let $A\in\mathbb{R}^{n\times n}$, then for any
+\paragraph{P 7.3.2} Let $A\in\mathbb{R}^{\nxn}$, then for any
 $1\leq i\leq n$: $\det(A)=\sum_{j=1}^{n}A_{ij}C_{ij}$.
 
-\paragraph{P 7.3.3} Let $A\in\mathbb{R}^{n\times n}$ with
-$\det(A)\not=0$ and let $C$ be the $n\times n$ matrix with the co-factors of
+\paragraph{P 7.3.3} Let $A\in\mathbb{R}^{\nxn}$ with
+$\det(A)\not=0$ and let $C$ be the $\nxn$ matrix with the co-factors of
 $A$ as entries. Then $A^{-1} = \frac{1}{\det(A)}C^\top$.
 
 \paragraph{P 7.3.5} (\key{Cramer's rule}) Let
-$A\in\mathbb{R}^{n\times n}$ such that $\det(A)\not=0$ and
+$A\in\mathbb{R}^{\nxn}$ such that $\det(A)\not=0$ and
 $b\in\mathbb{R}^n$. Moreover, let $\mathscr{B}_j$ be the matrix obtained
 from $A$ by replacing the $j$-th column of $A$ with the vector $b$. Then
 the solution $x\in\mathbb{R}^n$ of $Ax=b$ is given by $x_j=\frac{\det(\mathscr{B}_j)}{\det(A)}$.
