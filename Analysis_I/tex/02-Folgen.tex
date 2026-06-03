@@ -1,0 +1,74 @@
+\section{2. Folgen}
+\subsection{Konzept der Folge}
+
+\Def \key{Folge} $(a_n)_{n \in \NN_0}$, $(a_n)_{n \geq 0}$ oder $(a_n)_{n=0}^\infty$. 
+Ausbildung $f : \NN_0 \to \RR$ (oder $f : \NN \to \RR$). \key{Bilder} $a(n) = a_n$
+sind \key{Gliede der Folge}
+
+\Def Folge \key{direkt} beschreiben: $a_n = f(n)$;
+oder \key{rekursiv}: $a_n = g(a_{n-1}, a_{n-2}, \ldots)$.
+$f$ und $g$ heissen \key{Bildungsgesetz}.
+
+\Def Folge \key{konvergent}, falls \key{Grenzwert} $L \in \RR$ mit
+$\forall \varepsilon > 0 \, \exists N > 0 \, \forall n > N : |a_n - L| < \varepsilon$
+existiert, sonst \key{divergent}.
+Man schreibt $\lim\limits_{n \to \infty} a_n = L$
+
+\Satz Konvergente Folge besitzt genau einen eindeutigen Grenzwert
+
+\Def Falls $\forall M > 0 \, \exists N > 0 \, \forall n > N : a_n > M$ gilt,
+Folge divergiert \key{gegen unendlich}: $\lim\limits_{n\to\infty}a_n = \infty$
+
+Falls $\forall M > 0 \, \exists N > 0 \, \forall n > N : a_n < -M$ gilt,
+Folge divergiert \key{gegen minus unendlich}: $\lim\limits_{n\to\infty} a_n = -\infty$
+
+\Def Sei $(a_n)_{n \in \NN_0}$ Folge in $\RR$.
+\key{Teilfolge} ist Folge der form $(a_{n_k})_{k \in \NN_0}$
+wobei $(n_k)_{k \in \NN_0}$ Folge in $\NN_0$ mit $n_{k+1} > n_k$
+
+\Satz $(a_n)_{n \in \NN_0}$ konvergent gegen $L \in \RR$. Auch jede Teilfolge $\to L$
+
+\Def \key{Häufungspunkt} $A$, falls
+$\forall \varepsilon > 0 \, \forall N \in \NN_0 \, \exists n \geq N : |a_n - A| < \varepsilon$
+
+Äquiv.: $a_n \in (A-\varepsilon, A+\varepsilon)$ gilt für unendlich viele $n$
+
+\Satz $A$ Häufungspunkt $\iff$ Teilfolge mit $\lim\limits_{k \to \infty} a_{n_k} = A$ existiert
+
+\Kor Konvergente Folge hat genau einen Häufungspunkt: $L$
+
+\Kor Sei $A$ Häufungspunkt, unendlich viele $a_n \in (A-\varepsilon, A+\varepsilon)$
+
+\Satz Sei $\lim\limits_{n\to\infty} a_n = K \in \RR$,
+$\lim\limits_{n\to\infty} b_n = L \in \RR$ und $C \in \RR$:
+\begin{itemize}
+    \item $\lim\limits_{n\to\infty}(a_n + b_n) = K + L$
+    \item $\lim\limits_{n\to\infty}(a_n - b_n) = K - L$
+    \item $\lim\limits_{n\to\infty}(a_n \cdot b_n) = K \cdot L$
+    \item $\lim\limits_{n\to\infty}(C \cdot a_n) = C \cdot K$
+    \item Falls $L \neq 0$, $b_n \neq 0$: $\lim\limits_{n\to\infty}\frac{a_n}{b_n} = \frac{K}{L}$
+    \item Falls $K < L$, es gibt $N \in \NN$ mit $a_n < b_n$ für alle $n \geq N$
+    \item Falls es $N \in \NN$ so dass $a_n \leq b_n$ für alle $n \geq N$, dann gilt $K \leq L$
+\end{itemize}
+
+\Satz \key{Wichtige Grenzwerte}
+\begin{itemize}
+    \item $\lim\limits_{n\to\infty} \frac{\log n}{n} = \lim\limits_{n\to\infty} \frac{\ln n}{n} =0$
+    \item $\lim\limits_{n\to\infty} n^\frac{1}{n} = \sqrt[n]{n} = 1$
+    \item $\lim\limits_{n\to\infty} x^\frac{1}{n} = \sqrt[n]{x} = 1$, $x > 0$
+    \item $\forall x \in \RR : \lim\limits_{n\to\infty} (1 + \frac{x}{n})^n = e^x$
+    \item $\forall x \in \RR : \lim\limits_{n\to\infty} \frac{x^n}{n!} = 0$
+\end{itemize}
+
+\Satz \key{Sandwich-Theorem}:
+Seien $(a_n)_{n\in\NN_0}$ und $(c_n)_{n\in\NN_0}$ mit gleichem Grenzwert $L$ und
+$(b_n)_{n\in\NN_0}$ mit $\forall n \in \NN_0 : a_n \leq b_n \leq c_n$. $\lim\limits_{n\to\infty} b_n = L$.
+
+\Def \key{Nach unten}/\key{oben beschränkt}, falls $M = \{a_n \, | \, n \in \NN_0\}$
+nach unten/oben beschränkt. Unten und oben beschränkt: \key{beschränkte Folge}
+
+\Def \key{monoton fallend}/\key{wachsend},
+falls $\forall n,m \in \NN_0 : m > n \implies a_m \leq a_n$ (resp. $\geq$).
+\key{Streng monoton fallend}/\key{wachsend} falls $<$ oder $>$
+
+\Satz Jede beschränkte und monotone Folge konvergiert.

@@ -1,0 +1,130 @@
+\documentclass[8pt, a4paper]{extarticle}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{nicematrix}
+\usepackage{mathrsfs}
+\usepackage{booktabs}
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\usepackage[
+    landscape,
+    margin=0.8cm,
+    footskip=0.5cm
+]{geometry}
+
+\usepackage[
+    skip=5pt plus1pt,
+    indent=0pt
+]{parskip}
+
+\usepackage[
+    compact
+]{titlesec}
+
+\usepackage[hidelinks]{hyperref}
+
+\title{Analysis I FS26}
+\author{Aaron Blasko}
+\date{}
+
+\AtBeginDocument{
+  \setlength\abovedisplayskip{0pt}
+  \setlength\belowdisplayskip{0pt}
+  \setlength\abovedisplayshortskip{-\baselineskip}
+  \setlength\belowdisplayshortskip{0pt}
+}
+
+\setlist{noitemsep, topsep=0pt, parsep=0pt, partopsep=-0.6\parskip}
+
+\newlength{\sepwidth}
+\setlength{\sepwidth}{0.4pt}
+\setlength{\columnseprule}{\sepwidth}
+
+\newcommand{\secsep}{
+    \vspace{\baselineskip}
+    \leaders
+        \hrule width \columnwidth \relax
+    \vskip\sepwidth
+}
+
+\titleformat{\section}
+    {\secsep\Large\bfseries}
+    {\thesection}
+    {1em}
+    {}
+    [\vspace{-\baselineskip}]
+
+\titleformat{\section}
+    {\secsep\normalfont\Large\bfseries}
+    {}
+    {0pt}
+    {\colorbox{yellow!50}}
+
+\titleformat{\subsection}
+    {\normalfont\large\bfseries}
+    {}
+    {0pt}
+    {\colorbox{yellow!50}}
+
+\titleformat{\subsubsection}
+    {\normalfont\normalsize\bfseries}
+    {}
+    {0pt}
+    {\colorbox{yellow!50}}
+
+\newcommand{\key}[1]{\textit{\color{red}{#1}}}
+
+\titleformat{\section}
+    {\secsep\normalfont\Large\bfseries}
+    {}
+    {0pt}
+    {\colorbox{yellow!50}}
+
+\titleformat{\subsection}
+    {\normalfont\large\bfseries}
+    {}
+    {0pt}
+    {\colorbox{yellow!50}}
+
+\titleformat{\subsubsection}
+    {\normalfont\normalsize\bfseries}
+    {}
+    {0pt}
+    {\colorbox{yellow!50}}
+
+\setcounter{secnumdepth}{1}
+\numberwithin{equation}{section}
+\DeclareMathOperator{\sgn}{sgn}
+
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+
+\newcommand{\Def}{\paragraph{Def.}}
+\newcommand{\Satz}{\paragraph{Satz}}
+\newcommand{\Kor}{\paragraph{Korollar}}
+
+\begin{document}
+
+\begin{multicols*}{3}
+
+    {\large \textbf{Analysis I FS26}}
+    Aaron Blasko
+
+    \input{./tex/01-LogikMengenZahlen.tex}
+    \input{./tex/02-Folgen.tex}
+
+\end{multicols*}
+
+\pagebreak
+
+\clearpage
+
+\end{document}

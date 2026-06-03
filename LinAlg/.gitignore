@@ -1,0 +1,6 @@
+*
+!tex/
+!images/
+!*.tex
+!.gitignore
+!README.md
