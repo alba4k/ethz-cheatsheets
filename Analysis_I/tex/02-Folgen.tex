@@ -1,6 +1,4 @@
 \section{2. Folgen}
-\subsection{Konzept der Folge}
-
 \Def \key{Folge} $(a_n)_{n \in \NN_0}$, $(a_n)_{n \geq 0}$ oder $(a_n)_{n=0}^\infty$. 
 Ausbildung $f : \NN_0 \to \RR$ (oder $f : \NN \to \RR$). \key{Bilder} $a(n) = a_n$
 sind \key{Gliede der Folge}
@@ -72,3 +70,37 @@ falls $\forall n,m \in \NN_0 : m > n \implies a_m \leq a_n$ (resp. $\geq$).
 \key{Streng monoton fallend}/\key{wachsend} falls $<$ oder $>$
 
 \Satz Jede beschränkte und monotone Folge konvergiert.
+
+\Satz Jede konvergente Folge ist beschränkt
+
+\Satz Eigenschaften von monotone Folge
+\begin{itemize}
+    \item Eine monotone Folge konvergiert $\iff$ sie ist beschränkt
+    \item Falls monoton wachsend, gilt $\lim\limits_{n\to\infty}a_n = \sup\{a_n \, | \, n \in \NN_0\}$
+    \item Falls monoton fallend, gilt $\lim\limits_{n\to\infty}a_n = \inf\{a_n \, | \, n \in \NN_0\}$
+\end{itemize}
+
+\Def \key{Limes superior}: $\limsup\limits_{n\to\infty} a_n = \overline{\lim\limits_{n\to\infty}} a_n = \lim\limits_{n\to\infty} \sup\{a_k \, | \, k \geq n\}$
+\key{Limes inferior}: $\liminf\limits_{n\to\infty} a_n = \mathop{\underline{\lim}}\limits_{n \to \infty} a_n = \lim\limits_{n\to\infty} \inf\{a_k \, | \, k \geq n\}$
+
+\Satz Es gelten die folgenden Tatsachen:
+\begin{itemize}
+    \item $\limsup\limits_{n\to\infty} a_n = \inf\limits_{n\in\NN_0}(\sup\{a_k \, | \, k \geq n\})$
+    \item $\liminf\limits_{n\to\infty} a_n = \sup\limits_{n\in\NN_0}(\inf\{a_k \, | \, k \geq n\})$
+    \item konvergente Folge: $\lim\limits_{n\to\infty} a_n = \limsup\limits_{n\to\infty} a_n = \liminf\limits_{n\to\infty} a_n$
+    \item beschr. konvergiert gdw $\lim\limits_{n\to\infty}a_n = \limsup_{n\to\infty} a_n = \liminf\limits_{n\to\infty} a_n$
+\end{itemize}
+
+\Satz Beschränkt, $\limsup\limits_{n\to\infty}a_n = A$. Dann $A$ Häufungspunkt,  $\forall\varepsilon > 0$:
+\begin{itemize}
+    \item nur endlich viele $a_n$ mit $a_n > A + \varepsilon$
+    \item unendlich viele $a_n$ mit $A - \varepsilon < a_n < A + \varepsilon$
+\end{itemize}
+
+\Kor Jede beschr. Folge hat Häufungspunkt und konv. Teilfolge
+
+\Def \key{Cauchy-Folge}: $\forall \varepsilon > 0 \, \exists N \in \NN \, \forall m, n \geq N : |a_n - a_m| < \varepsilon$
+
+\Satz Jede Cauchy-Folge ist beschränkt
+
+\Satz Folge konvergiert $\iff$ ist Cauchy-Folge
