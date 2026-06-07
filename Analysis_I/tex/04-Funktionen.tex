@@ -1,1 +1,156 @@
 \section{4. Funktionen}
+
+\subsection{Konzept}
+
+\Def \key{Funktion}: Input $\to$ 1 Output aus \key{Zielbereich} ($range(f)$)
+\begin{align*}
+    f: domain(f) & \to range(f) \\
+    x & \mapsto y = f(x)
+\end{align*}
+
+\Def \key{Definitionsbereich} $\DD(f) = domain(f)$: alle mögliche Inputs
+
+\Def \key{Wertebereich}/\key{Bildmenge} $\WW(f) = image(f)$: realisierte Outputs
+
+\Def input: \key{unabhängige Variable}/\key{Argument}, output: \key{abhängige Variable}
+
+\Def Sei $f: \DD(f) \to \RR$, $\DD(f)\ne \varnothing$, $D' \subset \DD(f)$.
+\key{Einschränkung}/\key{Restriktion} von $f$ auf $D'$ ist $f\rvert_{D'} : D' \to \RR$
+mit $f\rvert_{D'}(x) = f(x) \forall x \in D'$
+
+\Def Sei $f : \DD(f) \to \RR$ mit $\DD(f)\ne \varnothing$:
+\vspace{-0.6em}
+\begin{itemize}
+    \item $f$ \key{nach oben beschränkt} falls $M \in \RR$ mit $\forall x \in \DD(f) : f(x)\le M$
+    \item $f$ \key{nach unten beschränkt} falls $M \in \RR$ mit $\forall x \in \DD(f) : f(x)\ge M$
+    \item $f$ \key{beschränkt} falls $M \in \RR$ mit $\forall x \in \DD(f) : |f(x)|\ge M$
+\end{itemize}
+
+\Def Sei $f : X \to Y$. $f$. $f$ ist:
+\vspace{-0.6em}
+\begin{itemize}
+    \item \key{injektiv}, falls $\forall x_1, x_2 \in X (f(x_1) = f(x_2) \implies x_1 = x_2)$
+    \item \key{surjektiv}, falls $\forall y \in Y \, \exists x \in X : f(x) = y$
+    \item \key{bijektiv}, falls $f$ injektiv \textit{und} surjektiv ist
+\end{itemize}
+
+\Def $f: X \to Y$, $g: Y \to Z$. \key{Verknüpfung} $g \circ f : X \to Z$ mit $\forall x \in X : g \circ f(x) = g(f(x))$
+
+\Def \key{Identität}(\key{-sfunktion}: $\forall x \in X : id_X(x) = x$
+
+\Satz Falls $f: X \to Y$ bijektiv, ex. eindeutiges $g: Y \to X$ mit $g \circ f = id_X$ und $f \circ g = id_Y$.
+$g$ heisst \key{Inverse}/\key{Umkehrfunktion}, $f^{-1}$
+
+\Def $f: \DD(f) \subset \RR \to \RR$ heisst:
+\vspace{-0.6em}
+\begin{itemize}
+    \item \key{monoton wachsend}: $\forall x_1, x_2 \in X (x_1 < x_2 \implies f(x_1)\le f(x_2))$
+    \item \key{streng mon. wachs.}: $\forall x_1, x_2 \in X (x_1 < x_2 \implies f(x_1) < f(x_2))$
+    \item \key{monoton fallend}: $\forall x_1, x_2 \in X (x_1 < x_2 \implies f(x_1)\ge f(x_2))$
+    \item \key{streng mon. fallend}: $\forall x_1, x_2 \in X (x_1 < x_2 \implies f(x_1) > f(x_2))$
+    \item \key{monoton}: monoton wachsend oder fallend
+    \item \key{streng monoton}: streng monoton wachsend oder fallend
+\end{itemize}
+
+\Satz Jede streng monotone Funktion ist injektiv
+
+\Def $f: \RR \to \RR$ heisst:
+\vspace{-0.6em}
+\begin{itemize}
+    \item \key{Ungerade}, falls $\forall x \in \RR : f(-x) = -f(x)$
+    \item \key{Ferade}, falls $\forall x \in \RR : f(-x) = f(x)$
+\end{itemize}
+
+\Def \key{Graph} der Funktion ist Menge alle Punkte der Form $(x, f(x))$
+
+\Def Graph ist \key{linksgekrümmt}/\key{konvex} falls man beim durchlaufen von L nach R links abbiegt.
+Falls rechts \key{rechtsgekrümmt}/\key{konkav}
+
+\subsection{Grenzwerte}
+
+\Def $f: \DD(f) \to \RR$, $x_0 \in \RR$, $\DD(f) \cap (x_0 - \delta, x_0 + \delta)\ne \varnothing \forall \delta > 0$.
+Dann $L \in \RR$ \key{Grenzwert}/\key{Limes} von $f(x)$ an Stelle $x_0$, falls
+$$\forall \varepsilon > 0 \, \exists \delta > 0 : x \in \DD(f) \cap (x_0 - \delta, x_0 + delta) \implies |f(x) - L| < \varepsilon$$
+$L = \lim\limits_{\substack{x\ge x_0 \\ x \to x_0}} f(x)$ ist \key{rechtsseitigen Grenzwert} falls
+$$\forall \varepsilon > 0 \, \exists \delta > 0 : x \in \DD(f) \cap [x_0, x_0 + \delta) \implies |f(x) - L| < \varepsilon$$
+$L = \lim\limits_{\substack{x\le x_0 \\ x \to x_0}} f(x)$ ist \key{linksseitigen Grenzwert} falls
+$$\forall \varepsilon > 0 \, \exists \delta > 0 : x \in \DD(f) \cap (x_0 - \delta, x_0] \implies |f(x) - L| < \varepsilon$$
+Man kann ähnlich $\lim\limits_{\substack{x > x_0 \\ x \to x_0}}$ und $\lim\limits_{\substack{x < x_0 \\ x \to x_0}}$
+definieren (mit $()$ anstatt $[]$)
+$f$ hat \key{für $x$ gegen $\infty$} den Grenzwer $L = \lim\limits_{x\to\infty}f(x)$, falls $\forall R > 0 : \DD(f) \cap (R, \infty) \ne \varnothing$ und
+$$\forall \varepsilon > 0 \, \exists M > 0 : x \in \DD(f) \cap (M, \infty) \implies |f(x) - L| < \varepsilon$$
+$f$ hat \key{für $x$ gegen $-\infty$} den Grenzwer $L = \lim\limits_{x\to\infty}f(x)$, falls $\forall R > 0 : \DD(f) \cap (-\infty, -R) \ne \varnothing$ und
+$$\forall \varepsilon > 0 \, \exists M > 0 : x \in \DD(f) \cap (-\infty, -M) \implies |f(x) - L| < \varepsilon$$
+$f$ hat in $x_0$ den \key{uneigentlichen Grenzwert} $\lim\limits_{x \to x_0}f(x) = \infty$ falls
+$$\forall N > 0 \, \exists \delta > 0 : x \in \DD(f) \cap (x_0 - \delta, x_0 + \delta) \implies f(x) \ge N$$
+$f$ hat in $x_0$ den \key{uneigentlichen Grenzwert} $\lim\limits_{x \to x_0}f(x) = -\infty$ falls
+$$\forall N > 0 \, \exists \delta > 0 : x \in \DD(f) \cap (x_0 - \delta, x_0 + \delta) \implies f(x) \le -N$$
+
+\Satz $f: \DD(f) \to \RR$. $\lim\limits_{x \to x_0} f(x) = L$ $\iff$ für jede konv. Folge $(x_n)_{n \in \NN_0}$,
+die gegen $x_0$ konvergiert, gilt $\lim\limits_{n\to\infty} f(x_n) = L$
+
+\Satz \key{Rechenregeln}: $\lim\limits_{x\to c} f(x) = K (\ne \pm \infty)$, $\lim\limits_{x\to c}g(x) = L (\ne \pm \infty)$, $A \in \RR$:
+\vspace{-0.6em}
+\begin{itemize}
+    \item $\lim\limits_{x\to c}(f(x) + g(x)) = K + L$
+    \item $\lim\limits_{x\to c}(f(x) - g(x)) = K - L$
+    \item $\lim\limits_{x\to c}(f(x) \cdot g(x)) = K \cdot L$
+    \item $\lim\limits_{x\to c}(A \cdot f(x)) = A \cdot K$
+    \item Falls $L \ne 0$: $\lim\limits_{x\to c}\frac{f(x)}{g(x)} = \frac{K}{L}$
+\end{itemize}
+
+\subsection{Elementare Funktionen}
+
+\Def \key{Lineare Funkt.}: $y = f(x) = mx + q$, $x \mapsto mx + q$. Eigenschaft, \key{$\WW$ durch $\DD$ konstant}:
+$\frac{f(x+y)-f(x)}{x+y-x} = \frac{mx + my + q -mx - q}{y} = \frac{my}{y} = m$
+
+\Def \key{Exponentialfunktion}: $\exp(x) = e^x = \lim\limits_{n\to\infty} \left(1 + \frac{x}{n}\right)^n$
+
+\Satz $\exp: \RR \to \RR$ ist bijektiv, streng monoton wachsend, stetig und:
+\vspace{-0.6em}
+\begin{itemize}
+    \item $\exp(0) = 1$
+    \item $\exp(-x) = \exp(x)^-1 \, \forall x \in \RR$
+    \item $\exp(x + y) = \exp(x)\cdot\exp(y) \, \forall x,y \in \RR$
+\end{itemize}
+
+\Def Exponentialfunktion mit \key{Anfangswert} $z_0$ und \key{Wachstumfaktor}/\key{Basis} $a$: $z = f(t) = z_0 \cdot a^t = z_0 \cdot e^{kt}$
+Eigenschaft: \key{relative Zunahme konstant}: $\frac{z(t + s)}{z(t)} = \frac{z_0 \cdot a^{t + s}}{z_0 \cdot a^t} = a^s$
+
+\Def Eindeutige Inverse zu $\exp$ heisst (\key{natürlicher}) \key{Logarithmus}: $\log(x): \RR^+ \to \RR$
+
+\Satz Logarithmus $\log: \RR^+ \to \RR$ ist bijektiv, streng monoton wachsend, stetig und:
+\vspace{-0.6em}
+\begin{itemize}
+    \item $\log(1) = 0$
+    \item $\log(x^{-1}) = -\log(x) \, \forall x \in \RR^+$
+    \item $\log(x \cdot y) = \log(x) + \log(y) \, \forall x,y \in \RR^+$
+\end{itemize}
+
+\Def $g(x) = s(u(x)) = s \circ u(x)$: \key{zusammengesetzte Funktion}. $s$: \key{äussere Funk.}. $u$: \key{innere Funk.}
+
+\Satz Für trigonometrische Funktionen gilt:
+\vspace{-0.6em}
+\begin{itemize}
+    \item $\sin(x)^2 + \cos(x)^2 = 1 \, \forall x \in \RR$
+    \item $\sin$, $\cos$ und $\tan$ sind \key{periodische} Funktionen
+    \item $\tan$ hat für $\omega = \pm \frac{(2n+1)\pi}{2}$, $n \in \NN$ eine \key{vertikale Asymptote}
+    \item $\sin$ ist \key{ungerade}, d.h. $\sin(-x) = -\sin(x)$
+    \item $\cos$ ist \key{gerade}, d.h. $\cos(-x) = \cos(x)$
+\end{itemize}
+
+\Def $f(t) = A \sin(B(t+h)) + C$ oder $f(t) = A\cos(B(t+h))+C$ sind \key{Sinusschwingungen}/\key{Sinuswellel} und:
+\vspace{-0.6em}
+\begin{itemize}
+    \item $|A|$ heisst \key{Amplitude}
+    \item $|B|^-1 \cdot 2\pi$ nennen wir \key{Periode}
+    \item $|h|$ ist die \key{Phasenverschiebung}
+    \item $|C|$ wird \key{Mittelwert} genannt
+\end{itemize}
+
+\Def $y = f(x) = k\cdot x^p$, $k,p \in \RR$, heisst \key{Potenzfunktion}
+
+\Def $y = f(x) = \sum_{s=0}^{n} a_s x^s$, $n \in \NN$ und alle $a_s \in \RR$, heisst \key{Polynom}.
+$a_s$ heissen \key{Koeffizienten}, $n$ ist der \key{Grad} des Polynoms.
+
+\Def $y = f(x) = \frac{p(x)}{q(x)}$, $p(x)$ und $q(x)$ Polynome, heisst \key{rationale F.}

@@ -11,6 +11,7 @@ sonst \key{divergent}. $L$ ist \key{Wert} der Reihe
 \Satz \key{Notwend. Kriterium für Konvergenz}: \key{Nullfolge}, $\lim\limits_{n\to\infty} a_n = 0$
 
 \Satz $\sum_{n=0}^{\infty} a_n$, $\sum_{n=0}^{\infty} b_n$ konvergent, $C \in \RR$
+\vspace{-0.6em}
 \begin{itemize}
     \item $\sum_{n=0}^{\infty} (a_n + b_n) = \sum_{n=0}^{\infty} a_n + \sum_{n=0}^{\infty} b_n$
     \item $\sum_{n=0}^{\infty} C \cdot a_n = C \cdot \sum_{n=0}^{\infty} a_n$
@@ -19,10 +20,11 @@ sonst \key{divergent}. $L$ ist \key{Wert} der Reihe
 \Satz Für $N \in \NN_0$, $\sum_{n=N}^{\infty} a_n$ konvergent $\iff$ $\sum_{n=0}^{\infty} a_n$ konvergent.
 In diesem Fall gilt $\sum_{n=0}^{\infty} a_n = \sum_{n=0}^{N-1} a_n + \sum_{n=N}^{\infty} a_n$
 
-\Satz Für $a_n \geq 0$ ist $s_n$ wachsend; Reihe konvergiert $\iff$ $s_n$ beschr.
+\Satz Für $a_n\ge 0$ ist $s_n$ wachsend; Reihe konvergiert $\iff$ $s_n$ beschr.
 
-\Satz \key{Vergleichskriterium}: Reihen $a_n, b_n, c_n \geq 0$,
-$\exists N \in \NN \, \forall n \geq N : c_n \leq b_n \leq a_n$. Dann gilt:
+\Satz \key{Vergleichskriterium}: Reihen $a_n, b_n, c_n\ge 0$,
+$\exists N \in \NN \, \forall n\ge N : c_n\le b_n\le a_n$. Dann gilt:
+\vspace{-0.6em}
 \begin{itemize}
     \item $\sum_{n=0}^{\infty} a_n$ konver. $\implies$ $\sum_{n=0}^{\infty} b_n$ konver. (\key{Majorantenkriterium})
     \item $\sum_{n=0}^{\infty} c_n$ diverg. $\implies$ $\sum_{n=0}^{\infty} b_n$ diverg. (\key{Minorantenkriterium})
@@ -37,23 +39,25 @@ $\exists \, \varphi: \NN_0 \to \NN_0$ bijektiv mit $\sum_{n=0}^{\infty} a_{\varp
 \Satz \key{Umordnungssatz für absolut konv. Reihen} Absolut konv., $\varphi: \NN_0 \to \NN_0$ bijektiv.
 $\sum_{n=0}^{\infty} a_{\varphi(n)} = \sum_{n=0}^{\infty} a_n$ konvergiert auch absolut
 
-\Satz \key{Leibnitz Kriterium}: monoton fallende Nullfolge, $a_n \geq 0$.
+\Satz \key{Leibnitz Kriterium}: monoton fallende Nullfolge, $a_n\ge 0$.
 Die \key{alternierende Reihe} $\sum_{n=0}^{\infty} (-1)^n a_n$ und es gilt:
-$\sum_{n=0}^{2m+1} (-1)^n a_n \leq \sum_{n=0}^{\infty} (-1)^n a_n \leq \sum_{n=0}^{2m} (-1)^n a_n$ für alle $m \in \NN_0$
+$\sum_{n=0}^{2m+1} (-1)^n a_n\le \sum_{n=0}^{\infty} (-1)^n a_n\le \sum_{n=0}^{2m} (-1)^n a_n$ für alle $m \in \NN_0$
 
-\Satz \key{Cauchy Kriterium}: Reihe konvergiert $\iff$ für alle $\varepsilon > 0$ existiert ein $N \in \NN_0$ so dass für $n \geq m \geq N$ gilt $|\sum_{k = m+1}^{n} a_k| \leq \varepsilon$
+\Satz \key{Cauchy Kriterium}: Reihe konvergiert $\iff$ für alle $\varepsilon > 0$ existiert ein $N \in \NN_0$ so dass für $n\ge m\ge N$ gilt $|\sum_{k = m+1}^{n} a_k|\le \varepsilon$
 
 \Satz Jede absolut konvergente Reihe konvergiert
 
-\Satz \key{Veralgemeinerte Dreiecksungleichung}: $\left\lvert\sum\limits_{n=0}^{\infty} a_n \right\rvert \leq \sum\limits_{n=0}^{\infty}|a_n|$
+\Satz \key{Veralgemeinerte Dreiecksungleichung}: $\left\lvert\sum\limits_{n=0}^{\infty} a_n \right\rvert\le \sum\limits_{n=0}^{\infty}|a_n|$
 
 \Satz \key{Wurzel-Kriterium}: $\rho = \limsup\limits_{n\to\infty} \sqrt[n]{n} \in \RR \cup \{\infty\}$
+\vspace{-0.6em}
 \begin{itemize}
     \item $\rho < 1 \implies \sum_{n=0}^{\infty} a_n$ konvergiert absolut
     \item $\rho > 1 \implies \sum_{n=0}^{\infty} a_n$ divergiert
 \end{itemize}
 
-\Satz \key{Quotient-Kriterium}: $a_n \neq 0$, $\rho = \lim\limits_{n\to\infty} \frac{|a_{n+1}|}{|a_n|}$
+\Satz \key{Quotient-Kriterium}: $a_n\ne 0$, $\rho = \lim\limits_{n\to\infty} \frac{|a_{n+1}|}{|a_n|}$
+\vspace{-0.6em}
 \begin{itemize}
     \item $\rho < 1 \implies \sum_{n=0}^{\infty} a_n$ konvergiert absolut
     \item $\rho > 1 \implies \sum_{n=0}^{\infty} a_n$ divergiert
@@ -70,6 +74,7 @@ $a$ heisst \key{Entwicklungspunkt}, $c_0, c_1, \ldots$ heissen \key{Koeffiziente
 Potenzreihe \key{konvergiert} für Argument $x$
 
 \Satz
+\vspace{-0.6em}
 \begin{itemize}
     \item Jede Potenzreihe hat \key{Konvergenzradius} $R$. Reihe konvergiert für $|x-a| < R$, divergiert für $|x-a| > R$
     \item Intervall $(a-R, a+R)$ heisst \key{Konvergenzintervall}

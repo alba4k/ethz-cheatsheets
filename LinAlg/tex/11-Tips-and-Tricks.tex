@@ -76,8 +76,8 @@ $$A = U\Sigma V^\top = \frac{v}{||v||}(||v|| \cdot ||w||)\left(\frac{w}{||w||}\r
     \item Invertibility ($A \in \mathbb{R}^{\nxn}$):
         \begin{itemize}
             \item $A$ is invertible ($A^{-1}$ exists)
-            \item $\det(A) \neq 0$ ($A$ is non-singular)
-            \item $0$ is \textbf{not} an eigenvalue ($\forall i \, \lambda_i \neq 0$)
+            \item $\det(A)\ne 0$ ($A$ is non-singular)
+            \item $0$ is \textbf{not} an eigenvalue ($\forall i \, \lambda_i\ne 0$)
             \item $\rank(A) = n$ (full rank)
             \item The columns of $A$ are linearly independent
             \item $Ax = 0$ has only the trivial soltion ($N(A) = \{0\}$)
@@ -115,7 +115,7 @@ $$A = U\Sigma V^\top = \frac{v}{||v||}(||v|| \cdot ||w||)\left(\frac{w}{||w||}\r
     \item Positive (semi-)definite matrix ($A = A^\top \in \RR^{\nxn}$)
         \begin{itemize}
             \item $\lambda_i > 0$ ($\geq$) for $i = 1, \dots, n$
-            \item $x^\top Ax > 0$ ($\geq$) for all $x \neq 0$
+            \item $x^\top Ax > 0$ ($\geq$) for all $x\ne 0$
             \item All pivots (from gaussian elimination without swaps) are $> 0$
             \item All upper-left sub-determinants are $> 0$ (Sylvester's Criterion)
         \end{itemize}
@@ -196,7 +196,7 @@ of a symmetric matrix ($A$ = $A^\top$):
         \begin{itemize}
             \item \textbf{Symmetry}: Show $A^\top = A$ (reminder: $(AB)^\top = B^\top A^\top$)
             \item \textbf{Orthogonality}: Show $Q^\top Q = I$
-            \item \textbf{PD or PSD}: Show $x^\top A x > 0$ or $x^\top Ax \geq 0$ for all $x \neq 0$
+            \item \textbf{PD or PSD}: Show $x^\top A x > 0$ or $x^\top Ax\ge 0$ for all $x\ne 0$
         \end{itemize}
 \end{itemize}
 
@@ -213,9 +213,9 @@ of a symmetric matrix ($A$ = $A^\top$):
         \end{itemize}
     \item Rank properties
         \begin{itemize}
-            \item $\rank(AB) \leq \min(\rank(A), \rank(B))$
-            \item $\rank(A+B) \leq \rank(A)+\rank(B)$
-            \item $\rank(A) + \rank(B) \leq \rank(AB) + n$ (where $A \in \RR^{\mxn}$, $B \in \RR^{n \times k}$)
+            \item $\rank(AB)\le \min(\rank(A), \rank(B))$
+            \item $\rank(A+B)\le \rank(A)+\rank(B)$
+            \item $\rank(A) + \rank(B)\le \rank(AB) + n$ (where $A \in \RR^{\mxn}$, $B \in \RR^{n \times k}$)
             \item $\rank(A) = \dim(\colsp(A)) = \dim(\rowsp(A))$
             \item $\rank(A) + \dim(\nullsp(A)) = n$
         \end{itemize}

@@ -1,5 +1,5 @@
 \section{2. Folgen}
-\Def \key{Folge} $(a_n)_{n \in \NN_0}$, $(a_n)_{n \geq 0}$ oder $(a_n)_{n=0}^\infty$. 
+\Def \key{Folge} $(a_n)_{n \in \NN_0}$, $(a_n)_{n\ge 0}$ oder $(a_n)_{n=0}^\infty$. 
 Ausbildung $f : \NN_0 \to \RR$ (oder $f : \NN \to \RR$). \key{Bilder} $a(n) = a_n$
 sind \key{Gliede der Folge}
 
@@ -27,7 +27,7 @@ wobei $(n_k)_{k \in \NN_0}$ Folge in $\NN_0$ mit $n_{k+1} > n_k$
 \Satz $(a_n)_{n \in \NN_0}$ konvergent gegen $L \in \RR$. Auch jede Teilfolge $\to L$
 
 \Def \key{Häufungspunkt} $A$, falls
-$\forall \varepsilon > 0 \, \forall N \in \NN_0 \, \exists n \geq N : |a_n - A| < \varepsilon$
+$\forall \varepsilon > 0 \, \forall N \in \NN_0 \, \exists n\ge N : |a_n - A| < \varepsilon$
 
 Äquiv.: $a_n \in (A-\varepsilon, A+\varepsilon)$ gilt für unendlich viele $n$
 
@@ -39,17 +39,19 @@ $\forall \varepsilon > 0 \, \forall N \in \NN_0 \, \exists n \geq N : |a_n - A| 
 
 \Satz Sei $\lim\limits_{n\to\infty} a_n = K \in \RR$,
 $\lim\limits_{n\to\infty} b_n = L \in \RR$ und $C \in \RR$:
+\vspace{-0.6em}
 \begin{itemize}
     \item $\lim\limits_{n\to\infty}(a_n + b_n) = K + L$
     \item $\lim\limits_{n\to\infty}(a_n - b_n) = K - L$
     \item $\lim\limits_{n\to\infty}(a_n \cdot b_n) = K \cdot L$
     \item $\lim\limits_{n\to\infty}(C \cdot a_n) = C \cdot K$
-    \item Falls $L \neq 0$, $b_n \neq 0$: $\lim\limits_{n\to\infty}\frac{a_n}{b_n} = \frac{K}{L}$
-    \item Falls $K < L$, es gibt $N \in \NN$ mit $a_n < b_n$ für alle $n \geq N$
-    \item Falls es $N \in \NN$ so dass $a_n \leq b_n$ für alle $n \geq N$, dann gilt $K \leq L$
+    \item Falls $L\ne 0$, $b_n\ne 0$: $\lim\limits_{n\to\infty}\frac{a_n}{b_n} = \frac{K}{L}$
+    \item Falls $K < L$, es gibt $N \in \NN$ mit $a_n < b_n$ für alle $n\ge N$
+    \item Falls es $N \in \NN$ so dass $a_n\le b_n$ für alle $n\ge N$, dann gilt $K\le L$
 \end{itemize}
 
 \Satz \key{Wichtige Grenzwerte}
+\vspace{-0.6em}
 \begin{itemize}
     \item $\lim\limits_{n\to\infty} \frac{\log n}{n} = \lim\limits_{n\to\infty} \frac{\ln n}{n} =0$
     \item $\lim\limits_{n\to\infty} n^\frac{1}{n} = \sqrt[n]{n} = 1$
@@ -60,13 +62,13 @@ $\lim\limits_{n\to\infty} b_n = L \in \RR$ und $C \in \RR$:
 
 \Satz \key{Sandwich-Theorem}:
 Seien $(a_n)_{n\in\NN_0}$ und $(c_n)_{n\in\NN_0}$ mit gleichem Grenzwert $L$ und
-$(b_n)_{n\in\NN_0}$ mit $\forall n \in \NN_0 : a_n \leq b_n \leq c_n$. $\lim\limits_{n\to\infty} b_n = L$.
+$(b_n)_{n\in\NN_0}$ mit $\forall n \in \NN_0 : a_n\le b_n\le c_n$. $\lim\limits_{n\to\infty} b_n = L$.
 
 \Def \key{Nach unten}/\key{oben beschränkt}, falls $M = \{a_n \, | \, n \in \NN_0\}$
 nach unten/oben beschränkt. Unten und oben beschränkt: \key{beschränkte Folge}
 
 \Def \key{monoton fallend}/\key{wachsend},
-falls $\forall n,m \in \NN_0 : m > n \implies a_m \leq a_n$ (resp. $\geq$).
+falls $\forall n,m \in \NN_0 : m > n \implies a_m\le a_n$ (resp. $\geq$).
 \key{Streng monoton fallend}/\key{wachsend} falls $<$ oder $>$
 
 \Satz Jede beschränkte und monotone Folge konvergiert.
@@ -74,24 +76,27 @@ falls $\forall n,m \in \NN_0 : m > n \implies a_m \leq a_n$ (resp. $\geq$).
 \Satz Jede konvergente Folge ist beschränkt
 
 \Satz Eigenschaften von monotone Folge
+\vspace{-0.6em}
 \begin{itemize}
     \item Eine monotone Folge konvergiert $\iff$ sie ist beschränkt
     \item Falls monoton wachsend, gilt $\lim\limits_{n\to\infty}a_n = \sup\{a_n \, | \, n \in \NN_0\}$
     \item Falls monoton fallend, gilt $\lim\limits_{n\to\infty}a_n = \inf\{a_n \, | \, n \in \NN_0\}$
 \end{itemize}
 
-\Def \key{Limes superior}: $\limsup\limits_{n\to\infty} a_n = \overline{\lim\limits_{n\to\infty}} a_n = \lim\limits_{n\to\infty} \sup\{a_k \, | \, k \geq n\}$
-\key{Limes inferior}: $\liminf\limits_{n\to\infty} a_n = \mathop{\underline{\lim}}\limits_{n \to \infty} a_n = \lim\limits_{n\to\infty} \inf\{a_k \, | \, k \geq n\}$
+\Def \key{Limes superior}: $\limsup\limits_{n\to\infty} a_n = \overline{\lim\limits_{n\to\infty}} a_n = \lim\limits_{n\to\infty} \sup\{a_k \, | \, k\ge n\}$
+\key{Limes inferior}: $\liminf\limits_{n\to\infty} a_n = \mathop{\underline{\lim}}\limits_{n \to \infty} a_n = \lim\limits_{n\to\infty} \inf\{a_k \, | \, k\ge n\}$
 
 \Satz Es gelten die folgenden Tatsachen:
+\vspace{-0.6em}
 \begin{itemize}
-    \item $\limsup\limits_{n\to\infty} a_n = \inf\limits_{n\in\NN_0}(\sup\{a_k \, | \, k \geq n\})$
-    \item $\liminf\limits_{n\to\infty} a_n = \sup\limits_{n\in\NN_0}(\inf\{a_k \, | \, k \geq n\})$
+    \item $\limsup\limits_{n\to\infty} a_n = \inf\limits_{n\in\NN_0}(\sup\{a_k \, | \, k\ge n\})$
+    \item $\liminf\limits_{n\to\infty} a_n = \sup\limits_{n\in\NN_0}(\inf\{a_k \, | \, k\ge n\})$
     \item konvergente Folge: $\lim\limits_{n\to\infty} a_n = \limsup\limits_{n\to\infty} a_n = \liminf\limits_{n\to\infty} a_n$
     \item beschr. konvergiert gdw $\lim\limits_{n\to\infty}a_n = \limsup_{n\to\infty} a_n = \liminf\limits_{n\to\infty} a_n$
 \end{itemize}
 
 \Satz Beschränkt, $\limsup\limits_{n\to\infty}a_n = A$. Dann $A$ Häufungspunkt,  $\forall\varepsilon > 0$:
+\vspace{-0.6em}
 \begin{itemize}
     \item nur endlich viele $a_n$ mit $a_n > A + \varepsilon$
     \item unendlich viele $a_n$ mit $A - \varepsilon < a_n < A + \varepsilon$
@@ -99,7 +104,7 @@ falls $\forall n,m \in \NN_0 : m > n \implies a_m \leq a_n$ (resp. $\geq$).
 
 \Kor Jede beschr. Folge hat Häufungspunkt und konv. Teilfolge
 
-\Def \key{Cauchy-Folge}: $\forall \varepsilon > 0 \, \exists N \in \NN \, \forall m, n \geq N : |a_n - a_m| < \varepsilon$
+\Def \key{Cauchy-Folge}: $\forall \varepsilon > 0 \, \exists N \in \NN \, \forall m, n\ge N : |a_n - a_m| < \varepsilon$
 
 \Satz Jede Cauchy-Folge ist beschränkt
 
