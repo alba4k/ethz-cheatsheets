@@ -154,3 +154,54 @@ Eigenschaft: \key{relative Zunahme konstant}: $\frac{z(t + s)}{z(t)} = \frac{z_0
 $a_s$ heissen \key{Koeffizienten}, $n$ ist der \key{Grad} des Polynoms.
 
 \Def $y = f(x) = \frac{p(x)}{q(x)}$, $p(x)$ und $q(x)$ Polynome, heisst \key{rationale F.}
+
+\subsection{Stetigkeit}
+
+\Def $f: \DD(f) \to \RR$ \key{an der Stelle $x_0$ stetig} wenn:
+$\forall \varepsilon > 0 \, \exists \delta > 0 \, \forall x \in \DD (|x - x_0| < \delta \implies |f(x) - f(x_0)| < \varepsilon)$.
+$f$ \key{stetig} falls $\forall x_0 \in \DD$ stetig
+
+\Def $f: \DD(f) \to \RR$, $x_0 \in \DD(f)$ ist \key{rechtsstetig} falls
+$\lim\limits_{\substack{x\ge x_0 \\ x \to x_0}} f(x) = f(x_0)$.
+\key{Linkstetigkeit} ist analog definiert
+
+\Satz $f: \DD(f) \to \RR$, $x_0 \in \DD(F)$. $f$ an Stelle $x_0$ stetig $\iff$
+für jede Folge $(x_n)_{n\in\NN_0}$ mit $x_n \to x_0$ konvergiert $(f(x_n))_{n\in\NN_0}$ gegen $f(x_0)$
+
+\Satz \key{Rechenregeln}: für $f,g: D \subset \RR \to \RR$, $c \in \RR$ gilt
+\vspace{-0.6em}
+\begin{itemize}
+    \item $f + g$ ist stetig
+    \item $f - g$ ist stetig
+    \item $c \cdot f$ ist stetig
+    \item $f \cdot g$ ist stetig
+    \item $\frac{f}{g}$ ist stetig, sofern $g \ne 0$
+    \item Falls $f: I \subset \RR \to image(f)$, $g: image(f) \to image(g)$ ist
+    $f \circ g$ stetig und $\lim\limits_{x\to x_0} g(f(x)) = g(\lim\limits_{f\to c}f(x_0))$
+\end{itemize}
+
+\Satz \key{Stetigkeit der Umkehrfunktion}: $I, J \subset \RR$ und $f: I \to J$ stetig und
+bijektiv. $f^{-1}: J \to I$ ist auch stetig
+
+\Satz \key{Zwischenwertsatz}: $f: [a, b] \to \RR$ stetig, $c \in [f(a), f(b)]$.
+Es gibt ein $x \in [a, b]$ mit $f(x) = c$
+
+\Kor $f: I \subset \RR \to \RR$ stetig, $a, b \in I$ mit $f(a) \le 0$ und $f(b) \ge 0$.
+$f$ hat mindestens eine Nullstelle zwischen $a$ und $b$
+
+\Def ein beschränktes und abgeschlossenes Intervall ist \key{kompakt}
+
+\Satz $[a, b]$ kompakt, $(x_n)_{n\in\NN_0}$ in $[a, b]$.
+Dann existiert eine Teilfolge $(x_{n_k})_{k\in\NN_0}$ mit $\lim\limits_{k\to\infty} x_{n_k} = x_0$ mit $x_0 \in [a, b]$
+
+\Def $f: D \subset \RR \to \RR$, $x_0 \in D$. Dann liegt an der Stelle $x_0$ ein
+\vspace{-0.6em}
+\begin{itemize}
+    \item \key{lokales Maximum} falls $f(x_0) \ge f(x)$ für alle $x \in D$
+    \item \key{lokales Minimum} falls $f(x_0) \le f(x)$ für alle $x \in D$
+    \item \key{lokales Extrema} falls lokales Minimum oder Maximum
+\end{itemize}
+
+\Satz: \key{Stetige Funktion auf kompaktem Intervall}: $f: I \subset \RR \to \RR$ stetig,
+$I$ kompakt. $f$ beschränkt und $f$ nimmt max und min auf $I$ an,
+d.h. es gibt $x_{min}, x_{max} \in I$ mit $\forall x \in I : f(x_{min}) \le f(x) \le f(x_{max})$

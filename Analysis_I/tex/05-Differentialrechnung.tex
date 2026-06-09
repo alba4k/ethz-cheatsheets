@@ -1,0 +1,117 @@
+\section{5. Differentialrechnung}
+
+\subsection{Konzept}
+
+\Def $f: D \to \RR$, $x \mapsto y = f(x)$, $D \neq \varnothing$ enthält keine
+isolierten Punkte (i.e. Jedes $x \in D$ ist Häufungspunkt von $D \backslash \{x\}$).
+\key{mittlere}/\key{durchschnittliche Änderungsrate} oder \key{Differenzenquotient}
+von $f$ im Definitionsbereich zwischen $a$ und $a+h$:
+$$\frac{\Delta y}{\Delta x} = \frac{f(a+h) - f(a)}{h}$$
+
+\Def Die \key{Ableitung}/\key{Differentialquotient} einer Funkt. $y = f(x)$ \key{an der Stelle $a$}
+ist (sofern es existiert):
+$$\lim\limits_{h\to 0} \frac{f(a+h)-f(a)}{h} = \lim\limits_{b\to a}\frac{f(b) - f(a)}{b - a} = \left.\frac{dy}{dx}\right|_{x=a} = \left.\frac{df}{dx}\right|_{x=a} = f'(a)$$
+Ist \key{momentane Änderungsrate}, Steigung der Tangente,  Zu-/Abnahme
+
+\Def $f: \DD(f) \to \RR$, $x \mapsto y = f(x)$. Die \key{Ableitungsfunktion} ist:
+$$a \mapsto f'(a) = \left. \frac{dy}{dx} \right|_{x=a}$$
+
+\Def Funktion $f$. Falls $f'(x)$ existiert, heisst $f$ \key{an der Stelle $x$ differenzierbar}.
+Fallst für alle $x \in \DD(f)$ differenzierbar, $f$ \key{differenzierbar}
+
+\Satz $f$ an der Stelle $x_0$ differenzierbar $\implies$ $f$ an der Stelle $x_0$ stetig
+
+\Def $f$ \key{von rechts differenzierbar}, falls ex. \key{rechtsseitige Ableitung}:
+$\lim\limits_{\substack{h > x_0 \\ h \to 0}}\frac{f(a+h) - f(a)}{h}$, analog links
+$\lim\limits_{\substack{h < x_0 \\ h \to 0}}\frac{f(a+h) - f(a)}{h}$
+
+\Def $f: D \subset \RR \to \RR$. Iterativ \key{höheren Ableitungen} für $n \in \NN_0$:
+$f^{(0)} = f, f^{(1)} = f', f^{(2)} = f'', f^{(n+1)} = (f^{(n)})'$.
+Falls $f^{(n)}$ existiert, $f$ \key{$n$-fach differenzierbar}. Falls $f^{(n)}$ stetig,
+$f$ \key{$n$-fach stetig differenzierbar}.
+
+\Def Menge aller $n$-fach stetig differenzierbarer Funktionen auf D ist $C^n(D)$ und
+$C^\infty(D) = := \cap_{n=0}^\infty C^n(D)$ sind die \key{glatte Funktionen}
+
+\subsection{Regeln und Sätze}
+
+\Satz \key{Ableitungsregeln}
+\vspace{-0.6em}
+\begin{itemize}
+    \item $f(x) = a \cdot x^p \implies f'(x) = a \cdot p \cdot x^{p-1}$
+    \item $f(x) = a^x \implies f'(x) = \ln(a) \cdot a^x$ für $a > 0$
+    \item $f(x) = \sin(x) \implies f'(x) = \cos(x)$
+    \item $f(x) = \cos(x) \implies f'(x) = -\sin(x)$
+    \item $f(x) = \tan(x) \implies f'(x) = \frac{1}{\cos^2(x)} = 1 + \tan^2(x)$
+    \item $f(x) = \sinh(x) \implies f'(x) = \cosh(x)$
+    \item $f(x) = \cosh(x) \implies f'(x) = \sinh(x)$
+    \item $f(x) = \ln(x) \implies f'(x) = \frac{1}{x}$
+    \item $f(x) = \sin^{-1}(x) \implies f'(x) = \frac{1}{\sqrt{1 - x^2}}$
+    \item $f(x) = \sin^{-1}(x) \implies f'(x) = \frac{1}{\sqrt{1 - x^2}}$
+    \item $f(x) = \cos^{-1}(x) \implies f'(x) = -\frac{1}{\sqrt{1 - x^2}}$
+    \item $f(x) = \tan^{-1}(x) \implies f'(x) = \frac{1}{1 - x^2}$
+\end{itemize}
+
+\Satz \key{Rechenregeln}: für $f,g: D \to \RR$ an Stelle $x_0$ $n$-fach diff.bar sind
+$f+g$ und $f\cdot g$ auch $n$-fach diff.bar. Es gilt
+\vspace{-0.6em}
+\begin{itemize}
+    \item $(f+g)^{(n)}(x_0) = f^{(n)}(x_0) + g^{(n)}(x_0)$
+    \item $(f\cdot g)^{(n)}(x_0) = \sum_{k=0}^{n} \begin{pmatrix}n\\k\end{pmatrix} \cdot f^{(k)}(x_0) \cdot g^{(n-k)}(x_0)$
+\end{itemize}
+
+\Satz \key{Kettenregel}: $f: D \to E$ an der Stelle $x_0$ diff.bar, $g: E \to \RR$
+an Stelle $y_0 = f(x_0)$ diff.bar. $g \circ f: D \to \RR$ an Stelle $x_0$ diff.bar und
+$(g \circ f)'(x_0) = g'(f(x_0)) \cdot f'(x_0)$
+
+\Satz \key{Quotientenregel}: $f,g: D \to \RR$ diff.bar an Stelle $x_0$ und $g(x_0) \ne 0$.
+$\frac{f}{g}$ in $x_0$ diff.bar und $\left(\frac{f}{g}\right)'(x_0) = \frac{f'(x_0)g(x_0) - f(x_0)g'(x_0)}{g(x_0)^2}$
+
+\Satz \key{Ableitung der Umkehrfunktion}: $f: D \to E \subset \RR$ stetig, bijektiv,  und an Stelle $x_0$ diff.bar,
+$f^{-1}: E \to D$, $x_0 \in D$ Häufungspunkt von $D \backslash \{x_0\}$.
+Dann $f^{-1}$ an Stelle $y_0 = f(x_0)$ diff.bar: $\left(f^{-1}\right)'(y_0) = \frac{1}{f'(x_0)}$
+
+\Satz \key{Lokale Extermalstellen und erste Ableitung}: $f: D \subset \RR \to \RR$ an lokalen Extermalstelle
+$x_0 \in D$ diff.bar, $x_0$ Häufungspunkt von $D \cap (x_0, \infty)$ und $D \cap (-\infty, x_0)$.
+Dann gilt $f'(x_0) = 0$
+
+\Satz \key{Lokale Extermalstellen auf Intervall}: $I \subset \RR$ Intervall, $f: I \to \RR$,
+$x_0$ lokale Extermalstelle von $f$. Dann mindestens eine der Folgenden zutreffend:
+\vspace{-0.6em}
+\begin{itemize}
+    \item $x_0 \in I$ ist Endpunkt der Intervalls $I$
+    \item $f$ an der Stelle $x_0$ nicht differenzierbar
+    \item $f$ an der Stelle $x_0$ differenzierbar und $f'(x_0) = 0$
+\end{itemize}
+
+\Satz \key{Satz von Rolle}: $a < b$, $f: [a, b] \to \RR$ auf $[a, b]$ stetig und auf $(a, b)$ diff.bar.
+Falls $f(a) = f(b)$, dann existiert $\xi \in (a, b)$ mit $f'(\xi) = 0$
+
+\Satz \key{Mittelwertsatz}: $a < b$, $f: [a, b] \to \RR$ auf $[a, b]$ stetig und auf $(a, b)$ diff.bar.
+Es gibt ein $\xi \in (a, b)$ mit $f'(\xi) = \frac{f(b) - f(a)}{b - a}$
+
+\Satz \key{Regen von Bernoulli-l'Hôpital}: $a < b$, $f, g: (a, b) \to \RR$, $g, g' \ne 0$, $R > 0$, $h, i: (R, \infty) \to \RR$
+\begin{itemize}
+    \item $\lim\limits_{\substack{x > a \\ x \to a}} f(x) = \lim\limits_{\substack{x > a \\ x \to a}} g(x) = 0$ oder 
+    $\lim\limits_{\substack{x > a \\ x \to a}} |f(x)| = \lim\limits_{\substack{x > a \\ x \to a}} |g(x)| = \infty$
+    und $L = \lim\limits_{\substack{x > a \\ x \to a}} \frac{f'(x)}{g'(x)}$ existiert,
+    dann gilt $\lim\limits_{\substack{x > a \\ x \to a}} \frac{f(x)}{g(x)} = L$
+    \item $\lim\limits_{x\to\infty} f(x) = \lim\limits_{x\to\infty} g(x) = 0$ oder
+    $\lim\limits_{x\to\infty} |f(x)| = \lim\limits_{x\to\infty} |g(x)| = \infty$
+    und $L = \lim\limits_{x\to\infty} \frac{f'(x)}{g'(x)}$ existiert,
+    dann gilt $\lim\limits_{x\to\infty} \frac{f(x)}{g(x)} = L$
+\end{itemize}
+
+\subsection{Monotonie, Kovexität und Konkavität}
+
+\Satz $I \subset \RR$ Intervall, $f: I \to \RR$ diff.bar.
+$f$ wachsend $\iff$ $f' \ge 0$
+
+\Kor $I \subset \RR$ Intervall, $f: I \to \RR$.
+$f$ konst. $\iff$ $f$ diff.bar $\land$ $f' = 0$
+
+\Satz $I \subset \RR$ Intervall, $f: I \to \RR$ diff.bar.
+$f$ konvex $\iff$ $f'$ wachsend
+
+\Kor $I \subset \RR$ Intervall, $f: I \to \RR$ 2x diff.bar.
+$f$ konvex $\iff$ $f'' \ge 0$
