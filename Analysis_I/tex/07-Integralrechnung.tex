@@ -1,0 +1,132 @@
+\section{6. Integralrechnung}
+
+\subsection{Stammfunktion, unbestimmtes Integral}
+
+\Def $I \subset \RR$ Intervall, $f: I \to \RR$. $F: I \to \RR$ diff.bar mit Eigenschaft
+$F'(x) = f(x) \forall x \in \RR$ nennt man \key{Stammfunktion} von $f$ auf $I$. Das 
+Bestimmen von $F(x)$ aus $f(x)$ nennt man (\key{unbestimmte}) \key{Integration}
+
+\Def Die Familie Funktionen $F(x) + C$ (wobei $F$ Stammfunktion vom \key{Integrand} $f$ ist)
+nennt man \key{unbestimmtes Integral} und man schreibt
+$$\int f(x) dx$$
+
+\Satz \key{Rechenregeln}: $f,g$ Funktionen, $k \in \RR$. Folgendes gilt:
+\vspace{-0.6em}
+
+\begin{tabular}{llll}
+    $\displaystyle \int f(x) \pm g(x)dx = \int f(x) dx \pm \int g(x) dx$ & \hspace{-12pt}
+    $\displaystyle \int \frac{1}{x} dx = \ln(|x|) + C$ \\
+    
+    $\displaystyle \int k f(x) dx = k \int f(x) dx$ & \hspace{-12pt}
+    $\displaystyle \int \sin(x) dx = -\cos(x) + C$ \\
+    
+    $\displaystyle \int k dx = kx + C$ & \hspace{-12pt}
+    $\displaystyle \int \cos(x) dx = \sin(x) + C$ \\
+    
+    $\displaystyle \int x^n dx = \frac{1}{n+1}x^{n+1} + C \text{ für } n \ne -1$ & \hspace{-12pt}
+    $\displaystyle \int \sinh(x) dx = \cosh(x) + C$ \\
+    
+    $\displaystyle \int e^x dx = e^x + C$ & \hspace{-12pt}
+    $\displaystyle \int \cosh(x) dx = \sinh(x) + C$ \\
+\end{tabular}
+
+\Satz \key{partielle Integration}: $f, g$ Funktionen.
+$$\int \underbrace{f(x)}_{\downarrow}\cdot\underbrace{g'(x)}_{\uparrow} dx = f(x) \cdot g(x) - \int f'(x) \cdot g(x) dx$$
+
+\Satz \key{Integration durch Substitution}: $f, g$ Funktionen.
+$$\int f'(\underbrace{g(x)}_y) \cdot \underbrace{g'(x) dx}_{dy} = \int \frac{df}{dy} dy = f(y) + C = f(g(x)) + C$$
+
+\subsection{Bestimmtes Integral (Riemann-Integral)}
+
+\Def \key{Zerlegung} von $[a, b]$ ist endliche Menge von Punkten
+$a = x_0 < x_1 < \cdots < x_n = b$ mit $n \in \NN$. $x_i$ sind \key{Unterteilungspunkte}. \\
+Führt zu \key{Partition} des Intervalls:
+$[a, b] = \{x_0\} \cup (x_0, x_1) \cup \{x_1\} \cup \cdots \cup (x_{n-1}, x_n) \cup \{x_n\}$
+
+\Def Zerlegung $a = y_0 < \cdots < y_m = b$ ist \key{Verfeinerung} der Zerlegung
+$a = x_0 < \cdots < x_n = b$ falls $\{x_0, \ldots, x_n\} \subset \{y_0, \ldots, y_m\}$
+
+\Def $f: [a, b] \to \RR$ \key{Treppenfunktion}, falls Zerlegung $a = x_0 < \cdots < x_n = b$
+von $[a, b]$ existiert, s.d. für $k = 1, \ldots, n$ die Restriktion von $f$ auf $(x_{k-1}, x_k)$
+$f\Big|_{(x_k-1, x_k)}$ konstant. \\
+Wir sagen auch, dass $f$ eine Treppenfunktion bezüglich dieser Zerlegung ist.
+
+\Def $f: [a, b] \to \RR$ Treppenfunktion bezüglich $a = x_0 < \cdots < x_n = b$. das
+\key{Integral der Treppenfunktion} $f$ über $[a, b]$ ist die reelle Zahl
+$$\int_a^b \hspace{-4pt} f(x) dx := \sum_{k=1}^{n} c_k(x_k - x_{k-1})$$
+wobei $c_k$ der Wert von $f$ auf dem Intervall $(x_{k-1}, x_k)$ ist
+
+\Def $f: [a,b] \to \RR$, $\mathcal{TF}$ Menge der Treppenfunktionen.
+die Menge der \key{Obersummen} $\mathcal U (f)$ oder der \key{Untersummen}
+$\mathcal L (f)$ sind:
+$$\mathcal U (f) := \left\{\int_a^b \hspace{-4pt}s(x)dx \, | \, s \in \mathcal{TF}; s \ge f\right\}$$
+
+$$\mathcal L (f) := \left\{\int_a^b \hspace{-4pt}s(x)dx \, | \, s \in \mathcal{TF}; s \le f\right\}$$
+
+\Def $f: [a, b] \to \RR$ beschränkt ist \key{Riemann-integrierbar},
+falls $\sup \mathcal L (f) = \inf \mathcal U (f)$ \\
+In diesem Fal wird der Wert das \key{Riemann-Integral von $f$} genannt:
+$$\int_a^b \hspace{-4pt}f(x) dx := \sup \mathcal L (f) = \inf \mathcal U (f)$$
+$a$ und $b$ sind \key{untere}/\key{obere Integrationsgrenze} und $f$ den \key{Integranden}
+
+\Satz \key{Eigenschaft des Riemann-Integral}: $f,g: [a,b] \to \RR$ (Riemann-) integrierbar,
+$\alpha, \beta \in \RR$:
+\vspace{-0.6em}
+\begin{itemize}
+    \item $\displaystyle \int_a^b \hspace{-4pt} (\alpha f + \beta g)(x) dx = \alpha \int_a^b \hspace{-4pt} f(x) dx + \beta \int_a^b \hspace{-4pt} g(x) dx$ (Linearität)
+    \item $\displaystyle f \le g \implies \int_a^b \hspace{-4pt} f(x) dx \le \int_a^b \hspace{-4pt}g(x) dx$ (Monotonie)
+    \item $\displaystyle \left|\int_a^b \hspace{-4pt} f(x) dx\right| \le \int_a^b \hspace{-4pt} f(x) dx$ (Dreiecksungleichng)
+    \item $\displaystyle \int_a^b \hspace{-4pt} f(x) dx = \int_{b}^{a} f(x) dx$ (Umkehrung der Integrationsrichtung)
+    \item $\displaystyle a \le c \le b \implies \int_a^b \hspace{-4pt} f(x) dx = \int_a^c \hspace{-4pt} f(x) dx + \int_c^b \hspace{-4pt} f(x) dx$ (Aufteilung des Integrationsbereich)
+\end{itemize}
+
+\Satz Jede monotone Funktion ist Riemann-integrierbar
+
+\Satz Jede stetige Funktion ist Riemann-integrierbar
+
+\Def $D \subset \RR$, $(f_n)_{n \in \NN_0}$ Folge von Funkt. $f_n: D \subset \RR \to \RR$
+und $f: D \subset \RR \to \RR$ Funktion.
+Dann \key{konvergiert die Folge $(f_n)_{n\in\NN_0}$ punktweise gegen $f$}, falls, für jedes $x \in D$,
+$(f_n(x))_{n\in\NN_0}$ gegen $f(x)$ konvergiert. $f$ heisst \key{punktweiser Grenzwert}
+von $(f_n)_{n\in\NN_0}$
+
+\Def $D \subset \RR$, $(f_n)_{n\in\NN_0}$ Folge von Funkt. $f_n: D \to \RR$ und
+$f: D \to \RR$. \\
+\key{Folge konvergiert gleichmässig gegen $f$}, falls
+$\forall \varepsilon > 0 \, \exists N \in \NN_0 \, \forall n \ge N \, \forall x \in D : |f_n(x) - f(x)| < \varepsilon$
+
+\Satz $D \subset \RR$, $(f_n)_{n \in \NN_0}$ Folge stetiger Funkt. $f_n: D \to \RR$, die gleichmässig
+gegen $f: D \to \RR$ konvergiert. Dann $f$ stetig
+
+\Satz $(f_n)_{n \in \NN_0}$ Folge int.barer Funkt. $f_n: [a, b] \to \RR$, die gleichmässig
+gegen $f: D \to \RR$ konvergiert. Dann $f$ int.bar und
+$$\displaystyle \int_a^b \hspace{-4pt}f(x)dx = \lim_{n\to\infty}\int_a^b \hspace{-4pt}f_n(x)dx$$
+
+\Satz \key{Mittelwertsatz der Integralrechnung}: Falls $f(x)$ auf $[a, b]$ stetig, gilt für ein
+$c \in [a, b]$:
+\vspace{-10pt}
+$$f(c) = \frac{1}{b-a}\int_a^b \hspace{-4pt}f(x)dx$$
+Wobei $f(c)$ der \key{Mittelwert} von $f$ über $[a, b]$ ist
+
+\Satz \key{Hauptsatz der Integral- und Differentialrechnung}: $f: [a, b] \to \RR$ stetig. Dann ist für alle
+$C \in \RR$ $F: [a, b] \to \RR$ Stammfunktion von $f$:
+$$F(x) := \int_{a}^{x} \hspace{-4pt} f(y) dy + C$$
+Ausserdem ist jede Stammfunktion von der obigen Form
+
+\Kor $F: [a, b] \to \RR$ stetig diff.bar. Dann für alle $x \in [a, b]$
+$$F(x) = F(a) + \int_{a}^{x} \hspace{-4pt}F'(t) dt$$
+
+\Kor $f: [a, b] \to \RR$ stetig und $F: [a, b] \to \RR$ Stammfunktion von $f$.
+$$\int_a^b \hspace{-4pt} f(t) dt = F(x)\Big|_a^b = F(b) - F(a)$$
+
+\Satz \key{Partielle Integration}: $f,g: [a, b] \to \RR$ stetig diff.bar.
+$$\int_a^b \hspace{-4pt} f(x)g'(x) dx = f(x)g(x) \Big|_a^b - \int_a^b \hspace{-4pt} f'(x)g(x) dx$$
+
+\Satz \key{Substitution, Version 1}: $I, J \subset \RR$ Intervalle, $f: I \to J$ stetig diff.bar und
+$g: J \to \RR$ stetig. Dann für alle $[a, b] \subset I$:
+$$\int_a^b \hspace{-4pt} g(f(x))f'(x) dx = \int_{f(a)}^{f(b)} \hspace{-4pt} g(y) dy$$
+
+\Satz \key{Substitution, Version 2}: $I, J \subset \RR$ Intervalle, $f: I \to J$ stetig diff.bar
+und $g: J \to \RR$ stetig. Für $[a, b] \subset I$ gilt $f'(f) \ne 0$ für alle $x \in [a, b]$
+und $f^{-1}: [f(a), f(b)] \to \RR$ die Inverse von $f\Big|_{[a,b]}$. Dann gilt
+$$\int_a^b \hspace{-4pt} g(f(x)) dx = \int_{f(a}^{f(b)} \hspace{-4pt} g(y)(f^{-1})'(y)dy$$

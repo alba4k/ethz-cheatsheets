@@ -1,1 +1,144 @@
 \section{6. Differentialgleichungen}
+
+\subsection{Teil 1}
+
+\Def In \key{Differentialgleichung} treten gesuchte Funktion sowie Ableitungen auf,
+z.B $y'(x) = 69x \cdot y(x) + 420$. $x$ ist \key{unabhängige Variable} und $y$ heisst
+\key{abhängige Variable}
+
+\Def Eine DG der Form
+$a_n(x)y^{(n)} + \ldots + a_0(x)y(x) = s(x)$
+heisst \key{lineare} DG mit \key{Koeffizienten} $a_i(x)$. Die \key{Ordnung} der DG ist
+die maximale Ordnung der Ableitungen. $s(x)$ heisst \key{Störfunktion}. Falls $s(x) = 0$
+\key{homogen}, sonst \key{inhomogen}.
+Falls alle $a_i(x)$ konstant, DG \key{mit konstanten Koeffizienten}
+
+\Satz \key{Superpositionsprinzip}: $y_1(x)$ und $y_2(x)$ Lösungen einer linearen, homogenen DG.
+$y(x) = C_1 y_1(x) + C_2 y_2(x)$, $C_1, C_2 \in \RR$ ist auch eine Lösung.
+
+\Satz \key{Fundamentallösungen}: Lineare, homogene DG der Ordnung $n$ hat $n$
+\key{Fundamentallösungen} $y_1(x), \ldots, y_n(x)$ so dass die allgemeine Lösung gegeben ist durch
+$y(x) = C_1 y_1(x) + \ldots + C_n y_n(x)$, $C_1, \ldots, C_n \in \RR$
+
+\subsection{Lösen einer linearen, homogengen DG}
+
+Gegeben $a_n u^{(n)}(x) + \ldots + a_0 u(x) = 0$. Der \key{Ansatz} $u(x) = e^{\lambda x}$
+(Eulerscher Ansatz) führt uns zur \key{charakteristische Gleichung}
+$a_n \lambda^n + \ldots + a_1 \lambda + a_0 = 0$ und das \key{charakteristische Polynom}
+$p(\lambda) = a_n \lambda^n + \ldots + a_1 \lambda + a_0$.
+
+Nun für die allgemeine Lösung der DG:
+\vspace{-0.6em}
+\begin{itemize}
+    \item Falls alle $r$ Nullstellen $\lambda_i$ von $p(\lambda)$ reell mit Multiplizität $m_i$:
+    $u(x) = \sum_{i=0}^{r} \left(\sum_{p=0}^{m_i-1} C_{ip}x^pe^{\lambda_i x}\right)$
+    \item Falls $r$ reelle Nullstelle und $s$ \textit{Paare} komplexer Nullstellen ($a_j \pm ib_j$)
+    mit Multiplizität $m_i$:
+    $u(x) = \sum_{i=0}^{r}\left(\sum_{p=0}^{m_i - 1}C_{ip} x^p e^{\lambda_i x}\right) + \sum_{j=0}^{s} \left(\sum_{q=0}^{m_j-1}(A_{jq} x^q e^{a_j x} \sin(b_j x) + B_{jq} x^q e^{a_j x} \cos(b_j x))\right)$
+\end{itemize}
+
+In der allgemeinen Lösung einer DG $n.$-ter Ordnung tauchen \key{$n$ Konstanten} auf.
+
+Wollen wir also aus der allgemeinen Lösung \textit{eine} Funktion auswählen, so müssen wir \key{$n$ Informationen vorgeben}
+
+$\to$ Zwei Strategien
+\vspace{-0.6em}
+\begin{itemize}
+    \item \key{Randwertproblem}: Wir geben die Informationen an \textit{zwei unterschiedlichen Stellen} vor, z.B., im fall $n = 2$,
+    $$u(t_0) = u_0 \hspace{20pt} u(t_1) = u_1 \hspace{20pt} t_0 \ne t_1$$
+    \item \key{Anfangswertproblem}: Wir geben an \textit{einer Stelle} die Informationen vor, z.B., im fall $n = 2$,
+    $$u(t_0) = u_0 \hspace{20pt} u'(t_0) = v_0 \hspace{20pt} t_0 \ne t_1$$
+\end{itemize}
+
+\subsection{Aufstellen von Differentialgleichungen}
+
+\subsubsection{Typische Situation}
+
+Gegeben Geburtenrate $B(t)$ und Sterberate $T(t)$, wie entwickelt sich Bevölkerung $y(t)$?
+
+Wie verändert sich $y(t)$ in einem kleinen Zeitintervall $\Delta t$?
+\vspace{-0.6em}
+\begin{itemize}
+    \item Zuwachs: $B(t) \cdot \Delta t$
+    \item Abnahme: $T(t) \cdot \Delta t$
+    \item Nettobilanz: $y(t + \Delta t) = y(t) + B(t) \cdot \Delta t - T(t) \cdot \Delta t$
+\end{itemize}
+
+Was ist die Differenz zwischen nahe den Werten, falls die Zeiten nahe beieinander sind?
+$$\Delta y = y(t + \Delta t) - y(t) = B(t) \cdot \Delta t - T(t) \cdot \Delta t $$
+
+Was ist die proportionale Veränderung?
+$$\frac{\Delta y}{\Delta t} = \frac{y(t + \Delta t) - y(t)}{\Delta t} = B(t) - T(t)$$
+
+Was passiert im Grenzwert $\Delta t \to 0$?
+$$\frac{dy}{dt} = \lim_{\Delta t \to 0} \frac{\Delta y}{\Delta t} = \lim_{\Delta t \to 0}\frac{y(t + \Delta t) - y(t)}{\Delta t} = B(t) - T(t)$$
+
+Also ist die gesuchte Differentialgleichung
+$$y'(t) = B(t) - T(t)$$
+
+\subsubsection{Mechanische Probleme}
+
+Hier ist zu beachten, dass das Problem meist über die involvierten Kräfte beschieben werden kann.
+Für jede Kraft $F$ gilt
+$$F = m \cdot y'' = m \cdot a$$
+wobei $y$ die Position des betrachteten Körpers und $a$ dessen Beschleiunigung sind.
+
+\subsection{Teil 2}
+
+\vspace{-0.6em}
+\begin{itemize}
+    \item Trennung der Variablen
+    \item Substitution
+    \item Variation der Konstanten (lineare, inhomogene DG)
+\end{itemize}
+\textit{Lineare, inhomogene} DG \textit{beliebiger} Ordnung:
+\vspace{-0.6em}
+\begin{itemize}
+    \item Geeignete Ansätze für die partikuläre Lösung
+\end{itemize}
+
+\Satz \key{Trennung der Variablen}:
+$$y'(x) = f(x) \cdot g(y) \implies \int \frac{1}{g(y)} dy = \int f(x) dx$$
+
+\Satz \key{Lineare Substitution} Falls DG der Form
+$y'(x) = f(ax + by(x) + c)$, mit $a, b, c \in \RR$, dann erhalten wir durch die
+Substitution $u = ax + by(x) + c$ eine DG mit trennbaren Variablen
+
+\Def Eine DG, wo die unab. var. $x$ nie vorkommt, heisst \key{autonom}
+
+\Def Eine DG folgender Form heisst \key{homogen in den Variablen}:
+$$y' = g\left(\frac{y}{x}\right)$$
+
+\Satz \key{Substitution bei in den Variablen homogenen DG} Falls DG homogen in den Variablen
+erhalten wir durch die Substitution $u = \frac{y}{x}$ eine DG mit trennbaren Variablen
+
+\Def Falls DG der Form
+$$a_n(x)y^{(n)}(x) + \cdot + a_0(x)y(x) = s(x) \ne 0$$
+heisst $a_n(x)y^{(n)}(x) + \cdot + a_0(x)y(x) = 0$ die \key{dazugehörige homogene DG}
+
+\Satz Ist $y_p(x)$ eine \key{partikuläre Lösung} einer \textit{linearen, inhomogenen} DG und
+$y_h(x)$ die allgemeine Lösung der dazugehörige homogene DG, so ist die allgemeine Lösung der
+\textit{linearen, inhomogenen} DG $y(x) = y_h(x) + y_p(x)$
+
+\Satz \key{Variation der Konstanten}: Gegeben eine \textit{inhomogene, lineare} DG erster Ordnung.
+Dann erhalten wir einen \textit{Ansatz} für die partikuläre Lösung, indem wir der allgemeinen
+Lösung der dazugehörigen homogenen DG die aufstretende Konstante durch
+\textit{eine Funktion in der unab. Var. ersetze n}
+
+\subsubsection{Ansätze für die partikuläre Lösung}
+
+Falls Störfunktion \key{Polynom} $n$-ten Grades, wählen wir als Ansatz Polynom vom gleichen Grad
+
+\Satz Falls $s(t) = a_0 + a_1 t + \cdots + a_nt^n$, dann $y(t) = C_0 + C_1 t + \cdots + C_nt^n$ \\
+\textbf{Spezialfall}: $0$ ist eine $m$-fache Nullstelle des char. Pol.: $y(t) = (C_0 + \cdots + C_nt^n)t^m$
+
+Falls Störfunktion \key{Schwingung} $n$-ten Grades, wählen wir als Ansatz Schwingung gleicher Frequenz
+
+\Satz Falls $s(t) = A e^{kt}$, dann $y(t) = C e^{kt}$ \\
+\textbf{Spezialfall}: $k$ ist eine $m$-fache Nullstelle des char. Pol.: $y(t) = (C e^{kt})t^m$
+
+Falls Störfunktion \key{Produkt Polynoms und Exponentialfunktion} $n$-ten Grades, wählen wir als
+Ansatz Produkt von Polynom vom gleichen Grad und Exponentialfunktion mit gleichem Exponenten
+
+\Satz Falls $s(t) = A \sin(\omega t) + B \cos(\omega t)$, dann $y(t) = C_1 \sin(\omega t) + C_2 \cos(\omega t)$ \\
+\textbf{Spezialfall}: $i\omega$ ist eine $m$-fache Nullstelle des char. Pol.: $y(t) = (C_1 \sin(\omega t) + C_2 \cos(\omega t))t^m$

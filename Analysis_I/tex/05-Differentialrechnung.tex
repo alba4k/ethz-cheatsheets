@@ -35,22 +35,17 @@ $C^\infty(D) = := \cap_{n=0}^\infty C^n(D)$ sind die \key{glatte Funktionen}
 
 \subsection{Regeln und Sätze}
 
-\Satz \key{Ableitungsregeln}
+\Satz \key{Ableitungsregeln}:
 \vspace{-0.6em}
-\begin{itemize}
-    \item $f(x) = a \cdot x^p \implies f'(x) = a \cdot p \cdot x^{p-1}$
-    \item $f(x) = a^x \implies f'(x) = \ln(a) \cdot a^x$ für $a > 0$
-    \item $f(x) = \sin(x) \implies f'(x) = \cos(x)$
-    \item $f(x) = \cos(x) \implies f'(x) = -\sin(x)$
-    \item $f(x) = \tan(x) \implies f'(x) = \frac{1}{\cos^2(x)} = 1 + \tan^2(x)$
-    \item $f(x) = \sinh(x) \implies f'(x) = \cosh(x)$
-    \item $f(x) = \cosh(x) \implies f'(x) = \sinh(x)$
-    \item $f(x) = \ln(x) \implies f'(x) = \frac{1}{x}$
-    \item $f(x) = \sin^{-1}(x) \implies f'(x) = \frac{1}{\sqrt{1 - x^2}}$
-    \item $f(x) = \sin^{-1}(x) \implies f'(x) = \frac{1}{\sqrt{1 - x^2}}$
-    \item $f(x) = \cos^{-1}(x) \implies f'(x) = -\frac{1}{\sqrt{1 - x^2}}$
-    \item $f(x) = \tan^{-1}(x) \implies f'(x) = \frac{1}{1 - x^2}$
-\end{itemize}
+
+\begin{tabular}{ll}
+    $(a \cdot x^p)' = a \cdot p \cdot x^{p-1}$          & $(\cosh(x))' = \sinh(x)$ \\
+    $(a^x)' = \ln(a) \cdot a^x \quad \text{für } a > 0$ & $(\ln(x))' = \frac{1}{x}$ \\
+    $(\sin(x))' = \cos(x)$                              & $(\arcsin(x))' = \frac{1}{\sqrt{1 - x^2}}$\\
+    $(\cos(x))' = -\sin(x)$                             & $(\arccos(x))' = -\frac{1}{\sqrt{1 - x^2}}$ \\
+    $(\tan(x))' = \frac{1}{\cos^2(x)} = 1 + \tan^2(x)$  & $(\arctan(x))' = \frac{1}{1 + x^2}$ \\
+    $(\sinh(x))' = \cosh(x)$ \\
+\end{tabular}
 
 \Satz \key{Rechenregeln}: für $f,g: D \to \RR$ an Stelle $x_0$ $n$-fach diff.bar sind
 $f+g$ und $f\cdot g$ auch $n$-fach diff.bar. Es gilt
