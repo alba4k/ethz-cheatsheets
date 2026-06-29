@@ -14,27 +14,55 @@ $$\int f(x) dx$$
 \vspace{-0.6em}
 
 \begin{tabular}{llll}
-    $\displaystyle \int f(x) \pm g(x)dx = \int f(x) dx \pm \int g(x) dx$ & \hspace{-12pt}
-    $\displaystyle \int \frac{1}{x} dx = \ln(|x|) + C$ \\
+    $\displaystyle \int \hspace{-2pt} f(x) \pm g(x)dx = \int \hspace{-2pt} f(x) dx \pm \int \hspace{-2pt} g(x) dx$ & \hspace{-14pt}
+    $\displaystyle \int \hspace{-2pt} \frac{1}{x} dx = \ln(|x|) + C$ \\
     
-    $\displaystyle \int k f(x) dx = k \int f(x) dx$ & \hspace{-12pt}
-    $\displaystyle \int \sin(x) dx = -\cos(x) + C$ \\
+    $\displaystyle \int \hspace{-2pt} k f(x) dx = k \int \hspace{-2pt} f(x) dx$ & \hspace{-14pt}
+    $\displaystyle \int \hspace{-2pt} \sin(x) dx = -\cos(x) + C$ \\
     
-    $\displaystyle \int k dx = kx + C$ & \hspace{-12pt}
-    $\displaystyle \int \cos(x) dx = \sin(x) + C$ \\
+    $\displaystyle \int \hspace{-2pt} k dx = kx + C$ & \hspace{-14pt}
+    $\displaystyle \int \hspace{-2pt} \cos(x) dx = \sin(x) + C$ \\
     
-    $\displaystyle \int x^n dx = \frac{1}{n+1}x^{n+1} + C \text{ für } n \ne -1$ & \hspace{-12pt}
-    $\displaystyle \int \sinh(x) dx = \cosh(x) + C$ \\
+    $\displaystyle \int \hspace{-2pt} x^n dx = \frac{1}{n+1}x^{n+1} + C \text{ für } n \ne -1$ & \hspace{-14pt}
+    $\displaystyle \int \hspace{-2pt} \sinh(x) dx = \cosh(x) + C$ \\
     
-    $\displaystyle \int e^x dx = e^x + C$ & \hspace{-12pt}
-    $\displaystyle \int \cosh(x) dx = \sinh(x) + C$ \\
+    $\displaystyle \int \hspace{-2pt} e^x dx = e^x + C$ & \hspace{-14pt}
+    $\displaystyle \int \hspace{-2pt} \cosh(x) dx = \sinh(x) + C$
 \end{tabular}
 
-\Satz \key{partielle Integration}: $f, g$ Funktionen.
+\Satz \key{Partielle Integration}: $f, g$ Funktionen.
 $$\int \underbrace{f(x)}_{\downarrow}\cdot\underbrace{g'(x)}_{\uparrow} dx = f(x) \cdot g(x) - \int f'(x) \cdot g(x) dx$$
 
 \Satz \key{Integration durch Substitution}: $f, g$ Funktionen.
 $$\int f'(\underbrace{g(x)}_y) \cdot \underbrace{g'(x) dx}_{dy} = \int \frac{df}{dy} dy = f(y) + C = f(g(x)) + C$$
+
+\Satz $\star$ \key{Partialbruchzerlegung} (PBZ): für Polynome $p(x)$, $q(x)$ und $f(x) = \frac{p(x)}{q(x)}$
+kann man $\displaystyle \int f(x) dx$ wie folgt Lösen:
+\vspace{-0.6em}
+\begin{enumerate}
+    \item Falls $\deg(p) \ge \deg(q)$: Polynomdivision $\to$ $f(x) = s(x) + \frac{r(x)}{q(x)}$
+    \item $q(x)$ in Linear- und (irreduzible) quadratische Faktoren zerlegen
+    \item Für jeden Faktor von $q(x)$ addiert man entsprechende Terme im Ansatz $g(x)$:
+    \begin{itemize}
+        \item Einfache reelle Nullstelle $(x - x_1)$: $\frac{A}{x - x_1}$
+        \item Mehrfache relle Nullstelle $(x -x_1)^m$: $\frac{A_1}{x - x_1} + \cdots + \frac{A_m}{(x - x_1)^m}$
+        \item quadratischer Faktor $(x^2 + ax + b)$ mit $a^2 - 4b < 0$: $\frac{Bx + C}{x^2 + ax + b}$:
+    \end{itemize}
+    \item Setze $\frac{r(x)}{q(x)} = g(x)$
+    \item Löse für $A, B, C, \ldots$ (Nullstellen einsetzen oder Gleichungsystem)
+    \item Löse $\displaystyle \int g(x) dx$
+\end{enumerate}
+
+\Satz $\star$ \key{Mehr Rechenregeln} für PBZ: $a, b \in \RR$ beliebig. Folgendes gilt
+\vspace{-0.6em}
+\begin{itemize}
+    \item $\displaystyle \int \frac{a}{x - b} dx = a \ln(|x - b|) + C$
+    \item $\displaystyle \int \frac{a}{(x - b)^2} dx = -\frac{a}{x-b} + C$
+    \item $\displaystyle \int \frac{1}{(x + a)^2 + b^2} dx = \frac{1}{b} \arctan(\frac{x + a}{b}) + C$
+\end{itemize}
+
+\Satz $\star$ \key{Weirstrass-Substitution}: Nach der Substit. $t = \tan(\frac{x}{2})$ gilt:
+$$\sin x = \frac{2t}{1 + t^2} \hspace{10pt} \cos x = \frac{1 - t^2}{1 + t^2} \hspace{10pt} dx = \frac{2}{1 + t^2} dt$$
 
 \subsection{Bestimmtes Integral (Riemann-Integral)}
 
@@ -130,3 +158,9 @@ $$\int_a^b \hspace{-4pt} g(f(x))f'(x) dx = \int_{f(a)}^{f(b)} \hspace{-4pt} g(y)
 und $g: J \to \RR$ stetig. Für $[a, b] \subset I$ gilt $f'(f) \ne 0$ für alle $x \in [a, b]$
 und $f^{-1}: [f(a), f(b)] \to \RR$ die Inverse von $f\Big|_{[a,b]}$. Dann gilt
 $$\int_a^b \hspace{-4pt} g(f(x)) dx = \int_{f(a}^{f(b)} \hspace{-4pt} g(y)(f^{-1})'(y)dy$$
+
+\Satz $\star$ Für $p > 0$ gilt:
+$$\int_{0}^{1} \frac{1}{x^p} dx \text{ konvergiert} \iff p < 1$$
+
+\Satz $\star$ Für $p > 0$ gilt:
+$$\int_{1}^{\infty} \frac{1}{x^p} dx \text{ konvergiert} \iff p > 1$$

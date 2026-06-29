@@ -110,3 +110,30 @@ $f$ konvex $\iff$ $f'$ wachsend
 
 \Kor $I \subset \RR$ Intervall, $f: I \to \RR$ 2x diff.bar.
 $f$ konvex $\iff$ $f'' \ge 0$
+
+\subsection{Taylorreihen \texorpdfstring{$\star$}{*}}
+
+\Def $n \in \NN_0$, $i \subset \RR$ offenes Int., $f \in C^n(I)$. \key{Taylor-Polynom $n$-ter Ordnung} von $f$
+an Stelle $x_0$ ist
+$$T_n(x, x_0) = \sum_{k=0}^{n}\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k$$ 
+
+\Satz \key{Restglied von Lagrange}: $n \in \NN_0$, $i \subset \RR$ offenes Int., $f \in C^{n+1}(I)$. Für alle $x \in I$
+existiert \key{Zwischenwert} $\xi \in [x_0, x]$ so dass für $R_n := f(x) - T_n(x, x_0)$ gilt:
+$$R_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}$$
+
+\Def $i \subset \RR$ offenes Int., $f \in C^\infty(I)$. \key{Taylorreihe} ist 
+$T_\infty(x, x_0) = \sum_{k=0}^{\infty}\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k$
+und $f$ heisst \key{analytisch auf $I$} ($f \in C^\omega(I)$) falls $T_\infty(x, x_0)$ für jedes
+$x \in I$ gegen $f(x)$ konvergiert ($\lim\limits_{n\to\infty} R_n(x) = 0$)
+
+\Def Taylorreihe mit $x_0 = 0$ heisst auch $\key{Maclaurin-Reihe}$
+
+\Satz \key{Wichtige Maclaurin-Reihen}: Es gilt:
+\vspace{-0.6em}
+\begin{itemize}
+    \item $e^x = \sum_{k=0}^{\infty} \frac{x^{k}}{k!} = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \cdots$
+    \item $\cos x = \sum_{k=0}^{\infty} (-1)^k \frac{x^{2k}}{(2k)!} = 1 + \frac{x^2}{2} + \frac{x^4}{24} - \cdots$
+    \item $\sin x = \sum_{k=0}^{\infty} (-1)^k \frac{x^{2k + 1}}{(2k+1)!} = x + \frac{x^3}{6} + \frac{x^5}{120} - \cdots$
+    \item $\ln (1 + x) = \sum_{k=1}^{\infty} (-1)^{k-1} \frac{x^k}{k} = x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots$ für $-1 < x < 1$
+    \item $\arctan(x) = \sum_{k=0}^{\infty} (-1)^k \frac{x^{2k+1}}{2k+1} = x - \frac{x^3}{3} + \frac{x^5}{5} - \cdots$ für $-1 \le x \le 1$
+\end{itemize}
