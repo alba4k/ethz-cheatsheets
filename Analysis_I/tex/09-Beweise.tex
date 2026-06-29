@@ -1,0 +1,36 @@
+\section{9. Beweise \texorpdfstring{$\star$}{*}}
+
+\subsection{Differentialrechnung}
+
+\Bew \key{Satz von Rolle}: Da $f$ auf $[a, b]$ stetig, nimmt $f$ in $x_{min}, x_{max} \in [a, b]$
+ein Min. und Max. an (Stetige Funktion auf kompaktem Intervall).
+Ist $f$ konstant, dann ist $\xi = \frac{a + b}{2} \in (a,b)$ Max.,
+sonst gibt es $\xi = x_{max} \in (a, b)$ Max. \textit{oder} $\xi = x_{max} \in (a, b)$ Min. (da $f(a) = f(b)$). \\
+Falls $\xi$ Max., da $f$ diff.bar in $\xi$,
+$$f'(\xi) = \lim_{\substack{h \ge 0 \\ h \to 0}} \frac{f(\xi + h) - f(\xi)}{h} \le 0$$
+$$f'(\xi) = \lim_{\substack{h \le 0 \\ h \to 0}} \frac{f(\xi + h) - f(\xi)}{h} \ge 0$$
+Somit $f'(\xi) = 0$. Falls $\xi$ Min., dann Max. von $-f$ und $-f'(\xi) = 0$, also $f'(\xi) = 0$
+
+\Bew \key{Mittelwersatz der Differentialrechnung}: Sei
+$$h(x) = f(x) - \frac{f(b) - f(a)}{b - a} (x- a)$$
+Da $h(a) = h(b) = f(a)$ existiert $\xi \in (a, b)$ mit $h'(\xi) = 0$ (Satz von Rolle).
+Also gilt $h'(\xi) = f'(\xi) - \frac{f(b) - f(a)}{b - a} = 0$
+und $f'(\xi) = \frac{f(b) - f(a)}{b - a}$
+
+\subsection{Integralrechnung}
+
+\Bew \key{Mittelwersatz der Integralrechnung}: Da $f$ auf $[a, b]$ stetig, nimmt $f$ in $x_{min}, x_{max} \in [a, b]$
+ein Min. und Max. an (Stetige Funktion auf kompaktem Intervall). Also gilt:
+\vspace{-0.2em}
+\begin{align*}
+    \int_a^b f(x_{min}) dx \le &\int_a^b f(x) dx \le \int_a^b f(x_{max}) dx \\[-0.2em]
+    f(x_{min}) \cdot (b-a) \le &\int_a^b f(x) dx \le f(x_{max}) \cdot (b-a) \\[-0.2em]
+    f(x_{min}) \le &\frac{1}{b-a}\int_a^b f(x) dx \le f(x_{max})
+\end{align*}
+Aber da $\mu = \displaystyle\frac{1}{b-a}\int_a^b f(x) dx \in [f(x_{min}), f(x_{max})]$ und $f$ stetig,
+gibt es ein $c \in [\min\{x_{min}, x_{max}\}, \max\{x_{min}, x_{max}\}] \subset [a, b]$ mit $f(c) = \mu$ (Zwischenwertsatz)
+
+\Bew \key{Hauptsatz der Integral- und Differentialrechnung}:
+$$\lim_{h\to 0} \frac{F(x + h) - F(x)}{h} = \lim_{h\to 0} \frac{1}{h} \int_{x}^{x + h} f(y) dy = \lim_{h\to 0} f(\xi_h)$$
+wegen Mittelwersatz der Integralrechnung. Da $\xi_h \to x$, $h \to 0$ und $f$ stetig gilt:
+$\lim_{h\to 0} f(\xi_h) = f(x)$. Also $F'(x)$ existiert und gleich $f(x)$
