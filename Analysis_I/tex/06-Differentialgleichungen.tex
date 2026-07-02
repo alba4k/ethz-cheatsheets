@@ -31,10 +31,10 @@ Nun für die allgemeine Lösung der DG:
 \vspace{-0.6em}
 \begin{itemize}
     \item Falls alle $r$ Nullstellen $\lambda_i$ von $p(\lambda)$ reell mit Multiplizität $m_i$:
-    $u(x) = \sum_{i=0}^{r} \left(\sum_{p=0}^{m_i-1} C_{ip}x^pe^{\lambda_i x}\right)$
+    $u(x) = \sum_{i=1}^{r} \left(\sum_{p=0}^{m_i-1} C_{ip}x^pe^{\lambda_i x}\right)$
     \item Falls $r$ reelle Nullstelle und $s$ \textit{Paare} komplexer Nullstellen ($a_j \pm ib_j$)
     mit Multiplizität $m_i$:
-    $u(x) = \sum_{i=0}^{r}\left(\sum_{p=0}^{m_i - 1}C_{ip} x^p e^{\lambda_i x}\right) + \sum_{j=0}^{s} \left(\sum_{q=0}^{m_j-1}(A_{jq} x^q e^{a_j x} \sin(b_j x) + B_{jq} x^q e^{a_j x} \cos(b_j x))\right)$
+    $u(x) = \sum_{i=1}^{r}\left(\sum_{p=0}^{m_i - 1}C_{ip} x^p e^{\lambda_i x}\right) + \sum_{j=1}^{s} \left(\sum_{q=0}^{m_j-1}(A_{jq} x^q e^{a_j x} \sin(b_j x) + B_{jq} x^q e^{a_j x} \cos(b_j x))\right)$
 \end{itemize}
 
 In der allgemeinen Lösung einer DG $n.$-ter Ordnung tauchen \key{$n$ Konstanten} auf.

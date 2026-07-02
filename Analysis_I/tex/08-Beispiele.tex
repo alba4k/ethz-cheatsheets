@@ -1,8 +1,18 @@
 \section{8. Beispiele \texorpdfstring{$\star$}{*}}
 
+\subsection{Grenzwerte}
+\Bsp \key{Trick mit Wurzeln}: Lösung von $\lim\limits_{n\to\infty} \sqrt{n^2 + 3n} - n$
+\begin{align*}
+    \lim\limits_{n\to\infty} \sqrt{n^2 + 3n} - n &=\lim\limits_{n\to\infty} (\sqrt{n^2 + 3n} - n) \cdot \frac{\sqrt{n^2 + 3n} + n}{\sqrt{n^2 + 3n} + n} \\[-0.6em]
+        &= \lim\limits_{n\to\infty} \frac{n^2 + 3n - n^2}{\sqrt{n^2 + 3n} + n} \\[-0.2em]
+        &= \lim\limits_{n\to\infty} \frac{3n}{\sqrt{n^2 + 3n} + n} \\[-.3em]
+        &= \lim\limits_{n\to\infty} \frac{3}{\sqrt{1 + \frac{3}{n}} + 1} \\[-.3em]
+        &= \frac{3}{\sqrt{1 + 0} + 1} = \frac{3}{2}
+\end{align*}
+
 \subsection{Differentialgleichungen}
 
-\Bsp \key{Trennung der Variablen} Lösung von $y' = \frac{e^x(y^2 - 1)}{y(e^x + 1)}$
+\Bsp \key{Trennung der Variablen}: Lösung von $y' = \frac{e^x(y^2 - 1)}{y(e^x + 1)}$
 \vspace{-0.2em}
 \begin{align*}
     y' &= \frac{e^x(y^2 - 1)}{y(e^x + 1)} \\[-0.4em]
@@ -17,6 +27,57 @@
     y^2 &= C_4 (e^x + 1)^2 + 1 \\[-0.6em]
     y &= \pm \sqrt{C_4 (e^x + 1)^2 + 1}
 \end{align*}
+
+\Bsp \key{Variation der Konstanten}: Lösung von $y' - 2y = e^{3x}$
+\begin{enumerate}
+    \item Löse $y_h' - 2y_h = 0$:
+        \begin{align*}
+            y_h' - 2y_h &= 0 \\[-0.6em]
+            y_h' &= 2y_h \\[-0.6em]
+            y_h &= 2Ce^{2x} \\[-0.6em]
+        \end{align*}
+    \item Betrachte Konstanten als Funktion: $C \to C(x)$, $y = C(x) \cdot e^{2x}$
+    \item Berechne Ableitung(en): $y' = C'(x) \cdot e^{2x} + 2 C(x) \cdot e^{2x}$
+    \item Berechne $C(x)$:
+        \vspace{-0.6em}
+        \begin{align*}
+            y' - 2y &= e^{3x} \\[-0.6em]
+            C'(x) \cdot e^{2x} + 2 C(x) \cdot e^{2x} - 2C(x) \cdot e^{2x} &= e^3x \\[-0.6em]
+            C'(x) \cdot e^{2x} &= e^{3x} \\[-0.6em]
+            C'(x) &= e^x \\[-0.6em]
+            C(x) &= e^x + C \\[-0.6em]
+        \end{align*}
+    \item Berechne $y = C(x) \cdot e^{2x} = (e^x + C) \cdot e^{2x} = e^{3x} + Ce^{2x}$
+\end{enumerate}
+
+\Bsp \key{Ansätze für die partikuläre Lösung}: Lösung von $y''' - 2y'' = 4e^{2x} + 12$
+\begin{enumerate}
+    \item Löse $y_h''' - 2y_h'' = 0$ (char. Polynom $\lambda^2(\lambda - 2)$)
+        \vspace{-0.4em}
+        \begin{align*}
+            y_h &= \sum_{i = 1}^{2} (\sum_{p=0}^{m_i - 1} C_{ip} x^p e^{\lambda_i x}) \\[-0.6em]
+                &= \sum_{p = 0}^1 C_{1p} x^p + C_{20} e^{2x} \\[-0.6em]
+                &= C_{10} + C_{11}x + C_{20}e^{2x} \\[-0.6em]
+                &= C_1 + C_2x + C_3e^{2x} \\[-0.6em]
+        \end{align*}
+    \item Finde $y_p$ und Ableitungen mit Ansätze (beide sind Spezialfälle):
+        \vspace{-1em}
+        \begin{align*}
+            y_p &= C_1 x e^{2x} + C_2 x^2 \\[-0.4em]
+            y_p' &= C_1 e^{2x} + 2 C_1 x e^{2x} + C_2 x^2 \\[-0.4em]
+            y_p'' &= 4C_1e^{2x} + 4C_1 x e^{2x} + 2C_2 \\[-0.4em]
+            y_p''' &= 12 C_1 e^{2x} + 8C_1 x e^{2x}
+        \end{align*}
+    \item Substitution in der DG um $C_1, C_2$ zu bestimmen:
+        \begin{align*}
+            y_p''' - 2y_p'' &= 4e^{2x} + 12 \\[-0.3em]
+            12C_1 e^{2x} + 8C_1xe^{2x} - 8C_1e^{2x} - 8C_1xe^{2x} - 4C_2 &= 4e^{2x} + 12 \\[-0.6em]
+            4C_1 e^{2x} - 4C_2 &= 4e^{2x} + 12 \\[-0.6em]
+            \implies C_1 = 1, C_2 = -3 \hspace{60pt}& \\[-0.6em]
+            \implies y_p = x e^{2x} - 3 x^2 \hspace{61pt}&
+        \end{align*}
+    \item Allgemeine Lösung $y = y_h + y_p = C_1 + C_2x + C_3e^{2x} + x e^{2x} - 3 x^2$
+\end{enumerate}
 
 \subsection{Integration}
 
@@ -64,4 +125,15 @@
         &= \int \frac{1}{(t + \frac{1}{2})^2 + \frac{3}{4} dt} \\[-0.4em]
         &= \frac{2}{\sqrt{3}} \arctan(\frac{t + \frac{1}{2}}{\frac{2}{\sqrt{2}}}) + C \\[-0.4em]
         &= \frac{2}{\sqrt{3}} \arctan(\frac{\tan(\frac{x}{2}) + \frac{1}{2}}{\frac{2}{\sqrt{2}}}) + C
+\end{align*}
+
+\subsection{Misc}
+
+\Bsp \key{Polynomdivision}: $p(x) = s(x) \cdot q(x) + r(x)$
+\begin{align*}
+    &\overbrace{7x^4 \hspace{7pt} + 3x^2 - 6x + 1}^{p(x)} : \overbrace{4x^2 + 3}^{q(x)} = \overbrace{\frac{7}{4}x^2 - \frac{9}{16}}^{s(x)} \\[-0.6em]
+    &\hspace{-9pt}-7x^4 - \frac{21}{4}x^2 \\
+    &\hspace{19pt} -\frac{9}{4}x^2 - 6x + 1 \\[-0.3em]
+    &\hspace{19pt} +\frac{9}{4}x^2 \hspace{19.5pt} + \frac{27}{16} \\[-0.2em]
+    &\hspace{44pt} \left. -6x \hspace{2.5pt} + \frac{43}{16} \right\} r(x)
 \end{align*}
