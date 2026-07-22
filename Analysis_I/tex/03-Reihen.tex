@@ -49,7 +49,7 @@ $\sum_{n=0}^{2m+1} (-1)^n a_n\le \sum_{n=0}^{\infty} (-1)^n a_n\le \sum_{n=0}^{2
 
 \Satz \key{Veralgemeinerte Dreiecksungleichung}: $\left|\sum\limits_{n=0}^{\infty} a_n \right|\le \sum\limits_{n=0}^{\infty}|a_n|$
 
-\Satz \key{Wurzel-Kriterium}: $\rho = \limsup\limits_{n\to\infty} \sqrt[n]{n} \in \RR \cup \{\infty\}$
+\Satz \key{Wurzel-Kriterium}: $\rho = \limsup\limits_{n\to\infty} \sqrt[n]{a_n} \in \RR \cup \{\infty\}$
 \vspace{-0.6em}
 \begin{itemize}
     \item $\rho < 1 \implies \sum_{n=0}^{\infty} a_n$ konvergiert absolut
@@ -80,10 +80,18 @@ Potenzreihe \key{konvergiert} für Argument $x$
     \item Intervall $(a-R, a+R)$ heisst \key{Konvergenzintervall}
     \item $\rho = \limsup\limits_{n\to\infty} |c_n|^\frac{1}{n}$. \vspace{-2em}
         \begin{equation*}R = \begin{cases}
-            0\text{, falls} \rho = \infty \\
-            \rho^{-1}\text{, falls} 0 < \rho < \infty \\
-            \infty\text{, falls} \rho = 0
+            0\text{, falls } \rho = \infty \\
+            \rho^{-1}\text{, falls } 0 < \rho < \infty \\
+            \infty\text{, falls } \rho = 0
         \end{cases}\end{equation*}
 \end{itemize}
+
+\Satz $\star$ $(a_n)_{n\in\NN_0}$ Folge komplexer Zahlen und
+$$R = \begin{cases} \frac{1}{\limsup \limits_{n\to\infty}|a_n|^{\frac{1}{n}}} \hspace{10pt}\text{falls } \limsup\limits_{n\to\infty} |a_n|^{\frac{1}{n}} > 0 \\ +\infty \hspace{43pt}\text{sonst}\end{cases}$$
+Dann konv. $\sum^\infty_{n=0} a_nz^n$ absolut für $|z| < R$ und diverg. für $|z| > R$
+
+\Satz $\star$ $(a_n)_{n\in\NN_0}$ Folge komplexer Zahlen bei der 0 nicht unendlich oft auftritt und
+$$R = \lim_{n\to\infty} \left|\frac{a_n}{a_{n+1}}\right|$$
+Falls $R$ existiert konv. $\sum^\infty_{n=0} a_nz^n$ absolut für $|z| < R$ und diverg. für $|z| > R$
 
 \Satz $\star$ $\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}$
