@@ -28,6 +28,17 @@
     y &= \pm \sqrt{C_4 (e^x + 1)^2 + 1}
 \end{align*}
 
+\begin{minipage}{\linewidth}
+\Bsp \key{Substitution}: Lösung von $y' = y + x$
+\begin{enumerate}
+    \item Substitution $u = x + y$, also $u' = y' + 1$ (d.h. $y' = u' - 1$)
+    \item Setze in der DG ein: $u' - 1 = u \implies u' = u + 1$
+    \item Löse durch Trennung der Variablen: $u = Ce^x - 1$
+    \item Setze $u = x + y$ ein: $x + y = Ce^x - 1 \implies y = Ce^x - x - 1$
+\end{enumerate}
+\end{minipage}
+
+\begin{minipage}{\linewidth}
 \Bsp \key{Variation der Konstanten}: Lösung von $y' - 2y = e^{3x}$
 \begin{enumerate}
     \item Löse $y_h' - 2y_h = 0$:
@@ -49,6 +60,7 @@
         \end{align*}
     \item Berechne $y = C(x) \cdot e^{2x} = (e^x + C) \cdot e^{2x} = e^{3x} + Ce^{2x}$
 \end{enumerate}
+\end{minipage}
 
 \Bsp \key{Ansätze für die partikuläre Lösung}: Lösung von $y''' - 2y'' = 4e^{2x} + 12$
 \begin{enumerate}
