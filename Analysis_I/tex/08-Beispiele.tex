@@ -42,7 +42,7 @@
         \vspace{-0.6em}
         \begin{align*}
             y' - 2y &= e^{3x} \\[-0.6em]
-            C'(x) \cdot e^{2x} + 2 C(x) \cdot e^{2x} - 2C(x) \cdot e^{2x} &= e^3x \\[-0.6em]
+            C'(x) \cdot e^{2x} + 2 C(x) \cdot e^{2x} - 2C(x) \cdot e^{2x} &= e^{3x} \\[-0.6em]
             C'(x) \cdot e^{2x} &= e^{3x} \\[-0.6em]
             C'(x) &= e^x \\[-0.6em]
             C(x) &= e^x + C \\[-0.6em]
@@ -52,7 +52,7 @@
 
 \Bsp \key{Ansätze für die partikuläre Lösung}: Lösung von $y''' - 2y'' = 4e^{2x} + 12$
 \begin{enumerate}
-    \item Löse $y_h''' - 2y_h'' = 0$ (char. Polynom $\lambda^2(\lambda - 2)$)
+    \item Löse $y_h''' - 2y_h'' = 0$ (char. Polynom $\lambda^3 - 2\lambda^2 = \lambda^2(\lambda - 2)$)
         \vspace{-0.4em}
         \begin{align*}
             y_h &= \sum_{i = 1}^{2} (\sum_{p=0}^{m_i - 1} C_{ip} x^p e^{\lambda_i x}) \\[-0.6em]
@@ -64,7 +64,7 @@
         \vspace{-1em}
         \begin{align*}
             y_p &= C_1 x e^{2x} + C_2 x^2 \\[-0.4em]
-            y_p' &= C_1 e^{2x} + 2 C_1 x e^{2x} + C_2 x^2 \\[-0.4em]
+            y_p' &= C_1 e^{2x} + 2 C_1 x e^{2x} + 2C_2 x \\[-0.4em]
             y_p'' &= 4C_1e^{2x} + 4C_1 x e^{2x} + 2C_2 \\[-0.4em]
             y_p''' &= 12 C_1 e^{2x} + 8C_1 x e^{2x}
         \end{align*}
@@ -77,6 +77,19 @@
             \implies y_p = x e^{2x} - 3 x^2 \hspace{61pt}&
         \end{align*}
     \item Allgemeine Lösung $y = y_h + y_p = C_1 + C_2x + C_3e^{2x} + x e^{2x} - 3 x^2$
+\end{enumerate}
+
+\Bsp \key{Anfangswertproblem}: Lösung von $y'' - 6y' + 25y = 0$ gegeben $y(0) = 0$ und $y'(0) = 1$
+\begin{enumerate}
+    \item Löse DG (char. Polynom $\lambda^2 - 6\lambda + 25$ hat Lösungen $\lambda_{1, 2} = 3 \pm 4i$)
+    \begin{align*}
+        y &= \sum_{j=1}^{s} \left(\sum_{q=0}^{m_j-1}(A_{jq} x^q e^{a_j x} \sin(b_j x) + B_{jq} x^q e^{a_j x} \cos(b_j x))\right) \\
+          &= e^{3x} (A \sin(4 x) + B  \cos(4 x))
+    \end{align*}
+    \item Berechne $y'(x)$: $y'(x) = e^{3x} ((3A - 4B) \sin(4x) + (4A + 3B) \cos(4x))$
+    \item Berechne $y(0) = B$ und $y'(0) = 4A$
+    \item Setze $y(0) = 0$ und $y'(0) = 1$ und Löse das System: $B = 0$, $A = \frac{1}{4}$,
+     also  $y(x) = \frac{1}{4}e^{3x} \sin(4 x)$
 \end{enumerate}
 
 \subsection{Integration}
@@ -92,6 +105,8 @@
     \implies \int e^{2x} \cdot \cos(x) dx &= \frac{1}{5}e^{2x}(\sin x + \cos x) + C
 \end{align*}
 
+
+\begin{minipage}{\linewidth}
 \Bsp \key{Partielle Integration + Subtitution}: Lösung von $\displaystyle \int \arcsin(x) dx$
 \vspace{-0.6em}
 \begin{align*}
@@ -100,10 +115,12 @@
     \longrightarrow y = 1 - x^2 \implies& \frac{dy}{dx} = -2x \implies \frac{-1}{2} \, dy = x \, dx \\[-0.1em]
     \implies \int x \cdot \frac{1}{\sqrt{1-x^2}} dx &= \int \frac{-1}{2} \cdot \frac{1}{\sqrt{y}} dy \\[-0.1em]
                        &= -\frac{1}{2} \cdot \int y^{-\frac{1}{2}} dy \\[-0.3em]
-                       &= -\frac{1}{2} (2y^{\frac{1}{2}} + C \\[-0.3em]
+                       &= -\frac{1}{2} (2y^{\frac{1}{2}} + C) \\[-0.3em]
                        &= -\sqrt{y} + C = -\sqrt{1-x^2} + C \\
-    \implies \int \arcsin(x) dx &= x \cdot \arcsin(x) + \sqrt{1 - x^2} + C
+    \implies \int \arcsin(x) dx &= x \cdot \arcsin(x) - (-\sqrt{1 - x^2} + C) \\[-0.8em]
+                                &= x \cdot \arcsin(x) + \sqrt{1 - x^2} + C
 \end{align*}
+\end{minipage}
 
 \Bsp \key{Partialbruchzerlegung}: Lösung von $\displaystyle \int \frac{x^2 + 2x - 1}{x^3 - x} dx$
 \vspace{-0.6em}
@@ -117,7 +134,7 @@
     \item $\displaystyle \int \frac{1}{x} + \frac{-1}{x+1} + \frac{1}{x-1} dx = \ln(|x|) - \ln(|x+1|) + \ln(|x-1|) + C$
 \end{enumerate}
 
-\Bsp \key{Weirstrass-Substitution}: Lösung von $\displaystyle \int \frac{1}{2 + \sin x} dx$:
+\Bsp \key{Weierstrass-Substitution}: Lösung von $\displaystyle \int \frac{1}{2 + \sin x} dx$:
 \begin{align*}
     t = \tan(\frac{x}{2}), \hspace{10pt} \sin x &= \frac{2t}{1 + t^2}, \hspace{10pt} dx = \frac{2}{1 + t^2} dt \\[-0.1em]
     \implies \int \frac{1}{2 + \sin x} dx &= \int \frac{1}{2 + \frac{2t}{1 + t^2}} \cdot \frac{2}{1 + t^2} dt \\[-0.1em]

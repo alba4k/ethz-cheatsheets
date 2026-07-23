@@ -1,0 +1,60 @@
+\section{10. Tabellen \texorpdfstring{$\star$}{*}}
+
+\begin{minipage}{\linewidth}
+\Tab Ableitungen und Stammfunktionen
+
+\begin{tabular}{l c r}
+    $f(x)$ & $f'(x)$ & $\int f(x) \, dx (+ C)$ \\
+    \hline
+    $x^n \ (n \neq -1)$ & $n x^{n-1}$ & $\frac{x^{n+1}}{n+1}$ \\[1ex]
+    $\frac{1}{x}$ & $-\frac{1}{x^2}$ & $\ln|x|$ \\[1ex]
+    $e^x$ & $e^x$ & $e^x$ \\[1ex]
+    $a^x$ & $a^x \ln a$ & $\frac{a^x}{\ln a}$ \\[1ex]
+    $\ln x$ & $\frac{1}{x}$ & $x \ln x - x$ \\[0.5ex]
+    \hline
+    $\sin x$ & $\cos x$ & $-\cos x$ \\[1ex]
+    $\cos x$ & $-\sin x$ & $\sin x$ \\[1ex]
+    $\tan x$ & $\sec^2 x$ & $-\ln|\cos x|$ \\[1ex]
+    $\sec x$ & $\sec x \tan x$ & $\ln|\sec x + \tan x|$ \\[1ex]
+    $\csc x$ & $-\csc x \cot x$ & $-\ln|\csc x + \cot x|$ \\[1ex]
+    $\cot x$ & $-\csc^2 x$ & $\ln|\sin x|$ \\
+    \hline
+    $\arcsin x$ & $\frac{1}{\sqrt{1-x^2}}$ & $x \arcsin x + \sqrt{1-x^2}$ \\[1ex]
+    $\arccos x$ & $-\frac{1}{\sqrt{1-x^2}}$ & $x \arccos x - \sqrt{1-x^2}$ \\[1ex]
+    $\arctan x$ & $\frac{1}{1+x^2}$ & $x \arctan x - \frac{1}{2}\ln(1+x^2)$ \\[0.5ex]
+    \hline
+    $\sinh x$ & $\cosh x$ & $\cosh x$ \\[1ex]
+    $\cosh x$ & $\sinh x$ & $\sinh x$ \\[1ex]
+    $\tanh x$ & $\operatorname{sech}^2 x$ & $\ln(\cosh x)$ \\
+\end{tabular}
+\end{minipage}
+
+\begin{minipage}{\linewidth}
+\Tab Wichtige Grenzwerte
+
+\begin{tabular}{l c r}
+    $\lim f(x)$ & Grenzwert $L$ & Bedingung \\
+    \hline
+    $\lim\limits_{n\to\infty} \frac{\ln n}{n}$ & $0$ & \\[1ex]
+    $\lim\limits_{n\to\infty} \sqrt[n]{n}$ & $1$ & \\[1ex]
+    $\lim\limits_{n\to\infty} \sqrt[n]{x}$ & $1$ & $x > 0$ \\[1ex]
+    $\lim\limits_{n\to\infty} \left(1 + \frac{x}{n}\right)^n$ & $e^x$ & $x \in \mathbb{R}$ \\[1ex]
+    $\lim\limits_{n\to\infty} \frac{x^n}{n!}$ & $0$ & $x \in \mathbb{R}$ \\[0.5ex]
+    \hline
+    $\lim\limits_{n\to\infty} x^n$ & $0$ & $|x| < 1$ \\[1ex]
+    $\lim\limits_{n\to\infty} \frac{n^k}{a^n}$ & $0$ & $a > 1, k \in \mathbb{R}$ \\[1ex]
+    $\lim\limits_{n\to\infty} \frac{a^n}{n!}$ & $0$ & $a > 0$ \\[1ex]
+    $\lim\limits_{n\to\infty} \frac{n!}{n^n}$ & $0$ & \\[1ex]
+    $\lim\limits_{n\to\infty} \sqrt[n]{a^n + b^n}$ & $\max(a, b)$ & $a, b \ge 0$ \\
+    \hline
+    $\lim\limits_{x\to 0} \frac{\sin x}{x}$ & $1$ & $x \neq 0$ \\[1ex]
+    $\lim\limits_{x\to 0} \frac{1 - \cos x}{x^2}$ & $\frac{1}{2}$ & $x \neq 0$ \\[1ex]
+    $\lim\limits_{x\to 0} \frac{e^x - 1}{x} = \lim\limits_{x\to 0} \frac{e^x}{x + 1}$ & $1$ & $x \neq 0$ \\[1ex]
+    $\lim\limits_{x\to 0} \frac{\ln(1 + x)}{x}$ & $1$ & $x > -1, x \neq 0$ \\[1ex]
+    $\lim\limits_{x\to 0} \frac{(1 + x)^k - 1}{x}$ & $k$ & $k \in \mathbb{R}, x \neq 0$ \\[0.5ex]
+    \hline
+    $\lim\limits_{x\to 0^+} x^x$ & $1$ & \\[1ex]
+    $\lim\limits_{x\to 0^+} x^a \ln x$ & $0$ & $a > 0$ \\[1ex]
+    $\lim\limits_{x\to\infty} \frac{(\ln x)^k}{x^a}$ & $0$ & $a > 0, k \in \mathbb{R}$
+\end{tabular}
+\end{minipage}

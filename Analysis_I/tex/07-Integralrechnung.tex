@@ -45,7 +45,7 @@ kann man $\displaystyle \int f(x) dx$ wie folgt Lösen:
     \item Für jeden Faktor von $q(x)$ addiert man entsprechende Terme im Ansatz $g(x)$:
     \begin{itemize}
         \item Einfache reelle Nullstelle $(x - x_1)$: $\frac{A}{x - x_1}$
-        \item Mehrfache relle Nullstelle $(x -x_1)^m$: $\frac{A_1}{x - x_1} + \cdots + \frac{A_m}{(x - x_1)^m}$
+        \item Mehrfache reelle Nullstelle $(x -x_1)^m$: $\frac{A_1}{x - x_1} + \cdots + \frac{A_m}{(x - x_1)^m}$
         \item quadratischer Faktor $(x^2 + ax + b)$ mit $a^2 - 4b < 0$: $\frac{Bx + C}{x^2 + ax + b}$:
     \end{itemize}
     \item Setze $\frac{r(x)}{q(x)} = g(x)$
@@ -61,8 +61,22 @@ kann man $\displaystyle \int f(x) dx$ wie folgt Lösen:
     \item $\displaystyle \int \frac{1}{(x + a)^2 + b^2} dx = \frac{1}{b} \arctan(\frac{x + a}{b}) + C$
 \end{itemize}
 
-\Satz $\star$ \key{Weirstrass-Substitution}: Nach der Substit. $t = \tan(\frac{x}{2})$ gilt:
+\Satz $\star$ \key{Weierstrass-Substitution}: Nach der Substit. $t = \tan(\frac{x}{2})$ gilt:
 $$\sin x = \frac{2t}{1 + t^2} \hspace{10pt} \cos x = \frac{1 - t^2}{1 + t^2} \hspace{10pt} dx = \frac{2}{1 + t^2} dt$$
+
+\begin{minipage}{\linewidth}
+\Satz Folgendes kann hilfreich sein:
+
+\begin{tabular}{l l l}
+    Integrand Form & Substitution & Identität \\
+    \hline
+    $\sqrt{a^2 - x^2}$ & $x = a \sin \theta$ & $1 - \sin^2 \theta = \cos^2 \theta$ \\
+    $\sqrt{a^2 + x^2}$ & $x = a \tan \theta$ & $1 + \tan^2 \theta = \sec^2 \theta$ \\
+    $\sqrt{x^2 - a^2}$ & $x = a \sec \theta$ & $\sec^2 \theta - 1 = \tan^2 \theta$ \\
+    $\tan^2 x$         &                     & $\sec^2 \theta - 1 = \tan^2 \theta$ \\
+    $\cot^2 x$         &                     & $\csc^2 \theta - 1 = \cot^2 \theta$
+\end{tabular}
+\end{minipage}
 
 \subsection{Bestimmtes Integral (Riemann-Integral)}
 
@@ -97,13 +111,13 @@ In diesem Fal wird der Wert das \key{Riemann-Integral von $f$} genannt:
 $$\int_a^b \hspace{-4pt}f(x) dx := \sup \mathcal L (f) = \inf \mathcal U (f)$$
 $a$ und $b$ sind \key{untere}/\key{obere Integrationsgrenze} und $f$ den \key{Integranden}
 
-\Satz \key{Eigenschaft des Riemann-Integral}: $f,g: [a,b] \to \RR$ (Riemann-) integrierbar,
+\Satz \key{Eigenschaften des Riemann-Integral}: $f,g: [a,b] \to \RR$ (Riemann-) integrierbar,
 $\alpha, \beta \in \RR$:
 \vspace{-0.6em}
 \begin{itemize}
     \item $\displaystyle \int_a^b \hspace{-4pt} (\alpha f + \beta g)(x) dx = \alpha \int_a^b \hspace{-4pt} f(x) dx + \beta \int_a^b \hspace{-4pt} g(x) dx$ (Linearität)
     \item $\displaystyle f \le g \implies \int_a^b \hspace{-4pt} f(x) dx \le \int_a^b \hspace{-4pt}g(x) dx$ (Monotonie)
-    \item $\displaystyle \left|\int_a^b \hspace{-4pt} f(x) dx\right| \le \int_a^b \hspace{-4pt} f(x) dx$ (Dreiecksungleichng)
+    \item $\displaystyle \left|\int_a^b \hspace{-4pt} f(x) dx\right| \le \int_a^b \hspace{-4pt} |f(x)| dx$ (Dreiecksungleichng)
     \item $\displaystyle \int_a^b \hspace{-4pt} f(x) dx = \int_{b}^{a} f(x) dx$ (Umkehrung der Integrationsrichtung)
     \item $\displaystyle a \le c \le b \implies \int_a^b \hspace{-4pt} f(x) dx = \int_a^c \hspace{-4pt} f(x) dx + \int_c^b \hspace{-4pt} f(x) dx$ (Aufteilung des Integrationsbereich)
 \end{itemize}
@@ -155,9 +169,9 @@ $g: J \to \RR$ stetig. Dann für alle $[a, b] \subset I$:
 $$\int_a^b \hspace{-4pt} g(f(x))f'(x) dx = \int_{f(a)}^{f(b)} \hspace{-4pt} g(y) dy$$
 
 \Satz \key{Substitution, Version 2}: $I, J \subset \RR$ Intervalle, $f: I \to J$ stetig diff.bar
-und $g: J \to \RR$ stetig. Für $[a, b] \subset I$ gilt $f'(f) \ne 0$ für alle $x \in [a, b]$
+und $g: J \to \RR$ stetig. Für $[a, b] \subset I$ gilt $f'(x) \ne 0$ für alle $x \in [a, b]$
 und $f^{-1}: [f(a), f(b)] \to \RR$ die Inverse von $f\Big|_{[a,b]}$. Dann gilt
-$$\int_a^b \hspace{-4pt} g(f(x)) dx = \int_{f(a}^{f(b)} \hspace{-4pt} g(y)(f^{-1})'(y)dy$$
+$$\int_a^b \hspace{-4pt} g(f(x)) dx = \int_{f(a)}^{f(b)} \hspace{-4pt} g(y)(f^{-1})'(y)dy$$
 
 \Satz $\star$ Für $p > 0$ gilt:
 $$\int_{0}^{1} \frac{1}{x^p} dx \text{ konvergiert} \iff p < 1$$

@@ -58,7 +58,7 @@ $g$ heisst \key{Inverse}/\key{Umkehrfunktion}, $f^{-1}$
 \vspace{-0.6em}
 \begin{itemize}
     \item \key{Ungerade}, falls $\forall x \in \RR : f(-x) = -f(x)$
-    \item \key{Ferade}, falls $\forall x \in \RR : f(-x) = f(x)$
+    \item \key{Gerade}, falls $\forall x \in \RR : f(-x) = f(x)$
 \end{itemize}
 
 \Def \key{Graph} der Funktion ist Menge alle Punkte der Form $(x, f(x))$
@@ -77,9 +77,9 @@ $L = \lim\limits_{\substack{x\le x_0 \\ x \to x_0}} f(x)$ ist \key{linksseitigen
 $$\forall \varepsilon > 0 \, \exists \delta > 0 : x \in \DD(f) \cap (x_0 - \delta, x_0] \implies |f(x) - L| < \varepsilon$$
 Man kann ähnlich $\lim\limits_{\substack{x > x_0 \\ x \to x_0}}$ und $\lim\limits_{\substack{x < x_0 \\ x \to x_0}}$
 definieren (mit $()$ anstatt $[]$)
-$f$ hat \key{für $x$ gegen $\infty$} den Grenzwer $L = \lim\limits_{x\to\infty}f(x)$, falls $\forall R > 0 : \DD(f) \cap (R, \infty) \ne \varnothing$ und
+$f$ hat \key{für $x$ gegen $\infty$} den Grenzwert $L = \lim\limits_{x\to\infty}f(x)$, falls $\forall R > 0 : \DD(f) \cap (R, \infty) \ne \varnothing$ und
 $$\forall \varepsilon > 0 \, \exists M > 0 : x \in \DD(f) \cap (M, \infty) \implies |f(x) - L| < \varepsilon$$
-$f$ hat \key{für $x$ gegen $-\infty$} den Grenzwer $L = \lim\limits_{x\to\infty}f(x)$, falls $\forall R > 0 : \DD(f) \cap (-\infty, -R) \ne \varnothing$ und
+$f$ hat \key{für $x$ gegen $-\infty$} den Grenzwert $L = \lim\limits_{x\to\infty}f(x)$, falls $\forall R > 0 : \DD(f) \cap (-\infty, -R) \ne \varnothing$ und
 $$\forall \varepsilon > 0 \, \exists M > 0 : x \in \DD(f) \cap (-\infty, -M) \implies |f(x) - L| < \varepsilon$$
 $f$ hat in $x_0$ den \key{uneigentlichen Grenzwert} $\lim\limits_{x \to x_0}f(x) = \infty$ falls
 $$\forall N > 0 \, \exists \delta > 0 : x \in \DD(f) \cap (x_0 - \delta, x_0 + \delta) \implies f(x) \ge N$$
@@ -139,11 +139,11 @@ Eigenschaft: \key{relative Zunahme konstant}: $\frac{z(t + s)}{z(t)} = \frac{z_0
     \item $\cos$ ist \key{gerade}, d.h. $\cos(-x) = \cos(x)$
 \end{itemize}
 
-\Def $f(t) = A \sin(B(t+h)) + C$ oder $f(t) = A\cos(B(t+h))+C$ sind \key{Sinusschwingungen}/\key{Sinuswellel} und:
+\Def $f(t) = A \sin(B(t+h)) + C$ oder $f(t) = A\cos(B(t+h))+C$ sind \key{Sinusschwingungen}/\key{Sinuswellen} und:
 \vspace{-0.6em}
 \begin{itemize}
     \item $|A|$ heisst \key{Amplitude}
-    \item $|B|^-1 \cdot 2\pi$ nennen wir \key{Periode}
+    \item $|B|^{-1} \cdot 2\pi$ nennen wir \key{Periode}
     \item $|h|$ ist die \key{Phasenverschiebung}
     \item $|C|$ wird \key{Mittelwert} genannt
 \end{itemize}
@@ -163,7 +163,7 @@ $f$ \key{stetig} falls $\forall x_0 \in \DD$ stetig
 
 \Def $f: \DD(f) \to \RR$, $x_0 \in \DD(f)$ ist \key{rechtsstetig} falls
 $\lim\limits_{\substack{x\ge x_0 \\ x \to x_0}} f(x) = f(x_0)$.
-\key{Linkstetigkeit} ist analog definiert
+\key{Linksstetigkeit} ist analog definiert
 
 \Satz $f: \DD(f) \to \RR$, $x_0 \in \DD(F)$. $f$ an Stelle $x_0$ stetig $\iff$
 für jede Folge $(x_n)_{n\in\NN_0}$ mit $x_n \to x_0$ konvergiert $(f(x_n))_{n\in\NN_0}$ gegen $f(x_0)$
@@ -177,7 +177,7 @@ für jede Folge $(x_n)_{n\in\NN_0}$ mit $x_n \to x_0$ konvergiert $(f(x_n))_{n\i
     \item $f \cdot g$ ist stetig
     \item $\frac{f}{g}$ ist stetig, sofern $g \ne 0$
     \item Falls $f: I \subset \RR \to image(f)$, $g: image(f) \to image(g)$ ist
-    $f \circ g$ stetig und $\lim\limits_{x\to x_0} g(f(x)) = g(\lim\limits_{f\to c}f(x_0))$
+    $f \circ g$ stetig und $\lim\limits_{x\to x_0} g(f(x)) = g(\lim\limits_{x \to x_0}f(x_0))$
 \end{itemize}
 
 \Satz \key{Stetigkeit der Umkehrfunktion}: $I, J \subset \RR$ und $f: I \to J$ stetig und
@@ -199,7 +199,7 @@ Dann existiert eine Teilfolge $(x_{n_k})_{k\in\NN_0}$ mit $\lim\limits_{k\to\inf
 \begin{itemize}
     \item \key{lokales Maximum} falls $f(x_0) \ge f(x)$ für alle $x \in D$
     \item \key{lokales Minimum} falls $f(x_0) \le f(x)$ für alle $x \in D$
-    \item \key{lokales Extrema} falls lokales Minimum oder Maximum
+    \item \key{lokales Extremum} falls lokales Minimum oder Maximum
 \end{itemize}
 
 \Satz: \key{Stetige Funktion auf kompaktem Intervall}: $f: I \subset \RR \to \RR$ stetig,

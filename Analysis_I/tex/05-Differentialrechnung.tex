@@ -31,7 +31,7 @@ Falls $f^{(n)}$ existiert, $f$ \key{$n$-fach differenzierbar}. Falls $f^{(n)}$ s
 $f$ \key{$n$-fach stetig differenzierbar}.
 
 \Def Menge aller $n$-fach stetig differenzierbarer Funktionen auf D ist $C^n(D)$ und
-$C^\infty(D) = := \cap_{n=0}^\infty C^n(D)$ sind die \key{glatte Funktionen}
+$C^\infty(D) := \cap_{n=0}^\infty C^n(D)$ sind die \key{glatte Funktionen}
 
 \subsection{Regeln und Sätze}
 
@@ -66,15 +66,15 @@ $\frac{f}{g}$ in $x_0$ diff.bar und $\left(\frac{f}{g}\right)'(x_0) = \frac{f'(x
 $f^{-1}: E \to D$, $x_0 \in D$ Häufungspunkt von $D \backslash \{x_0\}$.
 Dann $f^{-1}$ an Stelle $y_0 = f(x_0)$ diff.bar: $\left(f^{-1}\right)'(y_0) = \frac{1}{f'(x_0)}$
 
-\Satz \key{Lokale Extermalstellen und erste Ableitung}: $f: D \subset \RR \to \RR$ an lokalen Extermalstelle
+\Satz \key{Lokale Extremalstellen und erste Ableitung}: $f: D \subset \RR \to \RR$ an lokalen Extremalstelle
 $x_0 \in D$ diff.bar, $x_0$ Häufungspunkt von $D \cap (x_0, \infty)$ und $D \cap (-\infty, x_0)$.
 Dann gilt $f'(x_0) = 0$
 
-\Satz \key{Lokale Extermalstellen auf Intervall}: $I \subset \RR$ Intervall, $f: I \to \RR$,
-$x_0$ lokale Extermalstelle von $f$. Dann mindestens eine der Folgenden zutreffend:
+\Satz \key{Lokale Extremalstellen auf Intervall}: $I \subset \RR$ Intervall, $f: I \to \RR$,
+$x_0$ lokale Extremalstelle von $f$. Dann mindestens eine der Folgenden zutreffend:
 \vspace{-0.6em}
 \begin{itemize}
-    \item $x_0 \in I$ ist Endpunkt der Intervalls $I$
+    \item $x_0 \in I$ ist Endpunkt des Intervalls $I$
     \item $f$ an der Stelle $x_0$ nicht differenzierbar
     \item $f$ an der Stelle $x_0$ differenzierbar und $f'(x_0) = 0$
 \end{itemize}
@@ -85,7 +85,7 @@ Falls $f(a) = f(b)$, dann existiert $\xi \in (a, b)$ mit $f'(\xi) = 0$
 \Satz \key{Mittelwertsatz}: $a < b$, $f: [a, b] \to \RR$ auf $[a, b]$ stetig und auf $(a, b)$ diff.bar.
 Es gibt ein $\xi \in (a, b)$ mit $f'(\xi) = \frac{f(b) - f(a)}{b - a}$
 
-\Satz \key{Regen von Bernoulli-l'Hôpital}: $a < b$, $f, g: (a, b) \to \RR$, $g, g' \ne 0$, $R > 0$, $h, i: (R, \infty) \to \RR$
+\Satz \key{Regel von Bernoulli-l'Hôpital}: $a < b$, $f, g: (a, b) \to \RR$, $g, g' \ne 0$, $R > 0$, $h, i: (R, \infty) \to \RR$
 \begin{itemize}
     \item $\lim\limits_{\substack{x > a \\ x \to a}} f(x) = \lim\limits_{\substack{x > a \\ x \to a}} g(x) = 0$ oder 
     $\lim\limits_{\substack{x > a \\ x \to a}} |f(x)| = \lim\limits_{\substack{x > a \\ x \to a}} |g(x)| = \infty$
@@ -97,7 +97,7 @@ Es gibt ein $\xi \in (a, b)$ mit $f'(\xi) = \frac{f(b) - f(a)}{b - a}$
     dann gilt $\lim\limits_{x\to\infty} \frac{f(x)}{g(x)} = L$
 \end{itemize}
 
-\subsection{Monotonie, Kovexität und Konkavität}
+\subsection{Monotonie, Konvexität und Konkavität}
 
 \Satz $I \subset \RR$ Intervall, $f: I \to \RR$ diff.bar.
 $f$ wachsend $\iff$ $f' \ge 0$
@@ -131,9 +131,11 @@ $x \in I$ gegen $f(x)$ konvergiert ($\lim\limits_{n\to\infty} R_n(x) = 0$)
 \Satz \key{Wichtige Maclaurin-Reihen}: Es gilt:
 \vspace{-0.6em}
 \begin{itemize}
-    \item $e^x = \sum_{k=0}^{\infty} \frac{x^{k}}{k!} = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \cdots$
-    \item $\cos x = \sum_{k=0}^{\infty} (-1)^k \frac{x^{2k}}{(2k)!} = 1 + \frac{x^2}{2} + \frac{x^4}{24} - \cdots$
-    \item $\sin x = \sum_{k=0}^{\infty} (-1)^k \frac{x^{2k + 1}}{(2k+1)!} = x + \frac{x^3}{6} + \frac{x^5}{120} - \cdots$
-    \item $\ln (1 + x) = \sum_{k=1}^{\infty} (-1)^{k-1} \frac{x^k}{k} = x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots$ für $|x| < 1$
-    \item $\arctan(x) = \sum_{k=0}^{\infty} (-1)^k \frac{x^{2k+1}}{2k+1} = x - \frac{x^3}{3} + \frac{x^5}{5} - \cdots$ für $|x| \le 1$
+    \item $e^x = \sum_{k=0}^\infty \frac{x^{k}}{k!} = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \cdots$
+    \item $\cos x = \sum_{k=0}^\infty (-1)^k \frac{x^{2k}}{(2k)!} = 1 + \frac{x^2}{2} + \frac{x^4}{24} - \cdots$
+    \item $\sin x = \sum_{k=0}^\infty (-1)^k \frac{x^{2k + 1}}{(2k+1)!} = x + \frac{x^3}{6} + \frac{x^5}{120} - \cdots$
+    \item $\ln (1 + x) = \sum_{k=1}^\infty (-1)^{k-1} \frac{x^k}{k} = x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots$ für $|x| < 1$
+    \item $\arctan(x) = \sum_{k=0}^\infty (-1)^k \frac{x^{2k+1}}{2k+1} = x - \frac{x^3}{3} + \frac{x^5}{5} - \cdots$ für $|x| \le 1$
+    \item $\frac{1}{1-x} = \sum_{k=0}^\infty x^k$ für $|x| < 1$
+    \item $(1 + x)^n = \sum_{k=0}^\infty \begin{pmatrix}n \\ k\end{pmatrix} x^k = \sum_{k=0}^\infty \frac{n!}{k!(n-k)!}x^k$ für $|x| < 1$
 \end{itemize}

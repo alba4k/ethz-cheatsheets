@@ -1,7 +1,7 @@
 \section{2. Folgen}
 \Def \key{Folge} $(a_n)_{n \in \NN_0}$, $(a_n)_{n\ge 0}$ oder $(a_n)_{n=0}^\infty$. 
-Ausbildung $f : \NN_0 \to \RR$ (oder $f : \NN \to \RR$). \key{Bilder} $a(n) = a_n$
-sind \key{Gliede der Folge}
+Abbildung $f : \NN_0 \to \RR$ (oder $f : \NN \to \RR$). \key{Bilder} $a(n) = a_n$
+sind \key{Glieder der Folge}
 
 \Def Folge \key{direkt} beschreiben: $a_n = f(n)$;
 oder \key{rekursiv}: $a_n = g(a_{n-1}, a_{n-2}, \ldots)$.
@@ -59,6 +59,9 @@ $\lim\limits_{n\to\infty} b_n = L \in \RR$ und $C \in \RR$:
     \item $\forall x \in \RR : \lim\limits_{n\to\infty} \frac{x^n}{n!} = 0$
 \end{itemize}
 
+\Satz $\star$ Für grosse $x \in \RR$ resp. $n \in \NN$, $a, p \in \RR$, $a > 1$:
+$$\ln(\ln x) \ll \ln x \ll x^p \ll a^x \ll n! \ll n^n$$
+
 \Satz \key{Sandwich-Theorem}:
 Seien $(a_n)_{n\in\NN_0}$ und $(c_n)_{n\in\NN_0}$ mit gleichem Grenzwert $L$ und
 $(b_n)_{n\in\NN_0}$ mit $\forall n \in \NN_0 : a_n\le b_n\le c_n$. $\lim\limits_{n\to\infty} b_n = L$.
@@ -74,7 +77,7 @@ falls $\forall n,m \in \NN_0 : m > n \implies a_m\le a_n$ (resp. $\geq$).
 
 \Satz Jede konvergente Folge ist beschränkt
 
-\Satz Eigenschaften von monotone Folge
+\Satz Eigenschaften monotoner Folgen
 \vspace{-0.6em}
 \begin{itemize}
     \item Eine monotone Folge konvergiert $\iff$ sie ist beschränkt
@@ -82,8 +85,8 @@ falls $\forall n,m \in \NN_0 : m > n \implies a_m\le a_n$ (resp. $\geq$).
     \item Falls monoton fallend, gilt $\lim\limits_{n\to\infty}a_n = \inf\{a_n \, | \, n \in \NN_0\}$
 \end{itemize}
 
-\Def \key{Limes superior}: $\limsup\limits_{n\to\infty} a_n = \overline{\lim\limits_{n\to\infty}} a_n = \lim\limits_{n\to\infty} \sup\{a_k \, | \, k\ge n\}$
-\key{Limes inferior}: $\liminf\limits_{n\to\infty} a_n = \mathop{\underline{\lim}}\limits_{n \to \infty} a_n = \lim\limits_{n\to\infty} \inf\{a_k \, | \, k\ge n\}$
+\Def \key{Limes superior}: $\limsup\limits_{n\to\infty} a_n = \varlimsup\limits_{n\to\infty} a_n = \lim\limits_{n\to\infty} \sup\{a_k \, | \, k\ge n\}$
+\key{Limes inferior}: $\liminf\limits_{n\to\infty} a_n = \varliminf\limits_{n \to \infty} a_n = \lim\limits_{n\to\infty} \inf\{a_k \, | \, k\ge n\}$
 
 \Satz Es gelten die folgenden Tatsachen:
 \vspace{-0.6em}

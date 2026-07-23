@@ -1,4 +1,4 @@
-\section{1. Logik, Mengen, Zahlen}
+W\section{1. Logik, Mengen, Zahlen}
 \subsection{Logik}
 
 \Def Eine \key{math. Aussage} ist entweder wahr oder falsch
@@ -36,7 +36,7 @@ oder durch Eigenschaften charakterisiert.
 \begin{itemize}
     \item \key{Teilmenge} $X \subset Y$ oder $X \subseteq Y$: $\forall x \in X : x \in Y$
     \item \key{echte Teilmenge} $X \subsetneq Y$: $(X \subset Y) \, \land \, (X\ne Y)$
-    \item \key{Komplement} Falls gilt $X \subset Y$ ist $X^c := \{y \, | \, y \in Y \, \land \, y \notin X\}$
+    \item \key{Komplement} Falls $X \subset Y$ gilt, ist $X^c := \{y \, | \, y \in Y \, \land \, y \notin X\}$
 \end{itemize}
 
 \Def Mit Mengen folgende \key{Operationen}:
@@ -176,7 +176,7 @@ $b = Im(z)$ \key{Imaginärteil}, $i^2 = -1$ \key{imag.}/\key{komplexe Einheit}. 
 \Satz $\frac{z}{w} = \frac{z \cdot \overline{w}}{w \cdot \overline{w}} = \frac{z \cdot \overline{w}}{|w|^2}$
 und $\overline{\frac{z}{w}} = \frac{\overline{z}}{\overline{w}}$ für $z,w \in \CC$
 
-\Satz Eigenschaften der komlex konjugierten Zahl
+\Satz Eigenschaften der komplex konjugierten Zahl
 \vspace{-0.6em}
 \begin{itemize}
     \item $z \cdot \overline{z} = |z|^2$
@@ -200,12 +200,12 @@ $$e^{it} = \cos(t) + i\sin(t)$$
 
 \Def $\cosh(t) = \frac{e^x + e^{-x}}{2}$ und $\sinh(t) = \frac{e^x - e^{-x}}{2}$
 
-\Def \key{Polardarstellung}: $z = r \cdot e^{i\varphi}$ und $r = |z|$, $\varphi = arg(z) \in (-\pi, \pi]$
+\Def \key{Polardarstellung}: $z = r \cdot e^{i\varphi}$ und $r = |z|$, $\varphi = \arg(z) \in (-\pi, \pi]$
 
 \Satz \key{Wurzeln in $\CC$}: $z^n = re^{i\varphi}$: 
 $z_k = r^{\frac{1}{n}}e^{i\frac{\varphi + 2k\pi}{n}}$ wobei $0\le k < n$
 
-\Satz \key{Fundamentalsatz der Algebra}: $p(z) = \sum_{k=0}^{n} a_k x^k$, $a_k \in \CC$
+\Satz \key{Fundamentalsatz der Algebra}: $p(z) = \sum_{k=0}^{n} a_k z^k$, $a_k \in \CC$
 kann als $p(z) = a_n\prod_{k=1}^{n}(z-z_k)$ geschrieben werden, wobei $z_k$ die Nullstellen
 von $p(z)$ (mit Vielfachheit) sind
 
