@@ -1,0 +1,116 @@
+\section{3. Reihen}
+
+\Def $\sum_{i=0}^{\infty} a_i$ heisst \key{Reihe},
+$a_n$ \key{Glieder}/\key{Elemente}/\key{Summanden}
+
+\Def Falls Folge der \key{Teilsummen}/\key{Partialsummen}
+$s_n = \sum_{k=0}^{n} a_k$ gegen Grenzwert $L < \infty$ konvergiert,
+Reihe \key{konvergiert}, $\lim\limits_{n\to\infty} s_n = \sum_{k=0}^{\infty} a_k = L$,
+sonst \key{divergent}. $L$ ist \key{Wert} der Reihe
+
+\Satz \key{Notwend. Kriterium für Konvergenz}: \key{Nullfolge}, $\lim\limits_{n\to\infty} a_n = 0$
+
+\Satz $\sum_{n=0}^{\infty} a_n$, $\sum_{n=0}^{\infty} b_n$ konvergent, $C \in \RR$
+\vspace{-0.6em}
+\begin{itemize}
+    \item $\sum_{n=0}^{\infty} (a_n + b_n) = \sum_{n=0}^{\infty} a_n + \sum_{n=0}^{\infty} b_n$
+    \item $\sum_{n=0}^{\infty} C \cdot a_n = C \cdot \sum_{n=0}^{\infty} a_n$
+\end{itemize}
+
+\Satz Für $N \in \NN_0$, $\sum_{n=N}^{\infty} a_n$ konvergent $\iff$ $\sum_{n=0}^{\infty} a_n$ konvergent.
+In diesem Fall gilt $\sum_{n=0}^{\infty} a_n = \sum_{n=0}^{N-1} a_n + \sum_{n=N}^{\infty} a_n$
+
+\Satz Für $a_n\ge 0$ ist $s_n$ wachsend; Reihe konvergiert $\iff$ $s_n$ beschr.
+
+\Satz $\star$ \key{Summenformel für geom. Reihe} $a_n = a \cdot q^n$, $q \ne 1$, $N \in \NN_0$:
+\vspace{-0.6em}
+\begin{itemize}
+    \item $\sum_{n=0}^{N} a_n = a \cdot \dfrac{1 - q^{N+1}}{1 - q}$
+\end{itemize}
+
+\Satz $\star$ \key{Geometrische Reihe} für $a_n = a \cdot q^n$: Für $|q| < 1$ konvergiert die Reihe und es gilt
+\vspace{-0.6em}
+\begin{itemize}
+    \item $\sum_{n=0}^{\infty} a_n = \dfrac{a}{1 - q}$
+\end{itemize}
+Für $|q| \ge 1$ (und $a \ne 0$) divergiert die Reihe.
+
+\Satz $\star$ \key{Summenformel für arithm. Reihe} für $a_n = a \cdot n + b$, $N \in \NN_0$:
+\vspace{-0.6em}
+\begin{itemize}
+    \item $\sum_{n=0}^{N} a_n = a \cdot \dfrac{N(N+1)}{2} + b \cdot (N+1)$
+\end{itemize}
+
+\Satz \key{Vergleichskriterium}: Reihen $a_n, b_n, c_n\ge 0$,
+$\exists N \in \NN \, \forall n\ge N : c_n\le b_n\le a_n$. Dann gilt:
+\vspace{-0.6em}
+\begin{itemize}
+    \item $\sum_{n=0}^{\infty} a_n$ konver. $\implies$ $\sum_{n=0}^{\infty} b_n$ konver. (\key{Majorantenkriterium})
+    \item $\sum_{n=0}^{\infty} c_n$ diverg. $\implies$ $\sum_{n=0}^{\infty} b_n$ diverg. (\key{Minorantenkriterium})
+\end{itemize}
+
+\Def $\sum_{n=0}^{\infty} a_n$ \key{absolut konvergent} falls $\sum_{n=0}^{\infty} |a_n|$ konvergent.
+Falls konvergent aber \textbf{nicht} absolut konvergent, \key{Bedingt konvergent}
+
+\Satz \key{Riemannscher Umordnungssatz}: Bedingt konvergent und beliebiges $L \in \RR$:
+$\exists \, \varphi: \NN_0 \to \NN_0$ bijektiv mit $\sum_{n=0}^{\infty} a_{\varphi(n)} = L$
+
+\Satz \key{Umordnungssatz für absolut konv. Reihen} Absolut konv., $\varphi: \NN_0 \to \NN_0$ bijektiv.
+$\sum_{n=0}^{\infty} a_{\varphi(n)} = \sum_{n=0}^{\infty} a_n$ konvergiert auch absolut
+
+\Satz \key{Leibniz Kriterium}: monoton fallende Nullfolge, $a_n \ge 0$.
+Die \key{alternierende Reihe} $\sum_{n=0}^{\infty} (-1)^n a_n$ konvergiert und es gilt:
+$\sum_{n=0}^{2m+1} (-1)^n a_n\le \sum_{n=0}^{\infty} (-1)^n a_n\le \sum_{n=0}^{2m} (-1)^n a_n$ für alle $m \in \NN_0$
+
+\Satz \key{Cauchy Kriterium}: Reihe konvergiert $\iff$ für alle $\varepsilon > 0$ existiert ein $N \in \NN_0$ so dass für $n\ge m\ge N$ gilt $|\sum_{k = m+1}^{n} a_k|\le \varepsilon$
+
+\Satz Jede absolut konvergente Reihe konvergiert
+
+\Satz \key{Verallgemeinerte Dreiecksungleichung}: $\left|\sum\limits_{n=0}^{\infty} a_n \right|\le \sum\limits_{n=0}^{\infty}|a_n|$
+
+\Satz \key{Wurzel-Kriterium}: $\rho = \limsup\limits_{n\to\infty} \sqrt[n]{a_n} \in \RR \cup \{\infty\}$
+\vspace{-0.6em}
+\begin{itemize}
+    \item $\rho < 1 \implies \sum_{n=0}^{\infty} a_n$ konvergiert absolut
+    \item $\rho > 1 \implies \sum_{n=0}^{\infty} a_n$ divergiert
+\end{itemize}
+
+\Satz \key{Quotient-Kriterium}: $a_n\ne 0$, $\rho = \lim\limits_{n\to\infty} \frac{|a_{n+1}|}{|a_n|}$
+\vspace{-0.6em}
+\begin{itemize}
+    \item $\rho < 1 \implies \sum_{n=0}^{\infty} a_n$ konvergiert absolut
+    \item $\rho > 1 \implies \sum_{n=0}^{\infty} a_n$ divergiert
+\end{itemize}
+
+\Satz \key{Cauchy-Produkt}: $a_n, b_n$ absolut konvergent, dann gilt:
+$(\sum_{n=0}^{\infty} a_n)(\sum_{n=0}^{\infty} b_n) = \sum_{n=0}^{\infty} (\sum_{k=0}^{n} a_{n-k} b_k)$,
+rechts absol. konverg.
+
+\Def Reihe der Form $\sum_{k=0}^{\infty} c_k(x-a)^k$ heisst \key{Potenzreihe},
+$a$ heisst \key{Entwicklungspunkt}, $c_0, c_1, \ldots$ heissen \key{Koeffizienten}, $x$ heisst \key{Argument}
+
+\Def Falls, für festes $x$, $s_n(x) = \sum_{k=0}^{n} c_k (x-a)^k$ konvergiert,
+Potenzreihe \key{konvergiert} für Argument $x$
+
+\Satz
+\vspace{-0.6em}
+\begin{itemize}
+    \item Jede Potenzreihe hat \key{Konvergenzradius} $R$. Reihe konvergiert für $|x-a| < R$, divergiert für $|x-a| > R$
+    \item Intervall $(a-R, a+R)$ heisst \key{Konvergenzintervall}
+    \item $\rho = \limsup\limits_{n\to\infty} |c_n|^\frac{1}{n}$. \vspace{-2em}
+        \begin{equation*}R = \begin{cases}
+            0\text{, falls } \rho = \infty \\
+            \rho^{-1}\text{, falls } 0 < \rho < \infty \\
+            \infty\text{, falls } \rho = 0
+        \end{cases}\end{equation*}
+\end{itemize}
+
+\Satz $\star$ $(a_n)_{n\in\NN_0}$ Folge komplexer Zahlen und
+$$R = \begin{cases} \frac{1}{\limsup \limits_{n\to\infty}|a_n|^{\frac{1}{n}}} \hspace{10pt}\text{falls } \limsup\limits_{n\to\infty} |a_n|^{\frac{1}{n}} > 0 \\ +\infty \hspace{43pt}\text{sonst}\end{cases}$$
+Dann konv. $\sum^\infty_{n=0} a_nz^n$ absolut für $|z| < R$ und diverg. für $|z| > R$
+
+\Satz $\star$ $(a_n)_{n\in\NN_0}$ Folge komplexer Zahlen bei der 0 nicht unendlich oft auftritt und
+$$R = \lim_{n\to\infty} \left|\frac{a_n}{a_{n+1}}\right|$$
+Falls $R$ existiert konv. $\sum^\infty_{n=0} a_nz^n$ absolut für $|z| < R$ und diverg. für $|z| > R$
+
+\Satz $\star$ $\sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}$

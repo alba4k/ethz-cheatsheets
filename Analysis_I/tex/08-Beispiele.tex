@@ -1,0 +1,274 @@
+\section{8. Beispiele \texorpdfstring{$\star$}{*}}
+
+\subsection{Grenzwerte}
+\Bsp \key{Trick mit Wurzeln}: Lösung von $\lim\limits_{n\to\infty} \sqrt{n^2 + 3n} - n$
+\begin{align*}
+    \lim\limits_{n\to\infty} \sqrt{n^2 + 3n} - n &=\lim\limits_{n\to\infty} (\sqrt{n^2 + 3n} - n) \cdot \frac{\sqrt{n^2 + 3n} + n}{\sqrt{n^2 + 3n} + n} \\[-0.6em]
+        &= \lim\limits_{n\to\infty} \frac{n^2 + 3n - n^2}{\sqrt{n^2 + 3n} + n} \\[-0.2em]
+        &= \lim\limits_{n\to\infty} \frac{3n}{\sqrt{n^2 + 3n} + n} \\[-.3em]
+        &= \lim\limits_{n\to\infty} \frac{3}{\sqrt{1 + \frac{3}{n}} + 1} \\[-.3em]
+        &= \frac{3}{\sqrt{1 + 0} + 1} = \frac{3}{2}
+\end{align*}
+
+\begin{minipage}{\linewidth}
+\Bsp \key{Kurvendiskussion}: Untersuchung von $f(x) = x^3 - 3x^2$
+\begin{enumerate}
+    \item \textbf{Definitionsbereich}: $f$ ist ein Polynom, also $D(f) = \mathbb{R}$.
+
+    \item \textbf{Symmetrie}: $f(-x) = -x^3 - 3x^2 \neq \pm f(x)$, also weder gerade noch ungerade.
+
+    \item \textbf{Nullstellen}: $f(x) = x^2(x - 3) = 0 \implies x_1 = 0$ (doppelt), $x_2 = 3$
+
+    \item \textbf{Verhalten im Unendlichen}:
+    $$\lim_{x\to\infty} f(x) = \infty, \qquad \lim_{x\to-\infty} f(x) = -\infty$$
+
+    \item \textbf{Erste Ableitung} (Monotonie, Extremstellen):
+    $$f'(x) = 3x^2 - 6x = 3x(x - 2)$$
+    Kritische Stellen: $f'(x) = 0 \implies x = 0$ oder $x = 2$. \\
+    Vorzeichentabelle von $f'$:
+    \begin{center}
+    \begin{tabular}{l|ccccc}
+        $x$ & $(-\infty, 0)$ & $0$ & $(0, 2)$ & $2$ & $(2, \infty)$ \\
+        \hline
+        $f'(x)$ & $+$ & $0$ & $-$ & $0$ & $+$ \\
+        $f$ & $\nearrow$ & & $\searrow$ & & $\nearrow$
+    \end{tabular}
+    \end{center}
+    Also lokales Maximum bei $x=0$, lokales Minimum bei $x=2$.
+
+    \item \textbf{Zweite Ableitung} (Konvexität, Wendepunkte):
+    $$f''(x) = 6x - 6 = 6(x - 1)$$
+    $f''(x) = 0 \implies x = 1$ (Kandidat für Wendepunkt). \\
+    Für $x < 1$: $f''(x) < 0$ (konkav); für $x > 1$: $f''(x) > 0$ (konvex). \\
+    Da Konkavität wechselt, ist $x = 1$ tatsächlich ein Wendepunkt.
+
+    \item \textbf{Klassifikation der Extremstellen} (via $f''$):
+    \begin{align*}
+        f''(0) &= -6 < 0 \implies x = 0 \text{ ist lokales Maximum} \\[-0.3em]
+        f''(2) &= 6 > 0 \implies x = 2 \text{ ist lokales Minimum}
+    \end{align*}
+
+    \item \textbf{Funktionswerte}:
+    \begin{align*}
+        f(0) &= 0 \quad \text{(lok. Max.)} \\[-0.3em]
+        f(2) &= 8 - 12 = -4 \quad \text{(lok. Min.)} \\[-0.3em]
+        f(1) &= 1 - 3 = -2 \quad \text{(Wendepunkt } (1, -2))
+    \end{align*}
+
+    \item \textbf{Asymptoten}: Keine, da $f$ ein Polynom ist (kein rationaler Anteil).
+
+    \item \textbf{Zusammenfassung}: $f$ wächst auf $(-\infty, 0)$, fällt auf $(0, 2)$, wächst auf $(2, \infty)$;
+    lokales Max. bei $(0, 0)$, lokales Min. bei $(2, -4)$, Wendepunkt bei $(1, -2)$;
+    konkav auf $(-\infty, 1)$, konvex auf $(1, \infty)$.
+\end{enumerate}
+\end{minipage}
+
+\subsubsection{\texorpdfstring{$\varepsilon$}{e}-\texorpdfstring{$\delta$}{d}-Beweise}
+
+\Bsp \key{Linearer Grenzwert}: Beweis von $\lim\limits_{x\to 3} (4x - 5) = 7$
+\begin{enumerate}
+    \item Sei $\varepsilon > 0$ beliebig gegeben. Zu zeigen: Es existiert ein $\delta > 0$, sodass $0 < |x - 3| < \delta \implies |(4x - 5) - 7| < \varepsilon$.
+    \item Abschätzung: $|(4x - 5) - 7| = |4x - 12| = 4|x - 3| < \varepsilon \iff |x - 3| < \frac{\varepsilon}{4}$.
+    \item Wahl von $\delta := \frac{\varepsilon}{4}$.
+    \item Beweis: Für $0 < |x - 3| < \delta$ gilt:
+    \begin{align*}
+        |(4x - 5) - 7| &= |4x - 12| \\[-0.4em]
+                       &= 4|x - 3| < 4 \cdot \frac{\varepsilon}{4} = \varepsilon
+    \end{align*}
+\end{enumerate}
+
+\begin{minipage}{\linewidth}
+\Bsp \key{Quadratischer Grenzwert}: Beweis von $\lim\limits_{x\to 2} x^2 = 4$
+\begin{enumerate}
+    \item Sei $\varepsilon > 0$ gegeben. Zu zeigen: $0 < |x - 2| < \delta \implies |x^2 - 4| < \varepsilon$.
+    \item Umformung: $|x^2 - 4| = |x - 2||x + 2|$.
+    \item Schranke für $|x + 2|$: Annahme $\delta \le 1$. Aus $|x - 2| < 1$ folgt $1 < x < 3$, also $|x + 2| < 5$.
+    \item Damit gilt $|x^2 - 4| = |x - 2||x + 2| < 5|x - 2|$. Setze $5|x - 2| < \varepsilon \implies |x - 2| < \frac{\varepsilon}{5}$.
+    \item Wahl von $\delta := \min\left(1, \frac{\varepsilon}{5}\right)$. Dann gilt:
+    \begin{align*}
+        |x^2 - 4| &= |x - 2||x + 2| \\[-0.4em]
+                  &< 5 \cdot |x - 2| < 5 \cdot \frac{\varepsilon}{5} = \varepsilon
+    \end{align*}
+\end{enumerate}
+\end{minipage}
+
+\begin{minipage}{\linewidth}
+\Bsp \key{Gebrochen-rationale Funktion}: Beweis von $\lim\limits_{x\to 4} \frac{1}{x} = \frac{1}{4}$
+\begin{enumerate}
+    \item Sei $\varepsilon > 0$ gegeben. Zu zeigen: $0 < |x - 4| < \delta \implies \left|\frac{1}{x} - \frac{1}{4}\right| < \varepsilon$.
+    \item Umformung: $\left|\frac{1}{x} - \frac{1}{4}\right| = \left|\frac{4 - x}{4x}\right| = \frac{|x - 4|}{4|x|}$.
+    \item Schranke für $\frac{1}{|x|}$: Annahme $\delta \le 2$. Aus $|x - 4| < 2$ folgt $2 < x < 6$, also $|x| > 2 \implies \frac{1}{|x|} < \frac{1}{2}$.
+    \item Damit gilt $\frac{|x - 4|}{4|x|} < \frac{|x - 4|}{4 \cdot 2} = \frac{|x - 4|}{8}$. Setze $\frac{|x - 4|}{8} < \varepsilon \implies |x - 4| < 8\varepsilon$.
+    \item Wahl von $\delta := \min(2, 8\varepsilon)$. Dann gilt:
+    \begin{align*}
+        \left|\frac{1}{x} - \frac{1}{4}\right| &= \frac{|x - 4|}{4|x|} \\[-0.4em]
+                                                &< \frac{|x - 4|}{8} < \frac{8\varepsilon}{8} = \varepsilon
+    \end{align*}
+\end{enumerate}
+\end{minipage}
+
+\subsection{Differentialgleichungen}
+
+\Bsp \key{Trennung der Variablen}: Lösung von $y' = \frac{e^x(y^2 - 1)}{y(e^x + 1)}$
+\vspace{-0.2em}
+\begin{align*}
+    y' &= \frac{e^x(y^2 - 1)}{y(e^x + 1)} \\[-0.4em]
+       &= \frac{e^x}{e^x + 1} \cdot \frac{y^2 - 1}{y} \\[-0.4em]
+    \overset{TdV}{\implies} \int \frac{y}{y^2 - 1}dy &= \int \frac{e^x}{e^x + 1}dx \\[-0.3em]
+    \int \frac{1}{2} \cdot \frac{1}{u} du &= \int \frac{1}{u} du \\[-0.5em]
+    \frac{1}{2}\ln(|y^2 - 1|) &= \ln(|e^x + 1|) + C_1 \\[-0.6em]
+    \ln(|y^2 - 1|) &= 2\ln(|e^x + 1|) + C_2 \\[-0.6em]
+    |y^2 - 1| &= (e^x + 1)^2 \cdot C_3 \\[-0.6em]
+    y^2 - 1 &= \pm C_3 \cdot (e^x + 1)^2 \\[-0.6em]
+            &= C_4 \cdot (e^x + 1)^2 \\[-0.6em]
+    y^2 &= C_4 (e^x + 1)^2 + 1 \\[-0.6em]
+    y &= \pm \sqrt{C_4 (e^x + 1)^2 + 1}
+\end{align*}
+
+\begin{minipage}{\linewidth}
+\Bsp \key{Substitution}: Lösung von $y' = y + x$
+\begin{enumerate}
+    \item Substitution $u = x + y$, also $u' = y' + 1$ (d.h. $y' = u' - 1$)
+    \item Setze in der DG ein: $u' - 1 = u \implies u' = u + 1$
+    \item Löse durch Trennung der Variablen: $u = Ce^x - 1$
+    \item Setze $u = x + y$ ein: $x + y = Ce^x - 1 \implies y = Ce^x - x - 1$
+\end{enumerate}
+\end{minipage}
+
+\begin{minipage}{\linewidth}
+\Bsp \key{Variation der Konstanten}: Lösung von $y' - 2y = e^{3x}$
+\begin{enumerate}
+    \item Löse $y_h' - 2y_h = 0$:
+        \begin{align*}
+            y_h' - 2y_h &= 0 \\[-0.6em]
+            y_h' &= 2y_h \\[-0.6em]
+            y_h &= 2Ce^{2x} \\[-0.6em]
+        \end{align*}
+    \item Betrachte Konstanten als Funktion: $C \to C(x)$, $y = C(x) \cdot e^{2x}$
+    \item Berechne Ableitung(en): $y' = C'(x) \cdot e^{2x} + 2 C(x) \cdot e^{2x}$
+    \item Berechne $C(x)$:
+        \vspace{-0.6em}
+        \begin{align*}
+            y' - 2y &= e^{3x} \\[-0.6em]
+            C'(x) \cdot e^{2x} + 2 C(x) \cdot e^{2x} - 2C(x) \cdot e^{2x} &= e^{3x} \\[-0.6em]
+            C'(x) \cdot e^{2x} &= e^{3x} \\[-0.6em]
+            C'(x) &= e^x \\[-0.6em]
+            C(x) &= e^x + C \\[-0.6em]
+        \end{align*}
+    \item Berechne $y = C(x) \cdot e^{2x} = (e^x + C) \cdot e^{2x} = e^{3x} + Ce^{2x}$
+\end{enumerate}
+\end{minipage}
+
+\Bsp \key{Ansätze für die partikuläre Lösung}: Lösung von $y''' - 2y'' = 4e^{2x} + 12$
+\begin{enumerate}
+    \item Löse $y_h''' - 2y_h'' = 0$ (char. Polynom $\lambda^3 - 2\lambda^2 = \lambda^2(\lambda - 2)$)
+        \vspace{-0.4em}
+        \begin{align*}
+            y_h &= \sum_{i = 1}^{2} (\sum_{p=0}^{m_i - 1} C_{ip} x^p e^{\lambda_i x}) \\[-0.6em]
+                &= \sum_{p = 0}^1 C_{1p} x^p + C_{20} e^{2x} \\[-0.6em]
+                &= C_{10} + C_{11}x + C_{20}e^{2x} \\[-0.6em]
+                &= C_1 + C_2x + C_3e^{2x} \\[-0.6em]
+        \end{align*}
+    \item Finde $y_p$ und Ableitungen mit Ansätze (beide sind Spezialfälle):
+        \vspace{-1em}
+        \begin{align*}
+            y_p &= C_1 x e^{2x} + C_2 x^2 \\[-0.4em]
+            y_p' &= C_1 e^{2x} + 2 C_1 x e^{2x} + 2C_2 x \\[-0.4em]
+            y_p'' &= 4C_1e^{2x} + 4C_1 x e^{2x} + 2C_2 \\[-0.4em]
+            y_p''' &= 12 C_1 e^{2x} + 8C_1 x e^{2x}
+        \end{align*}
+    \item Substitution in der DG um $C_1, C_2$ zu bestimmen:
+        \begin{align*}
+            y_p''' - 2y_p'' &= 4e^{2x} + 12 \\[-0.3em]
+            12C_1 e^{2x} + 8C_1xe^{2x} - 8C_1e^{2x} - 8C_1xe^{2x} - 4C_2 &= 4e^{2x} + 12 \\[-0.6em]
+            4C_1 e^{2x} - 4C_2 &= 4e^{2x} + 12 \\[-0.6em]
+            \implies C_1 = 1, C_2 = -3 \hspace{60pt}& \\[-0.6em]
+            \implies y_p = x e^{2x} - 3 x^2 \hspace{61pt}&
+        \end{align*}
+    \item Allgemeine Lösung $y = y_h + y_p = C_1 + C_2x + C_3e^{2x} + x e^{2x} - 3 x^2$
+\end{enumerate}
+
+\Bsp \key{Anfangswertproblem}: Lösung von $y'' - 6y' + 25y = 0$ gegeben $y(0) = 0$ und $y'(0) = 1$
+\begin{enumerate}
+    \item Löse DG (char. Polynom $\lambda^2 - 6\lambda + 25$ hat Lösungen $\lambda_{1, 2} = 3 \pm 4i$)
+    \begin{align*}
+        y &= \sum_{j=1}^{s} \left(\sum_{q=0}^{m_j-1}(A_{jq} x^q e^{a_j x} \sin(b_j x) + B_{jq} x^q e^{a_j x} \cos(b_j x))\right) \\
+          &= e^{3x} (A \sin(4 x) + B  \cos(4 x))
+    \end{align*}
+    \item Berechne $y'(x)$: $y'(x) = e^{3x} ((3A - 4B) \sin(4x) + (4A + 3B) \cos(4x))$
+    \item Berechne $y(0) = B$ und $y'(0) = 4A$
+    \item Setze $y(0) = 0$ und $y'(0) = 1$ und Löse das System: $B = 0$, $A = \frac{1}{4}$,
+     also  $y(x) = \frac{1}{4}e^{3x} \sin(4 x)$
+\end{enumerate}
+
+\subsection{Integration}
+
+\Bsp \key{Partielle Integration}: Lösung von $\displaystyle \int e^{2x} \cdot \cos(x) dx$
+\vspace{-0.6em}
+\begin{align*}
+     I &= \int \underbrace{e^{2x}}_\downarrow \underbrace{\cos x}_\uparrow dx \\[-0.8em]
+       &= e^{2x} \sin x - 2 \int \underbrace{e^{2x}}_\downarrow \underbrace{\sin x}_\uparrow dx \\[-0.8em]
+       &= e^{2x} \sin x - 2 (e^{2x} \cos x + 2 \int e^{2x} \cos x dx) \\[-0.6em]
+       &= e^{2x} \sin x + 2 e^{2x} \cos x - 4 I \\[-0.2em]
+    \implies 5I &= e^{2x} \sin x + 2 e^{2x} \cos x \\[-0.4em]
+    \implies \int e^{2x} \cdot \cos(x) dx &= \frac{1}{5}e^{2x}(\sin x + \cos x) + C
+\end{align*}
+
+
+\begin{minipage}{\linewidth}
+\Bsp \key{Partielle Integration + Subtitution}: Lösung von $\displaystyle \int \arcsin(x) dx$
+\vspace{-0.6em}
+\begin{align*}
+    \int \arcsin(x) dx &= \int \underbrace{1}_\uparrow \cdot \underbrace{\arcsin(x)}_\downarrow dx \\[-2.6em]
+                       &= x \cdot \arcsin(x) - \int x \cdot \overbrace{\frac{1}{\sqrt{1-x^2}}}^{\frac{1}{\sqrt{y}}} dx \\
+    \longrightarrow y = 1 - x^2 \implies& \frac{dy}{dx} = -2x \implies \frac{-1}{2} \, dy = x \, dx \\[-0.1em]
+    \implies \int x \cdot \frac{1}{\sqrt{1-x^2}} dx &= \int \frac{-1}{2} \cdot \frac{1}{\sqrt{y}} dy \\[-0.1em]
+                       &= -\frac{1}{2} \cdot \int y^{-\frac{1}{2}} dy \\[-0.3em]
+                       &= -\frac{1}{2} (2y^{\frac{1}{2}} + C) \\[-0.3em]
+                       &= -\sqrt{y} + C = -\sqrt{1-x^2} + C \\
+    \implies \int \arcsin(x) dx &= x \cdot \arcsin(x) - (-\sqrt{1 - x^2} + C) \\[-0.8em]
+                                &= x \cdot \arcsin(x) + \sqrt{1 - x^2} + C
+\end{align*}
+\end{minipage}
+
+\begin{minipage}{\linewidth}
+\Bsp \key{Partialbruchzerlegung}: Lösung von $\displaystyle \int \frac{x^2 + 2x - 1}{x^3 - x} dx$
+\vspace{-0.6em}
+\begin{enumerate}
+    \item $2 < 3$, also brauchen wir keine division
+    \item $x^3 - x = x(x+1)(x-1)$
+    \item $g(x) = \frac{A}{x} + \frac{B}{x + 1} + \frac{C}{x - 1}$
+    \item $\frac{x^2 + 2x - 1}{x^3 - x} = \frac{A}{x} + \frac{B}{x + 1} + \frac{C}{x - 1} \\
+    \implies x^2 + 2x -1 = A(x^2 - 1) + B(x^2 - x) + C(x^2 + x)$
+    \item Lösen durch einsetzen $x = 0, \pm 1$: $A = C = 1, B = -1$
+    \item $\displaystyle \int \frac{1}{x} + \frac{-1}{x+1} + \frac{1}{x-1} dx = \ln(|x|) - \ln(|x+1|) + \ln(|x-1|) + C$
+\end{enumerate}
+\end{minipage}
+
+\Bsp \key{Weierstrass-Substitution}: Lösung von $\displaystyle \int \frac{1}{2 + \sin x} dx$:
+\begin{align*}
+    t = \tan(\frac{x}{2}), \hspace{10pt} \sin x &= \frac{2t}{1 + t^2}, \hspace{10pt} dx = \frac{2}{1 + t^2} dt \\[-0.1em]
+    \implies \int \frac{1}{2 + \sin x} dx &= \int \frac{1}{2 + \frac{2t}{1 + t^2}} \cdot \frac{2}{1 + t^2} dt \\[-0.1em]
+        &= \int \frac{2}{\frac{2 + 2t^2 + 2t}{1+t^2} \cdot (1+t^2)} dt \\[-0.1em]
+        &= \int \frac{1}{(t + \frac{1}{2})^2 + \frac{3}{4} dt} \\[-0.4em]
+        &= \frac{2}{\sqrt{3}} \arctan(\frac{t + \frac{1}{2}}{\frac{2}{\sqrt{2}}}) + C \\[-0.4em]
+        &= \frac{2}{\sqrt{3}} \arctan(\frac{\tan(\frac{x}{2}) + \frac{1}{2}}{\frac{2}{\sqrt{2}}}) + C
+\end{align*}
+
+\Bsp Ableitung von $f(x) = \displaystyle \int_0^{x^3} g(t) dt$.
+\begin{enumerate}
+    \item $H(x) := \displaystyle \int_0^x g(t) dt$, $G(x) := x^3$. $H'(x) = g(x)$, $G'(x) = 3x^2$
+    \item $f(x) = H(G(x))$. Also gilt auch $f'(x) = H'(G(x)) \cdot G'(x)$
+    \item $f'(x) = g(x^3) \cdot (3x^2) = 3x^2 g(x^3)$
+\end{enumerate}
+
+\subsection{Misc}
+
+\Bsp \key{Polynomdivision}: $p(x) = s(x) \cdot q(x) + r(x)$
+\begin{align*}
+    &\overbrace{7x^4 \hspace{7pt} + 3x^2 - 6x + 1}^{p(x)} : \overbrace{4x^2 + 3}^{q(x)} = \overbrace{\frac{7}{4}x^2 - \frac{9}{16}}^{s(x)} \\[-0.6em]
+    &\hspace{-9pt}-7x^4 - \frac{21}{4}x^2 \\
+    &\hspace{19pt} -\frac{9}{4}x^2 - 6x + 1 \\[-0.3em]
+    &\hspace{19pt} +\frac{9}{4}x^2 \hspace{19.5pt} + \frac{27}{16} \\[-0.2em]
+    &\hspace{44pt} \left. -6x \hspace{2.5pt} + \frac{43}{16} \right\} r(x)
+\end{align*}

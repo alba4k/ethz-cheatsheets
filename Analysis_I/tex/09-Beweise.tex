@@ -1,0 +1,123 @@
+\section{9. Beweise \texorpdfstring{$\star$}{*}}
+
+\subsection{Folgen und Reihen}
+
+\Bew \key{Grenzwert der geometrischen Reihe}: Für $q \neq 1$ gilt $S_n = \sum_{k=0}^n q^k = \frac{1 - q^{n+1}}{1 - q}$. 
+$$S_n - q S_n = \sum_{k=0}^n q^k - \sum_{k=0}^n q^{k+1} = 1 - q^{n+1} \implies S_n(1 - q) = 1 - q^{n+1}$$
+Für $|q| < 1$ gilt $\lim_{n\to\infty} q^{n+1} = 0$, somit $\sum_{k=0}^\infty q^k = \lim_{n\to\infty} S_n = \frac{1}{1 - q}$.
+
+\Bew \key{Monotoniekriterium für beschränkte Folgen}: Sei $(a_n)$ monoton steigend und nach oben durch $M$ beschränkt. Sei $s = \sup\{a_n : n \in \mathbb{N}\}$. 
+Für jedes $\varepsilon > 0$ existiert ein $N \in \mathbb{N}$ mit $s - \varepsilon < a_N \le s$. 
+Da $(a_n)$ monoton steigend ist, gilt für alle $n \ge N$:
+$$s - \varepsilon < a_N \le a_n \le s < s + \varepsilon \implies |a_n - s| < \varepsilon$$
+Somit konvergiert $(a_n)$ gegen $s = \sup \{a_n\}$.
+
+\Bew \key{Divergenz der harmonischen Reihe}: Gruppiere die Terme:
+$$1 + \frac{1}{2} + \left(\frac{1}{3}+\frac{1}{4}\right) + \left(\frac{1}{5}+\frac{1}{6}+\frac{1}{7}+\frac{1}{8}\right) + \cdots$$
+Jede Klammer mit Termen von $\frac{1}{2^k+1}$ bis $\frac{1}{2^{k+1}}$ enthält $2^k$ Summanden, jeder $\ge \frac{1}{2^{k+1}}$,
+also ist die Klammer $\ge 2^k \cdot \frac{1}{2^{k+1}} = \frac{1}{2}$.
+Damit gilt $s_{2^n} \ge 1 + \frac{n}{2} \to \infty$. Die Partialsummen sind unbeschränkt, also divergiert die Reihe.
+
+\Bew \key{Wurzelkriterium}: Sei $\rho = \limsup_{n\to\infty} \sqrt[n]{|a_n|} < 1$. Wähle $q$ mit $\rho < q < 1$.
+Da $\limsup \sqrt[n]{|a_n|} = \rho < q$, existiert $N \in \mathbb{N}$ mit $\sqrt[n]{|a_n|} < q$ für alle $n \ge N$, also $|a_n| < q^n$.
+Da $|q| < 1$ konvergiert $\sum q^n$ (geometrische Reihe). Nach dem Majorantenkriterium konvergiert $\sum_{n \ge N} |a_n|$,
+also auch $\sum |a_n|$ (endlich viele Terme davor ändern nichts an Konvergenz). Somit konvergiert $\sum a_n$ absolut.
+
+\Bew \key{Quotientenkriterium}: Sei $a_n \neq 0$, $\rho = \lim_{n\to\infty} \frac{|a_{n+1}|}{|a_n|} < 1$. Wähle $q$ mit $\rho < q < 1$.
+Es existiert $N \in \mathbb{N}$ mit $\frac{|a_{n+1}|}{|a_n|} < q$ für alle $n \ge N$.
+Induktiv folgt $|a_n| < |a_N| \cdot q^{n-N}$ für $n \ge N$.
+Da $\sum q^{n-N}$ (geometrische Reihe, $|q|<1$) konvergiert, konvergiert nach dem Majorantenkriterium auch $\sum_{n \ge N} |a_n|$,
+also $\sum a_n$ absolut.
+
+\Bew \key{Notwendiges Kriterium (Nullfolge)}: Sei $s_n = \sum_{k=0}^n a_k$ und $\sum a_n$ konvergent, d.h. $s_n \to L$.
+Dann gilt auch $s_{n-1} \to L$, also
+$$a_n = s_n - s_{n-1} \to L - L = 0$$
+
+\begin{minipage}{\linewidth}
+\Bew \key{Bolzano-Weierstrass}: Sei $(a_n)$ beschränkt, liegt also in einem Intervall $[\alpha, \beta]$.
+Halbiere $[\alpha, \beta]$; mindestens eine Hälfte enthält unendlich viele Folgenglieder --- nenne dieses Intervall $I_1$. Wähle $a_{n_1} \in I_1$. \\
+Halbiere $I_1$ erneut, wähle die Hälfte $I_2$ mit unendlich vielen Gliedern, und $n_2 > n_1$ mit $a_{n_2} \in I_2$.
+Induktiv erhält man $I_k$ mit $|I_k| = \frac{\beta - \alpha}{2^k}$ und $n_1 < n_2 < \cdots$ mit $a_{n_k} \in I_k$. \\
+Die Intervalle sind ineinander geschachtelt mit Länge $\to 0$, also konvergiert $(a_{n_k})$ gegen den (eindeutigen) Punkt im Durchschnitt aller $I_k$.
+\end{minipage}
+
+\subsection{Stetigkeit}
+
+\begin{minipage}{\linewidth}
+\Bew \key{Zwischenwertsatz}: Sei $f : [a,b] \to \mathbb{R}$ stetig, $c \in [f(a), f(b)]$. OBdA $f(a) \le c \le f(b)$.
+Sei $M = \{x \in [a,b] \mid f(x) \le c\}$. $M \neq \emptyset$ ($a \in M$) und nach oben beschränkt durch $b$, also existiert $x_0 = \sup(M)$. \\
+Da $f$ stetig, zeigt man $f(x_0) \le c$: es gibt $x_n \in M$ mit $x_n \to x_0$, also $f(x_n) \le c$, und mit Stetigkeit $f(x_0) = \lim f(x_n) \le c$. \\
+Angenommen $f(x_0) < c$. Da $f(b) \ge c > f(x_0)$, ist $x_0 < b$. Wegen Stetigkeit existiert $\delta > 0$ mit $f(x) < c$
+für $x \in (x_0, x_0 + \delta)$, Widerspruch zu $x_0 = \sup(M)$. \\
+Also $f(x_0) = c$.
+\end{minipage}
+
+\subsection{Differentialrechnung}
+
+\begin{minipage}{\linewidth}
+\Bew \key{Satz von Rolle}: Da $f$ auf $[a, b]$ stetig, nimmt $f$ in $x_{min}, x_{max} \in [a, b]$
+ein Min. und Max. an (Stetige Funktion auf kompaktem Intervall).
+Ist $f$ konstant, dann ist $\xi = \frac{a + b}{2} \in (a,b)$ Max.,
+sonst gibt es $\xi = x_{max} \in (a, b)$ Max. \textit{oder} $\xi = x_{max} \in (a, b)$ Min. (da $f(a) = f(b)$). \\
+Falls $\xi$ Max., da $f$ diff.bar in $\xi$,
+$$f'(\xi) = \lim_{\substack{h \ge 0 \\ h \to 0}} \frac{f(\xi + h) - f(\xi)}{h} \le 0$$
+
+$$f'(\xi) = \lim_{\substack{h \le 0 \\ h \to 0}} \frac{f(\xi + h) - f(\xi)}{h} \ge 0$$
+Somit $f'(\xi) = 0$. Falls $\xi$ Min., dann Max. von $-f$ und $-f'(\xi) = 0$, also $f'(\xi) = 0$
+\end{minipage}
+
+\begin{minipage}{\linewidth}
+\Bew \key{Mittelwertsatz der Differentialrechnung}: Sei
+$$h(x) = f(x) - \frac{f(b) - f(a)}{b - a} (x- a)$$
+Da $h(a) = h(b) = f(a)$ existiert $\xi \in (a, b)$ mit $h'(\xi) = 0$ (Satz von Rolle).
+Also gilt $h'(\xi) = f'(\xi) - \frac{f(b) - f(a)}{b - a} = 0$
+und $f'(\xi) = \frac{f(b) - f(a)}{b - a}$
+\end{minipage}
+
+\begin{minipage}{\linewidth}
+\Bew \key{Ableitung der Umkehrfunktion}: Sei $f$ streng monoton, differenzierbar in $x_0$ mit $f'(x_0) \neq 0$ und $g = f^{-1}$. Für $y = f(x)$ gilt $g(f(x)) = x$.
+\begin{align*}
+    \lim_{y \to y_0} \frac{g(y) - g(y_0)}{y - y_0} &= \lim_{x \to x_0} \frac{x - x_0}{f(x) - f(x_0)} \\[-0.6em]
+    &= \frac{1}{\lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}} = \frac{1}{f'(x_0)}
+\end{align*}
+\end{minipage}
+
+\Bew \key{Satz von L'Hospital (Fall 0/0)}: Seien $f(a)=g(a)=0$.
+\begin{align*}
+    \lim_{x \to a} \frac{f(x)}{g(x)} &= \lim_{x \to a} \frac{f(x) - f(a)}{g(x) - g(a)} \\[-0.6em]
+    &= \lim_{x \to a} \frac{\frac{f(x) - f(a)}{x - a}}{\frac{g(x) - g(a)}{x - a}} = \frac{f'(a)}{g'(a)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}
+\end{align*}
+
+\subsection{Integralrechnung}
+
+\Bew \key{Partielle Integration}:
+\begin{align*}
+    (f(x) \cdot g(x))' &= f'(x)\cdot g(x) + f(x) \cdot g'(x) \\[-0.6em]
+    f(x) \cdot g'(x) &= (f(x) \cdot g(x))' - f'(x) \cdot g(x) \\[-0.6em]
+    \int f(x) \cdot g'(x) dx &= f(x) \cdot g(x) - \int f'(x) \cdot g(x) dx
+\end{align*}
+
+\begin{minipage}{\linewidth}
+\Bew \key{Mittelwertsatz der Integralrechnung}: Da $f$ auf $[a, b]$ stetig, nimmt $f$ in $x_{min}, x_{max} \in [a, b]$
+ein Min. und Max. an (Stetige Funktion auf kompaktem Intervall). Also gilt:
+\vspace{-0.2em}
+\begin{align*}
+    \int_a^b f(x_{min}) dx \le &\int_a^b f(x) dx \le \int_a^b f(x_{max}) dx \\[-0.2em]
+    f(x_{min}) \cdot (b-a) \le &\int_a^b f(x) dx \le f(x_{max}) \cdot (b-a) \\[-0.2em]
+    f(x_{min}) \le &\frac{1}{b-a}\int_a^b f(x) dx \le f(x_{max})
+\end{align*}
+Aber da $\mu = \displaystyle\frac{1}{b-a}\int_a^b f(x) dx \in [f(x_{min}), f(x_{max})]$ und $f$ stetig,
+gibt es ein $c \in [\min\{x_{min}, x_{max}\}, \max\{x_{min}, x_{max}\}] \subset [a, b]$ mit $f(c) = \mu$ (Zwischenwertsatz)
+\end{minipage}
+
+\begin{minipage}{\linewidth}
+\Bew \key{Hauptsatz der Integral- und Differentialrechnung}:
+$$\lim_{h\to 0} \frac{F(x + h) - F(x)}{h} = \lim_{h\to 0} \frac{1}{h} \int_{x}^{x + h} f(y) dy = \lim_{h\to 0} f(\xi_h)$$
+wegen Mittelwertsatz der Integralrechnung. Da $\xi_h \to x$, $h \to 0$ und $f$ stetig gilt:
+$\lim_{h\to 0} f(\xi_h) = f(x)$. Also $F'(x)$ existiert und gleich $f(x)$
+\end{minipage}
+
+\Bew \key{Substitutionsregel}: Sei $F$ eine Stammfunktion von $f$. Nach der Kettenregel gilt für $H(x) = F(g(x))$:
+$$H'(x) = F'(g(x)) \cdot g'(x) = f(g(x)) \cdot g'(x)$$
+Integration auf beiden Seiten über $[a, b]$ liefert mit dem Hauptsatz:
+$$\int_a^b f(g(x)) \cdot g'(x) dx = H(b) - H(a) = F(g(b)) - F(g(a)) = \int_{g(a)}^{g(b)} f(u) du$$

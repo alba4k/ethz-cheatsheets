@@ -1,11 +1,13 @@
 \documentclass[8pt, a4paper]{extarticle}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{mathtools}
 \usepackage{multicol}
 \usepackage{enumitem}
-\usepackage{nicematrix}
 \usepackage{mathrsfs}
 \usepackage{booktabs}
+\usepackage{tikz}
+
 
 \usepackage{xcolor}
 \usepackage{graphicx}
@@ -28,7 +30,8 @@
 
 \usepackage[hidelinks]{hyperref}
 
-\title{Linear Algebra Cheatsheet HS25}
+\title{Analysis I FS26}
+\author{Aaron Blasko}
 \date{}
 
 \AtBeginDocument{
@@ -98,20 +101,6 @@
 
 \setcounter{secnumdepth}{1}
 \numberwithin{equation}{section}
-\renewcommand{\hat}{\widehat}
-\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
-\newcommand{\rnorm}[1]{\lVert#1\rVert}
-\DeclareMathOperator{\RREF}{RREF}
-\DeclareMathOperator{\vecspan}{\mathbf{Span}}
-\DeclareMathOperator{\colsp}{\mathbf{C}}
-\DeclareMathOperator{\rowsp}{\mathbf{R}}
-\DeclareMathOperator{\nullsp}{\mathbf{N}}
-\DeclareMathOperator{\lnullsp}{\mathbf{LN}}
-\DeclareMathOperator{\solsp}{\mathbf{Sol}}
-\DeclareMathOperator{\rank}{\mathbf{rank}}
-\DeclareMathOperator{\tr}{\mathbf{Tr}}
-\DeclareMathOperator{\proj}{proj}
-\DeclareMathOperator*{\argmin}{argmin}
 \DeclareMathOperator{\sgn}{sgn}
 
 \newcommand{\NN}{\mathbb{N}}
@@ -119,26 +108,37 @@
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\CC}{\mathbb{C}}
-\newcommand{\nxn}{n \times n}
-\newcommand{\mxn}{m \times n}
+
+\newcommand{\DD}{\mathbb{D}}
+\newcommand{\WW}{\mathbb{W}}
+
+\newcommand{\Def}{\paragraph{Def.}}
+\newcommand{\Satz}{\paragraph{Satz}}
+\newcommand{\Kor}{\paragraph{Kor.}}
+\newcommand{\Bsp}{\paragraph{Bsp.}}
+\newcommand{\Bew}{\paragraph{Bew.}}
+\newcommand{\Tab}{\paragraph{Tabelle}}
+\newcommand{\Bild}{\paragraph{Bild}}
 
 \begin{document}
 
 \begin{multicols*}{3}
 
-    {\large \textbf{Linear Algebra Cheatsheet HS25}}
-    by Aaron Blasko
+    {\large \textbf{Analysis I FS26}}
+    Aaron Blasko
 
-    \input{./tex/01-Vectors.tex}
-    \input{./tex/02-Matrices.tex}
-    \input{./tex/04-Fundamental-Subspaces.tex}
-    \input{./tex/05-Orthogonality.tex}
-    \input{./tex/06-Applications.tex}
-    \input{./tex/07-Determinant.tex}
-    \input{./tex/08-Eigenvalues-and-Eigenvectors.tex}
-    \input{./tex/09-Diagonalization.tex}
-    \input{./tex/10-Algorithms.tex}
-    \input{./tex/11-Tips-and-Tricks.tex}
+    Abschnitte mit $\star$ stammen nicht unbedingt aus Skript oder Slides.
+
+    \input{./tex/01-LogikMengenZahlen.tex} % SW 1, 2
+    \input{./tex/02-Folgen.tex} % SW 3, 4
+    \input{./tex/03-Reihen.tex} % SW 5
+    \input{./tex/04-Funktionen.tex} % SW 6, 7
+    \input{./tex/05-Differentialrechnung.tex} % SW 8, 9
+    \input{./tex/06-Differentialgleichungen.tex} % SW 11, 13
+    \input{./tex/07-Integralrechnung.tex} % SW 12
+    \input{./tex/08-Beispiele.tex}
+    \input{./tex/09-Beweise.tex}
+    \input{./tex/10-Tabellen.tex}
 
 \end{multicols*}
 

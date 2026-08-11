@@ -1,0 +1,212 @@
+W\section{1. Logik, Mengen, Zahlen}
+\subsection{Logik}
+
+\Def Eine \key{math. Aussage} ist entweder wahr oder falsch
+
+\Def \key{Prädikat} ist Aussage mit Variablen: $A(x)$ oder $A(x, y, \ldots)$ 
+
+\Def \key{Verneinung} (Negation) einer math. Aussage ist $\lnot A$.
+
+\Def Wir führen die folgenden \key{Quantoren} (”Kurzschreibweisen”) ein:
+$\forall$, $\exists$, $\exists!$, $\nexists$. 
+Quantoren stehen vor den Aussagen.
+
+\Def Wir führen die folgenden \key{Grundverknüpfungen} ein:
+$\land$, $\lor$, $\implies$, $\iff$.
+
+\Satz Es gelten die folgenden Regeln
+\vspace{-0.6em}
+\begin{itemize}
+    \item $\lnot \forall x \, A(x) \, \iff \, \exists x \, \lnot A(x)$
+    \item $\lnot \exists x \, A(x) \, \iff \, \forall x \, \lnot A(x)$
+    \item $\forall x (A(x) \, \land \, B(x)) \, \iff \, (\forall x A(x)) \, \land \, (\forall x \, B(x))$
+    \item $\exists x (A(x) \, \lor \, B(x)) \, \iff \, (\exists x A(x)) \, \lor \, (\exists x \, B(x))$
+    \item $\exists x (A(x) \, \land \, B(x)) \, \implies \, (\exists x A(x)) \, \land \, (\exists x \, B(x))$ \hspace{10pt} $\star$
+\end{itemize}
+
+\subsection{Mengen}
+
+\Def \key{Menge} ist eine Ansammlung von  Elementen, entweder aufgelistet
+oder durch Eigenschaften charakterisiert.
+
+\key{Leere Menge}: $\varnothing$. Element $x$ in Menge $M$: $x \in M$. Andernfalls: $x \notin M$.
+
+\Def Seinen $X$ und $Y$ zwei Mengen:
+\vspace{-0.6em}
+\begin{itemize}
+    \item \key{Teilmenge} $X \subset Y$ oder $X \subseteq Y$: $\forall x \in X : x \in Y$
+    \item \key{echte Teilmenge} $X \subsetneq Y$: $(X \subset Y) \, \land \, (X\ne Y)$
+    \item \key{Komplement} Falls $X \subset Y$ gilt, ist $X^c := \{y \, | \, y \in Y \, \land \, y \notin X\}$
+\end{itemize}
+
+\Def Mit Mengen folgende \key{Operationen}:
+$\cup$, $\cap$, $\backslash$, $\times$.
+
+\subsection{Zahlen}
+
+\Def \key{Zahlmengen}: $\NN = \{1, 2, \ldots\}$, $\ZZ$, $\QQ$, $\RR$.
+Wir betrachten oft auch: $\RR^+ = (0, \infty)$, $\RR^+_0 = [0, \infty)$, $\RR^-$, $\RR^-_0$
+
+\Satz \key{Theorem von Aaron}: In $\NN$, oder auch in $\RR$, gilt: $1 + 1 = 2$.
+
+\Def \key{Intervalle}, $I \subset \RR$:
+offenes Intervall $(a, b)$, abgeschlossenes Intervall $[a, b]$ und halboffene Intervalle $[a, b)$ $(a, b]$
+
+$\RR = (-\infty, \infty)$, $a, b \in \RR$ \key{beschränktes Int.},
+$(-\infty, b) = \{x \in \RR \, | \, x < b\}$
+
+\Def \key{Kenngrössen} von Teilmengen $X \subset \RR$:
+\vspace{-0.6em}
+\begin{itemize}
+    \item \key{obere Schranke} ist $y \in \RR$ mit $\forall x \in X : x\le y$
+    \item \key{untere Schranke} ist $y \in \RR$ mit $\forall x \in X : y\le x$
+    \item \key{Maximum} ist $x_0 \in X$ mit $\forall x \in X : x\le x_0$
+    \item \key{Minimum} ist $x_0 \in X$ mit $\forall x \in X : x_0\le x$
+    \item \key{Supremum} ist kleinste obere Schranke von $X$, $\sup(X)$
+    \item \key{Infimum} ist grösste untere Schranke von $X$, $\inf(X)$
+\end{itemize}
+
+\Satz
+Es gelten die folgenden Tatsachen:
+\vspace{-0.6em}
+\begin{itemize}
+    \item Maximum und Minimum eindeutig - sofern sie existieren
+    \item $M\ne \varnothing$, nach unten/oben beschr. hat eindeutig $\inf(M)$/$\sup(M)$.
+    \item $S = \sup(X)$ wenn $(\forall x \in X : x\le S) \, \land \, (\forall \varepsilon > 0 \, \exists x \in X : x > S - \varepsilon)$
+    \item $I = \inf(X)$ wenn $(\forall x \in X : I\le x) \, \land \, (\forall \varepsilon > 0 \, \exists x \in X : x < I + \varepsilon)$
+\end{itemize}
+
+\Def Axiome von $\RR$:
+\vspace{-0.6em}
+\begin{itemize}
+    \item \key{Axiome der Addition}:
+    \begin{itemize}
+        \item[(A1)] $x + (y + z) = (x + y) + z$ (Assoziativität)
+        \item[(A2)] $x + 0 = x$ (neutrales Element)
+        \item[(A3)] $x + (-x) = 0$ (inverses Element)
+        \item[(A4)] $x + y = y + x$ (Kommutativität) 
+    \end{itemize}
+
+    \item \key{Axiome der Multiplikation}:
+    \begin{itemize}
+        \item[(M1)] $x \cdot (y \cdot z) = (x \cdot y) \cdot z$ (Assoziativität)
+        \item[(M2)] $x \cdot 1 = x$ (neutrales Element)
+        \item[(M3)] $x \cdot x^{-1} = 1$ (inverses Element)
+        \item[(M4)] $x \cdot y = y \cdot x$ (Kommutativität)
+    \end{itemize}
+    
+    \item \key{Distributivitätsgesetz} (Kompatibilität von Addition und Multiplikation):
+        $x \cdot (y + z) = x \cdot y + x \cdot z = (y + z) \cdot x$
+    
+    \item \key{Ordnungsaxiome}:
+    \begin{itemize}
+        \item[(O1)] $x\le x$ (Reflexivität)
+        \item[(O2)] $(x\le y \, \land \, y\le z) \implies (x\le z)$ (Transitivität)
+        \item[(O3)] $(x\le y \, \land \, y\le x) \implies (x = y)$ (Antisymmetrie)
+        \item[(O4)] $x\le y$ oder $y\le x)$ (Totalität)
+    \end{itemize}
+
+    \item \key{Konsistenz mit Addition und Multiplikation}:
+    \item \begin{itemize}
+        \item[(K1)] $x\le y \implies x + z\le y + z$
+        \item[(K2)] $(x\ge 0 \, \land \, y\ge 0) \implies x \cdot y\ge 0$
+    \end{itemize}
+\end{itemize}
+
+\Satz Ordnungsvollständigkeit: $A, B \subset \RR$, $A\ne \varnothing$, $B\ne \varnothing$,
+$\forall a \in A \, \forall b \in B : a\le b$: \\
+Es gibt $c \in \RR$ so dass $\forall a \in A : a\le c$ und $\forall b \in B : c\le b$
+
+\Satz $\RR$ ist ein geordneter und ordnungsvollständiger Körper
+
+\Kor Eigenschaften von $\RR$
+\vspace{-0.6em}
+\begin{itemize}
+    \item Additive und multiplikative Inverse sind eindeutig bestimmt
+    \item $0 \cdot x = 0$
+    \item $-1 \cdot x = -x$
+    \item $y\ge 0 \iff -y\le 0$
+    \item $y^2\ge 0$
+    \item Aus $x\le y$ und $u\le v$ folgt $x + u\le y + v$
+    \item Falls $0\le x\le y$ und $u\ge 0$, $x \cdot u\le y \cdot u$
+\end{itemize}
+
+\Kor \key{Archimedisches Prinzip}
+\vspace{-0.6em}
+\begin{itemize}
+    \item Für $x \in \RR$ und $y > 0$ existiert $n \in \NN$ mit $n \cdot y\ge x$
+    \item Für jedes $\varepsilon > 0$ existiert $n \in \NN$ mit $\frac{1}{n}\le \varepsilon$
+\end{itemize}
+
+\Def $\max\{x, y\}$, $\min\{x, y\}$, \key{Absolutbetrag} $|x| = \max\{x, -x\}$
+
+\Satz \key{Satz von Chris}: Für $a, b, c \in \RR$ gilt $a \cdot (b + c) = a \cdot b + a \cdot c$
+
+\Satz \key{Eigenschaften des Absolutbetrags}
+\vspace{-0.6em}
+\begin{itemize}
+    \item $|x|\ge 0$
+    \item $|x + y|\le |x| + |y|$ (\key{Dreiecksungleichung})
+    \item $|x + y|\ge ||x| - |y||$
+\end{itemize}
+
+\Satz \key{Youngsche Ungleichung}: Für jedes $\varepsilon > 0$ und $x, y \in \RR$ gilt:
+$$2|xy|\le \varepsilon x^2 + \frac{1}{\varepsilon}y^2$$
+
+\subsection{Vektoren und Vektorräume}
+
+\Def Für $x, y \in \RR^n$:
+\vspace{-0.6em}
+\begin{itemize}
+    \item \key{(Standard-)Skalarprodukt}: $x \cdot y = <x,y> = [x,y] := \sum_{i=1}^{n}x_i y_i$
+    \item \key{Euklidische Norm}: $||x|| := \sqrt{\sum_{i=1}^{n}x_i^2}$
+    \item \key{Euklidischer Abstand}: $d(x,y) := \sqrt{\sum_{i=1}^{n}(x_i-y_i)^2}$
+\end{itemize}
+
+\Satz \key{Dreiecksungleichung}: $\forall x,y,z \in \RR^n : ||x-z||\le ||x-y|| + ||y - z||$
+
+\subsection{Komplexe Zahlen}
+
+\Def \key{komplexe Zahlen}: $\CC = \{z = a + ib \, | \, a,b \in \RR\}$.
+$z = a + ib$ heisst Normal-/aritmetische/kartesische Form. $a = Re(z)$ \key{Realteil},
+$b = Im(z)$ \key{Imaginärteil}, $i^2 = -1$ \key{imag.}/\key{komplexe Einheit}. $z = ib$ ist \key{rein imaginär}
+
+\Def $z = x + iy$ und $\overline{z} = x - iy$ sind \key{komplex konjugiert}
+
+\Satz $\frac{z}{w} = \frac{z \cdot \overline{w}}{w \cdot \overline{w}} = \frac{z \cdot \overline{w}}{|w|^2}$
+und $\overline{\frac{z}{w}} = \frac{\overline{z}}{\overline{w}}$ für $z,w \in \CC$
+
+\Satz Eigenschaften der komplex konjugierten Zahl
+\vspace{-0.6em}
+\begin{itemize}
+    \item $z \cdot \overline{z} = |z|^2$
+    \item $z + \overline{z} = 2 Re(z)$ und $z - \overline{z} = 2iIm(z)$
+    \item $\overline{\overline{z}} = z$
+    \item $\overline{z \pm w} = \overline{z} \pm \overline{w}$
+    \item $\overline{z \cdot w} = \overline{z} \cdot \overline{w}$
+    \item $z = \overline{z}$ falls $z \in \RR$
+    \item $\overline{z} = -z$ falls $z$ rein imaginär
+\end{itemize}
+
+\Def \key{Betrag} $|z| = \sqrt{a^2 + b^2}$,
+\key{Abstand} $d = |z_2 - z_1| = |z_1 - z_2|$
+
+\Satz \key{Dreiecksungleichung}: Für $z, w \in \CC$ gilt $|z + w|\le |z| + |w|$
+
+\Satz \key{Eulersche Formel}: $e^x = \sum_{k=0}^{\infty}\frac{1}{k!}x^k$ und mit $x = it$:
+$$e^{it} = \cos(t) + i\sin(t)$$
+
+\Kor $\cos(t) = \frac{e^{it} + e^{-it}}{2}$ und $\sin(t) = \frac{e^{it} - e^{-it}}{2i}$
+
+\Def $\cosh(t) = \frac{e^x + e^{-x}}{2}$ und $\sinh(t) = \frac{e^x - e^{-x}}{2}$
+
+\Def \key{Polardarstellung}: $z = r \cdot e^{i\varphi}$ und $r = |z|$, $\varphi = \arg(z) \in (-\pi, \pi]$
+
+\Satz \key{Wurzeln in $\CC$}: $z^n = re^{i\varphi}$: 
+$z_k = r^{\frac{1}{n}}e^{i\frac{\varphi + 2k\pi}{n}}$ wobei $0\le k < n$
+
+\Satz \key{Fundamentalsatz der Algebra}: $p(z) = \sum_{k=0}^{n} a_k z^k$, $a_k \in \CC$
+kann als $p(z) = a_n\prod_{k=1}^{n}(z-z_k)$ geschrieben werden, wobei $z_k$ die Nullstellen
+von $p(z)$ (mit Vielfachheit) sind
+
+\Satz $p(z)$ mit $a_k \in \RR$ $\implies$ Nullstellen komplex konjugiert
