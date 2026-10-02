@@ -1,0 +1,153 @@
+\documentclass[8pt, a4paper]{extarticle}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{mathrsfs}
+\usepackage{booktabs}
+\usepackage{tikz}
+
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\usepackage[
+    landscape,
+    margin=0.8cm,
+    footskip=0.5cm
+]{geometry}
+
+\usepackage[
+    skip=5pt plus1pt,
+    indent=0pt
+]{parskip}
+
+\usepackage[
+    compact
+]{titlesec}
+
+\usepackage[hidelinks]{hyperref}
+
+\title{Analysis II HS26}
+\author{Aaron Blasko}
+\date{}
+
+\AtBeginDocument{
+  \setlength\abovedisplayskip{0pt}
+  \setlength\belowdisplayskip{0pt}
+  \setlength\abovedisplayshortskip{-\baselineskip}
+  \setlength\belowdisplayshortskip{0pt}
+}
+
+\setlist{noitemsep, topsep=0pt, parsep=0pt, partopsep=-0.6\parskip}
+
+\newlength{\sepwidth}
+\setlength{\sepwidth}{0.4pt}
+\setlength{\columnseprule}{\sepwidth}
+
+\newcommand{\secsep}{
+    \vspace{\baselineskip}
+    \leaders
+        \hrule width \columnwidth \relax
+    \vskip\sepwidth
+}
+
+\titleformat{\section}
+    {\secsep\Large\bfseries}
+    {\thesection}
+    {1em}
+    {}
+    [\vspace{-\baselineskip}]
+
+\titleformat{\section}
+    {\secsep\normalfont\Large\bfseries}
+    {}
+    {0pt}
+    {\colorbox{yellow!50}}
+
+\titleformat{\subsection}
+    {\normalfont\large\bfseries}
+    {}
+    {0pt}
+    {\colorbox{yellow!50}}
+
+\titleformat{\subsubsection}
+    {\normalfont\normalsize\bfseries}
+    {}
+    {0pt}
+    {\colorbox{yellow!50}}
+
+\newcommand{\key}[1]{\textit{\color{red}{#1}}}
+\newcommand{\oldkey}[1]{\textit{\color{blue}{#1}}}
+
+\titleformat{\section}
+    {\secsep\normalfont\Large\bfseries}
+    {}
+    {0pt}
+    {\colorbox{yellow!50}}
+
+\titleformat{\subsection}
+    {\normalfont\large\bfseries}
+    {}
+    {0pt}
+    {\colorbox{yellow!50}}
+
+\titleformat{\subsubsection}
+    {\normalfont\normalsize\bfseries}
+    {}
+    {0pt}
+    {\colorbox{yellow!50}}
+
+\setcounter{secnumdepth}{1}
+\numberwithin{equation}{section}
+\DeclareMathOperator{\sgn}{sgn}
+
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+
+\newcommand{\DD}{\mathbb{D}}
+\newcommand{\WW}{\mathbb{W}}
+
+\newcommand{\Def}{\paragraph{Def.}}
+\newcommand{\Satz}{\paragraph{Satz}}
+\newcommand{\Kor}{\paragraph{Kor.}}
+\newcommand{\Bsp}{\paragraph{Bsp.}}
+\newcommand{\Bew}{\paragraph{Bew.}}
+\newcommand{\Tab}{\paragraph{Tabelle}}
+\newcommand{\Bild}{\paragraph{Bild}}
+
+\begin{document}
+
+\begin{multicols*}{3}
+
+    {\large \textbf{Analysis II HS26}}
+    Aaron Blasko
+
+    Abschnitte mit $\star$ stammen nicht unbedingt aus Skript oder Slides.
+
+    \oldkey{Blau} markierte Inhalte stammen aus Analysis I (FS26).
+
+    % Analysis I
+    \input{./tex/01-LogikMengenZahlen.tex} % SW 1, 2
+    \input{./tex/02-Folgen.tex} % SW 3, 4
+    \input{./tex/03-Reihen.tex} % SW 5
+    \input{./tex/04-Funktionen.tex} % SW 6, 7
+    \input{./tex/05-Differentialrechnung.tex} % SW 8, 9
+    \input{./tex/06-Differentialgleichungen.tex} % SW 11, 13
+    \input{./tex/07-Integralrechnung.tex} % SW 12
+    \input{./tex/08-Beispiele.tex}
+    \input{./tex/09-Beweise.tex}
+    \input{./tex/10-Tabellen.tex}
+
+\end{multicols*}
+
+\pagebreak
+
+\clearpage
+
+\end{document}
