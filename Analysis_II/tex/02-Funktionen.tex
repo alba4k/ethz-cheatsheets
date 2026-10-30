@@ -1,0 +1,45 @@
+\section{Funktionen}
+
+\begin{samepage}
+\Def \key{Funktion} (Abbildung): Inputs aus $\Rn$,
+\textbf{genau einen} Output aus Zielbereich ($range(f) \in \{\RR, \Rm \}$) \\
+Menge aller Inputs: \key{Definitionsbereich}, $domain(f) = \DD$.
+Menger aller realisierter Outputs: \key{Wertebereich} (Bildmenge), $image(f), \WW$
+\begin{align*}
+    f: \DD &\to range(f) \\
+         x &\mapsto y = f(x)
+\end{align*}
+Input ist \key{unabhängige Variable} (\key{Argument}), Output ist \key{abhängige Variable}
+
+Funktion $f: \Rn \to \Rm$: $x \mapsto f(x) = \begin{pmatrix}
+    f_1(x_1, \cdots, x_n) \\
+    \vdots \\
+    f_m(x_1, \cdots, x_n)
+\end{pmatrix}$
+\end{samepage}
+
+\Def $U \subseteq \Rn$, $f: U \to \Rm$, $x^\star \in U$.
+Falls jede Folge $(x_n)_{n \in \NN_0} \subseteq U$ mit $x_n \to x^\star$
+gemeinsames $y^\star \in \Rm$ hat, mit $f(x_n) \to y^\star$,
+dann $y^\star$ \key{Grenzwert} von $f$ für $x_n \to x^\star$: $\lim\limits_{x_n \to x^\star} f(x_n) = y^\star$
+
+\Def $f: \Rn \to \Rm$ \key{stetig}, falls (beide äquivalent):
+\begin{itemize}
+    \item $\forall x \in \Rn \, \forall \varepsilon > 0 \, \exists \delta > 0 \, : \, ||x - x'|| < \delta \implies ||f(x) - f(x')|| < \varepsilon$
+    \item für jede $(x_n)_{n\in\NN_0} \subseteq \Rn$ mit $x_n \to x$ gilt $(f(x_n))_{n\in\NN_0} \subseteq \Rm$ konvergiert gegen $f(x)$
+\end{itemize}
+
+\Satz $f: \Rn \to \RR$ stetig, $K \subseteq \Rn$ kompakt. $f$ nimmt Maximum und Minimum an:
+$\exists \overline{x}, \underline{x} \in K \, \forall x \in K \, : \, f(\underline{x}) \le f(x) \le f(\overline{x})$
+
+\Def $U \subseteq \Rn$ offen, $f: U \to \Rm$, $v \in \Rn$. \key{Richtungsableitung} von $f$ an Stelle $x$ in Richtung $v$ ist (sofern der Grenzwert existiert):
+$$\partial_v f(x) := \frac{d}{ds} \lvert_{s=0} f(x + sv) = \lim_{s \to 0} \frac{f(x + sv) - f(x)}{s} \in \Rm$$
+Falls $v = e_i$, $1 \le i \le n$, schreiben wir $\partial_{e_i} f(x) =: \partial_i f(x) = \frac{\partial}{\partial x_i}f(x) = f_i(x)$:
+die $i$-te \key{partielle Ableitung} von $f$ an Stelle $x$
+
+\Def $U \subseteq \Rn$ offen, $f: U \to \Rm$ heisst an Stelle $x \in U$ \key{differenzierbar}
+falls lineare Abbildung $L: \Rn \to \Rm$ existiert mit 
+$$\lim_{h \to 0} \frac{||f(x+h) - f(x) - L(h)||}{||h||} = 0$$
+$L$ heisst \key{Differential}, \key{totale Ableitung} oder \key{Tangentenabbildung} von $f$ an Stelle $x$:
+$L =: Df_x = df(x) = D_xf = DF(x)$. \\
+$f$ ist \key{differenzierbar in $U$}, falls $f$ in jedem Punkt von $U$ diff.bar ist.

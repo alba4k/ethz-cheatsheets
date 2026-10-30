@@ -1,18 +1,9 @@
-\section{2. Folgen}
-\Def \oldkey{Folge} $(a_n)_{n \in \NN_0}$, $(a_n)_{n\ge 0}$ oder $(a_n)_{n=0}^\infty$. 
-Abbildung $f : \NN_0 \to \RR$ (oder $f : \NN \to \RR$). \oldkey{Bilder} $a(n) = a_n$
-sind \oldkey{Glieder der Folge}
-
-\Def Folge \oldkey{direkt} beschreiben: $a_n = f(n)$;
-oder \oldkey{rekursiv}: $a_n = g(a_{n-1}, a_{n-2}, \ldots)$.
-$f$ und $g$ heissen \oldkey{Bildungsgesetz}.
+\section{Folgen}
 
 \Def Folge \oldkey{konvergent}, falls \oldkey{Grenzwert} $L \in \RR$ mit
 $\forall \varepsilon > 0 \, \exists N > 0 \, \forall n > N : |a_n - L| < \varepsilon$
 existiert, sonst \oldkey{divergent}.
 Man schreibt $\lim\limits_{n \to \infty} a_n = L$
-
-\Satz Konvergente Folge besitzt genau einen eindeutigen Grenzwert
 
 \Def Falls $\forall M > 0 \, \exists N > 0 \, \forall n > N : a_n > M$ gilt,
 Folge divergiert \oldkey{gegen unendlich}: $\lim\limits_{n\to\infty}a_n = \infty$
@@ -47,16 +38,6 @@ $\lim\limits_{n\to\infty} b_n = L \in \RR$ und $C \in \RR$:
     \item Falls $L\ne 0$, $b_n\ne 0$: $\lim\limits_{n\to\infty}\frac{a_n}{b_n} = \frac{K}{L}$
     \item Falls $K < L$, es gibt $N \in \NN$ mit $a_n < b_n$ für alle $n\ge N$
     \item Falls es $N \in \NN$ so dass $a_n\le b_n$ für alle $n\ge N$, dann gilt $K\le L$
-\end{itemize}
-
-\Satz \oldkey{Wichtige Grenzwerte}
-\vspace{-0.6em}
-\begin{itemize}
-    \item $\lim\limits_{n\to\infty} \frac{\log n}{n} = \lim\limits_{n\to\infty} \frac{\ln n}{n} =0$
-    \item $\lim\limits_{n\to\infty} n^\frac{1}{n} = \sqrt[n]{n} = 1$
-    \item $\lim\limits_{n\to\infty} x^\frac{1}{n} = \sqrt[n]{x} = 1$, $x > 0$
-    \item $\forall x \in \RR : \lim\limits_{n\to\infty} (1 + \frac{x}{n})^n = e^x$
-    \item $\forall x \in \RR : \lim\limits_{n\to\infty} \frac{x^n}{n!} = 0$
 \end{itemize}
 
 \Satz $\star$ Für grosse $x \in \RR$ resp. $n \in \NN$, $a, p \in \RR$, $a > 1$:
@@ -104,7 +85,7 @@ falls $\forall n,m \in \NN_0 : m > n \implies a_m\le a_n$ (resp. $\geq$).
     \item unendlich viele $a_n$ mit $A - \varepsilon < a_n < A + \varepsilon$
 \end{itemize}
 
-\Kor (\oldkey{Bolzano-Weierstrass}) Jede beschr. Folge hat Häufungspunkt und konv. Teilfolge
+\Kor (\oldkey{Bolzano-Weierstrass}) Jede beschr. Folge hat Häufungspunkt
 
 \Def \oldkey{Cauchy-Folge}: $\forall \varepsilon > 0 \, \exists N \in \NN \, \forall m, n\ge N : |a_n - a_m| < \varepsilon$
 

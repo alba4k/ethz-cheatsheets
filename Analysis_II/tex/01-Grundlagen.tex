@@ -1,0 +1,69 @@
+\section{Grundlagen}
+
+\Def \key{(Standard-)Skalarprodukt} von $x, y \in \Rn$:
+$x \cdot y = [x, y] = \langle x, y \rangle := \sum_{i=1}^n x_i y_i$
+
+\subsection{Vektoren und Vektorräume}
+
+\Def Für $x, y \in \Rn$:
+\vspace{-0.6em}
+\begin{itemize}
+    \item \key{(Standard-)Skalarprodukt}: $x \cdot y = \langle x,y \rangle = [x,y] := \sum_{i=1}^{n}x_i y_i$
+    \item \key{Euklidische Norm}: $||x|| := \sqrt{\sum_{i=1}^{n}x_i^2}$
+    \item \key{Euklidischer Abstand}: $d(x,y) = ||x-y|| := \sqrt{\sum_{i=1}^{n}(x_i-y_i)^2}$
+\end{itemize}
+
+\Satz \key{Dreiecksungleichung}: $\forall x,y,z \in \Rn : ||x-z||\le ||x-y|| + ||y - z||$
+
+\subsection{Folgen}
+
+\Def \key{Folge} $(x_n)_{n \in \NN}$ oder $(x_n)_{n \in \NN_0}$
+($(x_n)_{n \ge 1}$, $(x_n)_{n=1}^\infty$, resp. mit $0$) in $\Rm$
+ist Abbildung $\NN \to \Rm$ (resp. $\NN_0 \to \Rm$)
+$$x_s = \begin{pmatrix}
+    x_{1,s} \\
+    \vdots \\
+    x_{m,s} \\
+\end{pmatrix} \in \Rm$$
+
+\Def $(x_n)_{n \in \NN_0}$ Folge in $\Rm$ \key{konvergiert} gegen $y \in \Rm$ falls:
+$$\forall \varepsilon > 0 \, \exists N > 0 \, \forall n > N : || x_n - y || < \varepsilon$$
+$y$ ist dann \key{Grenzwert}: $\lim\limits_{n \to \infty} x_n = y$.
+Falls kein $y$, Folge \key{divergent}
+
+\Satz konv. Folge in $\Rn$ besitzt \key{eindeutigen Grenzwert}
+
+\Satz Folge in $\Rn$ konvergiert $\iff$ \key{koordinaten-weise konvergiert}
+
+\subsection{Mengen}
+
+\Def $x \in \Rn$, $r > 0 \in \RR$. \key{Offene Ball} um $x$ mit Radius $r$ ist
+$$B_r(x) = B(x, r) := \{y \in \Rm \,|\, ||x - y|| < r\}$$ 
+
+\Def $A \subseteq \Rn$ \key{offen}, falls $\forall y \in A \, \exists B_r(y) \,:\, B_r(y) \subseteq A$ \\
+     $A \subseteq \Rn$ \key{abgeschlossen}, falls $\Rn \setminus A$ offen ist. \\
+     $\Rn, \varnothing$ sind sowohl offen als auch abgeschlossen. Andere sind weder noch
+
+\Satz \key{Eigenschaften offener/abgeschlossener Mengen} in $\Rn$:
+\begin{itemize}
+    \item Endliche Schnitte offener Mengen: offen
+    \item Beliebige Vereinigungen offener Mengen: offen
+    \item Endliche Vereinigungen abgeschlossener Mengen: abgeschlossen
+    \item Beliebige Schnitte abgeschlossener Mengen: abgeschlossen
+\end{itemize}
+
+\Def Für $A \subseteq \Rn$ hat:
+\begin{itemize}
+    \item \key{Innere} $A^\circ = int(A) := \cup\{E \subseteq A \,|\, E offen\}$
+    \item \key{Abschluss} $\overline{A} := \cap\{U \supseteq A \,|\, U abgeschlossen\}$
+    \item \key{(topologische) Rand} $\overline{A} \setminus A^\circ$
+\end{itemize}
+
+\Satz $A \subseteq \Rn$ offen $\iff$ für jede Folge $(x_n)_{m \in \NN_0}$ mit Grenzwert $x \in A$ gilt:
+$\exists N \in \NN \, \forall n > N \, : \, x_n \in A$
+
+\Satz $A \subseteq \Rn$ abgeschlossen $\iff$ für jede Folge $(x_n)_{m \in \NN_0} \subseteq A$ mit Grenzwert $x$ gilt: $x \in A$
+
+\Def $K \subseteq \Rn$ \key{kompakt}, falls jede $(x_n)_{n \in \NN_0} \subseteq K$ eine konvergente Teilfolge besitzt
+
+\Satz $K \subseteq \Rn$ kompakt $\iff$ $K$ abgeschlossen und beschränkt

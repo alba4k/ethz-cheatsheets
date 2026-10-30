@@ -54,14 +54,15 @@
     \vskip\sepwidth
 }
 
-\titleformat{\section}
-    {\secsep\Large\bfseries}
-    {\thesection}
-    {1em}
-    {}
-    [\vspace{-\baselineskip}]
+\newcommand{\sectionbox}[1]{\colorbox{yellow!50}{\thesection. #1}}
 
 \titleformat{\section}
+    {\secsep\normalfont\Large\bfseries}
+    {}
+    {0pt}
+    {\sectionbox}
+
+\titleformat{name=\section,numberless}
     {\secsep\normalfont\Large\bfseries}
     {}
     {0pt}
@@ -82,24 +83,6 @@
 \newcommand{\key}[1]{\textit{\color{red}{#1}}}
 \newcommand{\oldkey}[1]{\textit{\color{blue}{#1}}}
 
-\titleformat{\section}
-    {\secsep\normalfont\Large\bfseries}
-    {}
-    {0pt}
-    {\colorbox{yellow!50}}
-
-\titleformat{\subsection}
-    {\normalfont\large\bfseries}
-    {}
-    {0pt}
-    {\colorbox{yellow!50}}
-
-\titleformat{\subsubsection}
-    {\normalfont\normalsize\bfseries}
-    {}
-    {0pt}
-    {\colorbox{yellow!50}}
-
 \setcounter{secnumdepth}{1}
 \numberwithin{equation}{section}
 \DeclareMathOperator{\sgn}{sgn}
@@ -109,6 +92,10 @@
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\CC}{\mathbb{C}}
+
+\newcommand{\Rn}{\mathbb{R}^n}
+\newcommand{\Rm}{\mathbb{R}^m}
+\newcommand{\Cn}{\mathbb{C}^n}
 
 \newcommand{\DD}{\mathbb{D}}
 \newcommand{\WW}{\mathbb{W}}
@@ -129,20 +116,35 @@
     Aaron Blasko
 
     Abschnitte mit $\star$ stammen nicht unbedingt aus Skript oder Slides.
+    
+    \vspace{4pt}
+    \hrule
 
-    \oldkey{Blau} markierte Inhalte stammen aus Analysis I (FS26).
+    \Large {\color{blue}{Analysis I}} \small FS26
+
+    \input{./tex/an1/01-LogikMengenZahlen.tex} % SW 1, 2
+    \input{./tex/an1/02-Folgen.tex} % SW 3, 4
+    \input{./tex/an1/03-Reihen.tex} % SW 5
+    \input{./tex/an1/04-Funktionen.tex} % SW 6, 7
+    \input{./tex/an1/05-Differentialrechnung.tex} % SW 8, 9
+    \input{./tex/an1/06-Differentialgleichungen.tex} % SW 11, 13
+    \input{./tex/an1/07-Integralrechnung.tex} % SW 12
+    \input{./tex/an1/08-Beispiele.tex}
+    \input{./tex/an1/09-Beweise.tex}
+
+    \setcounter{section}{0}
+    \pagebreak
+
+    \Large {\color{red}{Analysis II}} \small HS26
 
     % Analysis I
-    \input{./tex/01-LogikMengenZahlen.tex} % SW 1, 2
-    \input{./tex/02-Folgen.tex} % SW 3, 4
-    \input{./tex/03-Reihen.tex} % SW 5
-    \input{./tex/04-Funktionen.tex} % SW 6, 7
-    \input{./tex/05-Differentialrechnung.tex} % SW 8, 9
-    \input{./tex/06-Differentialgleichungen.tex} % SW 11, 13
-    \input{./tex/07-Integralrechnung.tex} % SW 12
-    \input{./tex/08-Beispiele.tex}
-    \input{./tex/09-Beweise.tex}
-    \input{./tex/10-Tabellen.tex}
+    \input{./tex/01-Grundlagen.tex}  % SW 1
+    \input{./tex/02-Funktionen.tex} % SW 2
+
+    \pagebreak
+
+    \input{./tex/XX-Tabellen.tex}
+
 
 \end{multicols*}
 

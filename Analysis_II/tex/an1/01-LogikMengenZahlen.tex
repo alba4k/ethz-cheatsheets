@@ -1,20 +1,7 @@
-\section{1. Logik, Mengen, Zahlen}
+\section{Logik, Mengen, Zahlen}
 \subsection{Logik}
 
-\Def Eine \oldkey{math. Aussage} ist entweder wahr oder falsch
-
-\Def \oldkey{Prädikat} ist Aussage mit Variablen: $A(x)$ oder $A(x, y, \ldots)$ 
-
-\Def \oldkey{Verneinung} (Negation) einer math. Aussage ist $\lnot A$.
-
-\Def Wir führen die folgenden \oldkey{Quantoren} (”Kurzschreibweisen”) ein:
-$\forall$, $\exists$, $\exists!$, $\nexists$. 
-Quantoren stehen vor den Aussagen.
-
-\Def Wir führen die folgenden \oldkey{Grundverknüpfungen} ein:
-$\land$, $\lor$, $\implies$, $\iff$.
-
-\Satz Es gelten die folgenden Regeln
+\Satz Es gelten die folgenden \oldkey{Regeln}
 \vspace{-0.6em}
 \begin{itemize}
     \item $\lnot \forall x \, A(x) \, \iff \, \exists x \, \lnot A(x)$
@@ -26,11 +13,6 @@ $\land$, $\lor$, $\implies$, $\iff$.
 
 \subsection{Mengen}
 
-\Def \oldkey{Menge} ist eine Ansammlung von  Elementen, entweder aufgelistet
-oder durch Eigenschaften charakterisiert.
-
-\oldkey{Leere Menge}: $\varnothing$. Element $x$ in Menge $M$: $x \in M$. Andernfalls: $x \notin M$.
-
 \Def Seinen $X$ und $Y$ zwei Mengen:
 \vspace{-0.6em}
 \begin{itemize}
@@ -38,22 +20,6 @@ oder durch Eigenschaften charakterisiert.
     \item \oldkey{echte Teilmenge} $X \subsetneq Y$: $(X \subset Y) \, \land \, (X\ne Y)$
     \item \oldkey{Komplement} Falls $X \subset Y$ gilt, ist $X^c := \{y \, | \, y \in Y \, \land \, y \notin X\}$
 \end{itemize}
-
-\Def Mit Mengen folgende \oldkey{Operationen}:
-$\cup$, $\cap$, $\backslash$, $\times$.
-
-\subsection{Zahlen}
-
-\Def \oldkey{Zahlmengen}: $\NN = \{1, 2, \ldots\}$, $\ZZ$, $\QQ$, $\RR$.
-Wir betrachten oft auch: $\RR^+ = (0, \infty)$, $\RR^+_0 = [0, \infty)$, $\RR^-$, $\RR^-_0$
-
-\Satz \oldkey{Theorem von Aaron}: In $\NN$, oder auch in $\RR$, gilt: $1 + 1 = 2$.
-
-\Def \oldkey{Intervalle}, $I \subset \RR$:
-offenes Intervall $(a, b)$, abgeschlossenes Intervall $[a, b]$ und halboffene Intervalle $[a, b)$ $(a, b]$
-
-$\RR = (-\infty, \infty)$, $a, b \in \RR$ \oldkey{beschränktes Int.},
-$(-\infty, b) = \{x \in \RR \, | \, x < b\}$
 
 \Def \oldkey{Kenngrössen} von Teilmengen $X \subset \RR$:
 \vspace{-0.6em}
@@ -67,7 +33,7 @@ $(-\infty, b) = \{x \in \RR \, | \, x < b\}$
 \end{itemize}
 
 \Satz
-Es gelten die folgenden Tatsachen:
+Es gelten die folgenden \oldkey{Tatsachen}:
 \vspace{-0.6em}
 \begin{itemize}
     \item Maximum und Minimum eindeutig - sofern sie existieren
@@ -113,13 +79,13 @@ Es gelten die folgenden Tatsachen:
     \end{itemize}
 \end{itemize}
 
-\Satz Ordnungsvollständigkeit: $A, B \subset \RR$, $A\ne \varnothing$, $B\ne \varnothing$,
+\Satz \oldkey{Ordnungsvollständigkeit}: $A, B \subset \RR$, $A\ne \varnothing$, $B\ne \varnothing$,
 $\forall a \in A \, \forall b \in B : a\le b$: \\
 Es gibt $c \in \RR$ so dass $\forall a \in A : a\le c$ und $\forall b \in B : c\le b$
 
 \Satz $\RR$ ist ein geordneter und ordnungsvollständiger Körper
 
-\Kor Eigenschaften von $\RR$
+\Kor \oldkey{Eigenschaften von $\RR$}
 \vspace{-0.6em}
 \begin{itemize}
     \item Additive und multiplikative Inverse sind eindeutig bestimmt
@@ -140,8 +106,6 @@ Es gibt $c \in \RR$ so dass $\forall a \in A : a\le c$ und $\forall b \in B : c\
 
 \Def $\max\{x, y\}$, $\min\{x, y\}$, \oldkey{Absolutbetrag} $|x| = \max\{x, -x\}$
 
-\Satz \oldkey{Satz von Chris}: Für $a, b, c \in \RR$ gilt $a \cdot (b + c) = a \cdot b + a \cdot c$
-
 \Satz \oldkey{Eigenschaften des Absolutbetrags}
 \vspace{-0.6em}
 \begin{itemize}
@@ -153,25 +117,7 @@ Es gibt $c \in \RR$ so dass $\forall a \in A : a\le c$ und $\forall b \in B : c\
 \Satz \oldkey{Youngsche Ungleichung}: Für jedes $\varepsilon > 0$ und $x, y \in \RR$ gilt:
 $$2|xy|\le \varepsilon x^2 + \frac{1}{\varepsilon}y^2$$
 
-\subsection{Vektoren und Vektorräume}
-
-\Def Für $x, y \in \RR^n$:
-\vspace{-0.6em}
-\begin{itemize}
-    \item \oldkey{(Standard-)Skalarprodukt}: $x \cdot y = <x,y> = [x,y] := \sum_{i=1}^{n}x_i y_i$
-    \item \oldkey{Euklidische Norm}: $||x|| := \sqrt{\sum_{i=1}^{n}x_i^2}$
-    \item \oldkey{Euklidischer Abstand}: $d(x,y) := \sqrt{\sum_{i=1}^{n}(x_i-y_i)^2}$
-\end{itemize}
-
-\Satz \oldkey{Dreiecksungleichung}: $\forall x,y,z \in \RR^n : ||x-z||\le ||x-y|| + ||y - z||$
-
 \subsection{Komplexe Zahlen}
-
-\Def \oldkey{komplexe Zahlen}: $\CC = \{z = a + ib \, | \, a,b \in \RR\}$.
-$z = a + ib$ heisst Normal-/aritmetische/kartesische Form. $a = Re(z)$ \oldkey{Realteil},
-$b = Im(z)$ \oldkey{Imaginärteil}, $i^2 = -1$ \oldkey{imag.}/\oldkey{komplexe Einheit}. $z = ib$ ist \oldkey{rein imaginär}
-
-\Def $z = x + iy$ und $\overline{z} = x - iy$ sind \oldkey{komplex konjugiert}
 
 \Satz $\frac{z}{w} = \frac{z \cdot \overline{w}}{w \cdot \overline{w}} = \frac{z \cdot \overline{w}}{|w|^2}$
 und $\overline{\frac{z}{w}} = \frac{\overline{z}}{\overline{w}}$ für $z,w \in \CC$
@@ -188,9 +134,6 @@ und $\overline{\frac{z}{w}} = \frac{\overline{z}}{\overline{w}}$ für $z,w \in \
     \item $\overline{z} = -z$ falls $z$ rein imaginär
 \end{itemize}
 
-\Def \oldkey{Betrag} $|z| = \sqrt{a^2 + b^2}$,
-\oldkey{Abstand} $d = |z_2 - z_1| = |z_1 - z_2|$
-
 \Satz \oldkey{Dreiecksungleichung}: Für $z, w \in \CC$ gilt $|z + w|\le |z| + |w|$
 
 \Satz \oldkey{Eulersche Formel}: $e^x = \sum_{k=0}^{\infty}\frac{1}{k!}x^k$ und mit $x = it$:
@@ -199,8 +142,6 @@ $$e^{it} = \cos(t) + i\sin(t)$$
 \Kor $\cos(t) = \frac{e^{it} + e^{-it}}{2}$ und $\sin(t) = \frac{e^{it} - e^{-it}}{2i}$
 
 \Def $\cosh(t) = \frac{e^x + e^{-x}}{2}$ und $\sinh(t) = \frac{e^x - e^{-x}}{2}$
-
-\Def \oldkey{Polardarstellung}: $z = r \cdot e^{i\varphi}$ und $r = |z|$, $\varphi = \arg(z) \in (-\pi, \pi]$
 
 \Satz \oldkey{Wurzeln in $\CC$}: $z^n = re^{i\varphi}$: 
 $z_k = r^{\frac{1}{n}}e^{i\frac{\varphi + 2k\pi}{n}}$ wobei $0\le k < n$
